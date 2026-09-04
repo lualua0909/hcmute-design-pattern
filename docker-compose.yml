@@ -1,0 +1,64 @@
+# Optional convenience orchestrator.
+# Every service still has its own Dockerfile and can be built/run standalone -
+# nothing here is shared between services except the external cloud MySQL and
+# CloudAMQP instances.
+services:
+  api-gateway:
+    build: ./api-gateway
+    image: pokeshop/api-gateway
+    container_name: pokeshop-api-gateway
+    env_file: ./api-gateway/.env
+    environment:
+      ANALYTICS_SERVICE_URL: http://analytics-service:8000
+      INVENTORY_SERVICE_URL: http://inventory-service:9000
+    volumes:
+      - ./secrets/firebase-service-account.json:/run/secrets/firebase-service-account.json:ro
+    ports: ["8080:8080"]
+    restart: unless-stopped
+    networks: [pokeshop]
+
+  inventory-service:
+    build: ./inventory-service
+    image: pokeshop/inventory-service
+    container_name: pokeshop-inventory-service
+    env_file: ./inventory-service/.env
+    ports: ["9000:9000"]
+    restart: unless-stopped
+    networks: [pokeshop]
+
+  analytics-service:
+    build: ./analytics-service
+    image: pokeshop/analytics-service
+    container_name: pokeshop-analytics-service
+    env_file: ./analytics-service/.env
+    ports: ["8000:8000"]
+    restart: unless-stopped
+    networks: [pokeshop]
+
+  notification-service:
+    build: ./notification-service
+    image: pokeshop/notification-service
+    container_name: pokeshop-notification-service
+    env_file: ./notification-service/.env
+    volumes:
+      - ./secrets/firebase-service-account.json:/run/secrets/firebase-service-account.json:ro
+    ports: ["7000:7000"]
+    restart: unless-stopped
+    networks: [pokeshop]
+
+  frontend:
+    build:
+      context: ./frontend
+      args:
+        VITE_API_BASE_URL: http://localhost:8080
+        VITE_AUTH_DEV_BYPASS: "true"
+    image: pokeshop/frontend
+    container_name: pokeshop-frontend
+    ports: ["5173:80"]
+    depends_on: [api-gateway]
+    restart: unless-stopped
+    networks: [pokeshop]
+
+networks:
+  pokeshop:
+    driver: bridge
