@@ -5,12 +5,12 @@ import { useAuth } from '@/hooks/useAuth';
 import { Button } from '@/components/ui/button';
 
 const LINKS = [
-  { to: '/cms', label: 'Dashboard', icon: LayoutDashboard, end: true },
-  { to: '/cms/products', label: 'Products', icon: Package },
-  { to: '/cms/inventory', label: 'Inventory', icon: Boxes },
-  { to: '/cms/orders', label: 'Orders', icon: Receipt },
-  { to: '/cms/analytics', label: 'Analytics', icon: BarChart3 },
-  { to: '/cms/users', label: 'Users', icon: Users },
+  { to: '/cms', label: 'Tổng quan', icon: LayoutDashboard, end: true },
+  { to: '/cms/products', label: 'Sản phẩm', icon: Package },
+  { to: '/cms/inventory', label: 'Kho hàng', icon: Boxes },
+  { to: '/cms/orders', label: 'Đơn hàng', icon: Receipt },
+  { to: '/cms/analytics', label: 'Báo cáo', icon: BarChart3 },
+  { to: '/cms/users', label: 'Người dùng', icon: Users },
 ];
 
 export function AdminLayout() {
@@ -20,8 +20,8 @@ export function AdminLayout() {
     <div className="flex min-h-screen bg-muted/30">
       <aside className="hidden w-60 shrink-0 border-r bg-background lg:block">
         <div className="flex h-16 items-center gap-2 border-b px-6 font-semibold">
-          <img src="/pokeball.svg" alt="" className="h-5 w-5" />
-          PokeShop CMS
+          <img src="/sporthub.svg" alt="" className="h-5 w-5" />
+          SportHub CMS
         </div>
         <nav className="space-y-1 p-3">
           {LINKS.map(({ to, label, icon: Icon, end }) => (
@@ -42,11 +42,11 @@ export function AdminLayout() {
 
       <div className="flex min-w-0 flex-1 flex-col">
         <header className="flex h-16 items-center gap-4 border-b bg-background px-6">
-          <div className="lg:hidden font-semibold">PokeShop CMS</div>
+          <div className="lg:hidden font-semibold">SportHub CMS</div>
           <div className="ml-auto flex items-center gap-3">
             <span className="hidden text-sm text-muted-foreground sm:inline">{profile?.email}</span>
             <Button variant="outline" size="sm" asChild>
-              <Link to="/"><Store className="h-4 w-4" />Storefront</Link>
+              <Link to="/"><Store className="h-4 w-4" />Về cửa hàng</Link>
             </Button>
           </div>
         </header>

@@ -28,7 +28,7 @@ export function Cart() {
         note || undefined
       );
       cart.clear();
-      toast.success('Order placed', { description: 'Inventory is reserving your cards — watch for the confirmation push.' });
+      toast.success('Order placed', { description: 'Inventory is reserving your items — watch for the confirmation push.' });
       navigate(`/orders?highlight=${order.id}`);
     } catch (err) {
       toast.error('Checkout failed', { description: err.message });
@@ -42,8 +42,8 @@ export function Cart() {
       <div className="container py-16">
         <EmptyState
           title="Your cart is empty"
-          description="Add a few cards and they will show up here."
-          action={<Button asChild><Link to="/products">Browse cards</Link></Button>}
+          description="Add a few items and they will show up here."
+          action={<Button asChild><Link to="/products">Start shopping</Link></Button>}
         />
       </div>
     );

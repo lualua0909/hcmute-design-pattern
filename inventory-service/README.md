@@ -27,6 +27,6 @@ retrying would never succeed. Infrastructure errors nack so nothing is lost.
 cp .env.example .env
 go mod tidy && go run .          # http://localhost:9000
 
-docker build -t pokeshop/inventory-service .
-docker run --rm -p 9000:9000 --env-file .env pokeshop/inventory-service
+docker build -t sporthub/inventory-service .
+docker run --rm -p 9000:9000 --env-file .env sporthub/inventory-service
 ```

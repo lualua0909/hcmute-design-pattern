@@ -22,9 +22,9 @@ def get_top_products(limit: int = Query(10, ge=1, le=50), days: int = Query(30, 
     return {"days": days, "items": service.top_products(limit, days)}
 
 
-@router.get("/rarity-mix")
-def get_rarity_mix(days: int = Query(30, ge=1, le=365)):
-    return {"days": days, "items": service.rarity_mix(days)}
+@router.get("/gender-mix")
+def get_gender_mix(days: int = Query(30, ge=1, le=365)):
+    return {"days": days, "items": service.gender_mix(days)}
 
 
 @router.post("/rebuild")

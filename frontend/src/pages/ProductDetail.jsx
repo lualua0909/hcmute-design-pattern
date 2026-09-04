@@ -7,7 +7,7 @@ import { Separator } from '@/components/ui/separator';
 import { Skeleton } from '@/components/ui/skeleton';
 import { api } from '@/lib/api';
 import { useCart } from '@/hooks/useCart';
-import { cn, formatCurrency, RARITY_LABELS, RARITY_STYLES } from '@/lib/utils';
+import { cn, formatCurrency, GENDER_LABELS, GENDER_STYLES } from '@/lib/utils';
 
 export function ProductDetail() {
   const { slug } = useParams();
@@ -24,8 +24,8 @@ export function ProductDetail() {
   if (product === false) {
     return (
       <div className="container py-20 text-center">
-        <p className="text-lg font-medium">Card not found</p>
-        <Button variant="link" asChild><Link to="/products">Back to catalogue</Link></Button>
+        <p className="text-lg font-medium">Product not found</p>
+        <Button variant="link" asChild><Link to="/products">Back to the shop</Link></Button>
       </div>
     );
   }
@@ -33,7 +33,7 @@ export function ProductDetail() {
   if (!product) {
     return (
       <div className="container grid gap-10 py-10 md:grid-cols-2">
-        <Skeleton className="aspect-[3/4]" />
+        <Skeleton className="aspect-square" />
         <div className="space-y-4">
           <Skeleton className="h-8 w-2/3" /><Skeleton className="h-4 w-1/3" /><Skeleton className="h-24" />
         </div>
@@ -50,29 +50,29 @@ export function ProductDetail() {
       </Button>
 
       <div className="grid gap-10 md:grid-cols-2">
-        <div className="flex items-center justify-center rounded-2xl border bg-card p-8">
+        <div className="aspect-square overflow-hidden bg-muted">
           {product.imageUrl
-            ? <img src={product.imageUrl} alt={product.name} className="max-h-[520px] w-full object-contain" />
-            : <div className="py-32 text-sm text-muted-foreground">No image</div>}
+            ? <img src={product.imageUrl} alt={product.name} className="h-full w-full object-cover" />
+            : <div className="flex h-full items-center justify-center text-sm text-muted-foreground">No image</div>}
         </div>
 
         <div className="space-y-6">
           <div className="space-y-3">
             <div className="flex flex-wrap items-center gap-2">
-              <Badge className={cn('border-0', RARITY_STYLES[product.rarity])}>
-                {RARITY_LABELS[product.rarity] || product.rarity}
+              <Badge className={cn('border-0', GENDER_STYLES[product.gender])}>
+                {GENDER_LABELS[product.gender] || product.gender}
               </Badge>
               {product.categoryName && <Badge variant="outline">{product.categoryName}</Badge>}
-              {product.cardSet && <Badge variant="outline">{product.cardSet}</Badge>}
+              {product.sport && <Badge variant="outline">{product.sport}</Badge>}
             </div>
-            <h1 className="text-3xl font-semibold tracking-tight">{product.name}</h1>
+            <h1 className="display text-3xl">{product.name}</h1>
             <p className="text-sm text-muted-foreground">SKU {product.sku}</p>
           </div>
 
           <p className="text-4xl font-semibold">{formatCurrency(product.price)}</p>
 
           <p className="text-sm leading-relaxed text-muted-foreground">
-            {product.description || 'No description provided for this card yet.'}
+            {product.description || 'No description provided for this product yet.'}
           </p>
 
           <Separator />
@@ -93,7 +93,7 @@ export function ProductDetail() {
                 </Button>
               </div>
 
-              <Button size="lg" disabled={soldOut} onClick={() => cart.add(product, quantity)}>
+              <Button size="lg" className="rounded-full" disabled={soldOut} onClick={() => cart.add(product, quantity)}>
                 <ShoppingCart className="h-4 w-4" />Add to cart
               </Button>
             </div>

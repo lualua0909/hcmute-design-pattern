@@ -16,8 +16,8 @@ const productSchema = z.object({
   imageUrl: z.string().url().max(512).optional().nullable(),
   price: z.number().nonnegative(),
   categoryId: z.number().int().positive().optional().nullable(),
-  rarity: z.enum(['common', 'uncommon', 'rare', 'holo_rare', 'ultra_rare', 'secret_rare']).default('common'),
-  cardSet: z.string().max(120).optional().nullable(),
+  gender: z.enum(['men', 'women', 'kids', 'unisex']).default('unisex'),
+  sport: z.string().max(120).optional().nullable(),
   status: z.enum(['draft', 'published', 'archived']).default('published'),
   stock: z.number().int().min(0).optional(),
 });
@@ -25,7 +25,8 @@ const productSchema = z.object({
 const listQuerySchema = z.object({
   q: z.string().optional(),
   category: z.coerce.number().int().positive().optional(),
-  rarity: z.string().optional(),
+  gender: z.string().optional(),
+  sport: z.string().optional(),
   status: z.string().optional(),
   minPrice: z.coerce.number().optional(),
   maxPrice: z.coerce.number().optional(),
@@ -51,8 +52,8 @@ const mapProduct = (r) => ({
   price: Number(r.price),
   categoryId: r.category_id,
   categoryName: r.category_name ?? null,
-  rarity: r.rarity,
-  cardSet: r.card_set,
+  gender: r.gender,
+  sport: r.sport,
   status: r.status,
   stock: r.on_hand === null || r.on_hand === undefined ? 0 : Number(r.on_hand) - Number(r.reserved || 0),
   createdAt: r.created_at,
@@ -61,7 +62,7 @@ const mapProduct = (r) => ({
 
 /** GET /api/products - public catalog listing with filters + pagination. */
 router.get('/', validate(listQuerySchema, 'query'), asyncHandler(async (req, res) => {
-  const { q, category, rarity, status, minPrice, maxPrice, sort, page, limit } = req.query;
+  const { q, category, gender, sport, status, minPrice, maxPrice, sort, page, limit } = req.query;
   const where = [];
   const params = [];
 
@@ -69,9 +70,10 @@ router.get('/', validate(listQuerySchema, 'query'), asyncHandler(async (req, res
   if (status && req.user?.role === 'admin') { where.push('p.status = ?'); params.push(status); }
   else if (!req.user || req.user.role !== 'admin') where.push("p.status = 'published'");
 
-  if (q) { where.push('(p.name LIKE ? OR p.sku LIKE ? OR p.card_set LIKE ?)'); params.push(`%${q}%`, `%${q}%`, `%${q}%`); }
+  if (q) { where.push('(p.name LIKE ? OR p.sku LIKE ? OR p.sport LIKE ?)'); params.push(`%${q}%`, `%${q}%`, `%${q}%`); }
   if (category) { where.push('p.category_id = ?'); params.push(category); }
-  if (rarity) { where.push('p.rarity = ?'); params.push(rarity); }
+  if (gender) { where.push('p.gender = ?'); params.push(gender); }
+  if (sport) { where.push('p.sport = ?'); params.push(sport); }
   if (minPrice !== undefined) { where.push('p.price >= ?'); params.push(minPrice); }
   if (maxPrice !== undefined) { where.push('p.price <= ?'); params.push(maxPrice); }
 
@@ -94,6 +96,18 @@ router.get('/', validate(listQuerySchema, 'query'), asyncHandler(async (req, res
     items: rows.map(mapProduct),
     pagination: { page, limit, total: Number(total), pages: Math.ceil(Number(total) / limit) },
   });
+}));
+
+/** GET /api/products/facets - distinct sports, for the storefront filter bar. */
+router.get('/facets', asyncHandler(async (req, res) => {
+  const rows = await query(
+    `SELECT sport, COUNT(*) AS count
+       FROM cat_products
+      WHERE status = 'published' AND sport IS NOT NULL
+      GROUP BY sport
+      ORDER BY sport`
+  );
+  res.json({ sports: rows.map((r) => ({ sport: r.sport, count: Number(r.count) })) });
 }));
 
 /** GET /api/products/:idOrSlug */
@@ -122,10 +136,10 @@ router.post('/', requireAuth, requireAdmin, validate(productSchema), asyncHandle
 
   const result = await query(
     `INSERT INTO cat_products
-       (sku, name, slug, description, image_url, price, category_id, rarity, card_set, status)
+       (sku, name, slug, description, image_url, price, category_id, gender, sport, status)
      VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`,
     [b.sku, b.name, b.slug, b.description ?? null, b.imageUrl ?? null, b.price,
-     b.categoryId ?? null, b.rarity, b.cardSet ?? null, b.status]
+     b.categoryId ?? null, b.gender, b.sport ?? null, b.status]
   );
 
   await publish('product.created', {
@@ -145,7 +159,7 @@ router.put('/:id', requireAuth, requireAdmin, validate(productSchema.partial()),
 
   const columns = {
     sku: 'sku', name: 'name', slug: 'slug', description: 'description', imageUrl: 'image_url',
-    price: 'price', categoryId: 'category_id', rarity: 'rarity', cardSet: 'card_set', status: 'status',
+    price: 'price', categoryId: 'category_id', gender: 'gender', sport: 'sport', status: 'status',
   };
   const sets = [];
   const params = [];

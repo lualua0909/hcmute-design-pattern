@@ -1,9 +1,9 @@
 {
-  "name": "pokeshop-api-gateway",
+  "name": "sporthub-api-gateway",
   "version": "1.0.0",
   "private": true,
   "type": "module",
-  "description": "PokeShop API Gateway / Orchestrator (Node.js + Express)",
+  "description": "SportHub API Gateway / Orchestrator (Node.js + Express)",
   "main": "src/server.js",
   "scripts": {
     "start": "node src/server.js",

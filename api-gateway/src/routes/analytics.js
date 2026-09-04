@@ -18,8 +18,8 @@ router.get('/revenue', asyncHandler(async (req, res) =>
 router.get('/top-products', asyncHandler(async (req, res) =>
   res.json(await forward(BASE, `/reports/top-products?limit=${Number(req.query.limit || 10)}&days=${Number(req.query.days || 30)}`))));
 
-router.get('/rarity-mix', asyncHandler(async (req, res) =>
-  res.json(await forward(BASE, `/reports/rarity-mix?days=${Number(req.query.days || 30)}`))));
+router.get('/gender-mix', asyncHandler(async (req, res) =>
+  res.json(await forward(BASE, `/reports/gender-mix?days=${Number(req.query.days || 30)}`))));
 
 router.post('/rebuild', asyncHandler(async (req, res) =>
   res.json(await forward(BASE, '/reports/rebuild', { method: 'POST', body: {} }))));

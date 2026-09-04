@@ -5,8 +5,8 @@
 services:
   api-gateway:
     build: ./api-gateway
-    image: pokeshop/api-gateway
-    container_name: pokeshop-api-gateway
+    image: sporthub/api-gateway
+    container_name: sporthub-api-gateway
     env_file: ./api-gateway/.env
     environment:
       ANALYTICS_SERVICE_URL: http://analytics-service:8000
@@ -15,36 +15,36 @@ services:
       - ./secrets/firebase-service-account.json:/run/secrets/firebase-service-account.json:ro
     ports: ["8080:8080"]
     restart: unless-stopped
-    networks: [pokeshop]
+    networks: [sporthub]
 
   inventory-service:
     build: ./inventory-service
-    image: pokeshop/inventory-service
-    container_name: pokeshop-inventory-service
+    image: sporthub/inventory-service
+    container_name: sporthub-inventory-service
     env_file: ./inventory-service/.env
     ports: ["9000:9000"]
     restart: unless-stopped
-    networks: [pokeshop]
+    networks: [sporthub]
 
   analytics-service:
     build: ./analytics-service
-    image: pokeshop/analytics-service
-    container_name: pokeshop-analytics-service
+    image: sporthub/analytics-service
+    container_name: sporthub-analytics-service
     env_file: ./analytics-service/.env
     ports: ["8000:8000"]
     restart: unless-stopped
-    networks: [pokeshop]
+    networks: [sporthub]
 
   notification-service:
     build: ./notification-service
-    image: pokeshop/notification-service
-    container_name: pokeshop-notification-service
+    image: sporthub/notification-service
+    container_name: sporthub-notification-service
     env_file: ./notification-service/.env
     volumes:
       - ./secrets/firebase-service-account.json:/run/secrets/firebase-service-account.json:ro
     ports: ["7000:7000"]
     restart: unless-stopped
-    networks: [pokeshop]
+    networks: [sporthub]
 
   frontend:
     build:
@@ -52,13 +52,13 @@ services:
       args:
         VITE_API_BASE_URL: http://localhost:8080
         VITE_AUTH_DEV_BYPASS: "true"
-    image: pokeshop/frontend
-    container_name: pokeshop-frontend
+    image: sporthub/frontend
+    container_name: sporthub-frontend
     ports: ["5173:80"]
     depends_on: [api-gateway]
     restart: unless-stopped
-    networks: [pokeshop]
+    networks: [sporthub]
 
 networks:
-  pokeshop:
+  sporthub:
     driver: bridge

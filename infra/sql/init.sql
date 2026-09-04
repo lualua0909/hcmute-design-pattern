@@ -1,5 +1,5 @@
 -- ============================================================
--- PokeShop - Shared MySQL schema (Aiven cloud, db: defaultdb)
+-- SportHub - Shared MySQL schema (Aiven cloud, db: defaultdb)
 -- Table prefix = logical schema boundary per service.
 --   cat_*  -> owned by API Gateway (catalog + users + orders)
 --   inv_*  -> owned by Inventory Service (Go)
@@ -38,8 +38,8 @@ CREATE TABLE IF NOT EXISTS cat_products (
   image_url    VARCHAR(512) NULL,
   price        DECIMAL(12,2) NOT NULL DEFAULT 0,
   category_id  INT NULL,
-  rarity       ENUM('common','uncommon','rare','holo_rare','ultra_rare','secret_rare') NOT NULL DEFAULT 'common',
-  card_set     VARCHAR(120) NULL,
+  gender       ENUM('men','women','kids','unisex') NOT NULL DEFAULT 'unisex',
+  sport        VARCHAR(120) NULL,
   status       ENUM('draft','published','archived') NOT NULL DEFAULT 'published',
   created_at   DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
   updated_at   DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,

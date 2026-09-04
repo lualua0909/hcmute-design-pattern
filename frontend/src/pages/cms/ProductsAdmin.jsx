@@ -14,11 +14,11 @@ import {
   Dialog, DialogContent, DialogDescription, DialogFooter, DialogHeader, DialogTitle,
 } from '@/components/ui/dialog';
 import { api } from '@/lib/api';
-import { cn, formatCurrency, RARITY_LABELS, RARITY_STYLES } from '@/lib/utils';
+import { cn, formatCurrency, GENDER_LABELS, GENDER_STYLES } from '@/lib/utils';
 
 const EMPTY = {
   sku: '', name: '', slug: '', description: '', imageUrl: '',
-  price: '', categoryId: '', rarity: 'common', cardSet: '', status: 'published', stock: '',
+  price: '', categoryId: '', gender: 'unisex', sport: '', status: 'published', stock: '',
 };
 
 const slugify = (value) =>
@@ -53,7 +53,7 @@ export function ProductsAdmin() {
       sku: product.sku, name: product.name, slug: product.slug,
       description: product.description || '', imageUrl: product.imageUrl || '',
       price: String(product.price), categoryId: product.categoryId ? String(product.categoryId) : '',
-      rarity: product.rarity, cardSet: product.cardSet || '', status: product.status,
+      gender: product.gender, sport: product.sport || '', status: product.status,
       stock: String(product.stock ?? ''),
     });
     setOpen(true);
@@ -73,8 +73,8 @@ export function ProductsAdmin() {
       imageUrl: form.imageUrl || null,
       price: Number(form.price),
       categoryId: form.categoryId ? Number(form.categoryId) : null,
-      rarity: form.rarity,
-      cardSet: form.cardSet || null,
+      gender: form.gender,
+      sport: form.sport || null,
       status: form.status,
       ...(form.stock === '' ? {} : { stock: Number(form.stock) }),
     };
@@ -136,7 +136,7 @@ export function ProductsAdmin() {
               <TableHeader>
                 <TableRow>
                   <TableHead>Product</TableHead>
-                  <TableHead>Rarity</TableHead>
+                  <TableHead>Gender</TableHead>
                   <TableHead>Price</TableHead>
                   <TableHead>Stock</TableHead>
                   <TableHead>Status</TableHead>
@@ -148,8 +148,8 @@ export function ProductsAdmin() {
                   <TableRow key={product.id}>
                     <TableCell>
                       <div className="flex items-center gap-3">
-                        <div className="h-10 w-8 shrink-0 overflow-hidden rounded bg-muted">
-                          {product.imageUrl && <img src={product.imageUrl} alt="" className="h-full w-full object-contain" />}
+                        <div className="h-10 w-10 shrink-0 overflow-hidden bg-muted">
+                          {product.imageUrl && <img src={product.imageUrl} alt="" className="h-full w-full object-cover" />}
                         </div>
                         <div>
                           <p className="font-medium">{product.name}</p>
@@ -158,8 +158,8 @@ export function ProductsAdmin() {
                       </div>
                     </TableCell>
                     <TableCell>
-                      <Badge className={cn('border-0', RARITY_STYLES[product.rarity])}>
-                        {RARITY_LABELS[product.rarity]}
+                      <Badge className={cn('border-0', GENDER_STYLES[product.gender])}>
+                        {GENDER_LABELS[product.gender]}
                       </Badge>
                     </TableCell>
                     <TableCell>{formatCurrency(product.price)}</TableCell>
@@ -223,11 +223,11 @@ export function ProductsAdmin() {
             </div>
 
             <div className="space-y-1.5">
-              <Label>Rarity</Label>
-              <Select value={form.rarity} onValueChange={(v) => setForm((p) => ({ ...p, rarity: v }))}>
+              <Label>Gender</Label>
+              <Select value={form.gender} onValueChange={(v) => setForm((p) => ({ ...p, gender: v }))}>
                 <SelectTrigger><SelectValue /></SelectTrigger>
                 <SelectContent>
-                  {Object.entries(RARITY_LABELS).map(([value, label]) => (
+                  {Object.entries(GENDER_LABELS).map(([value, label]) => (
                     <SelectItem key={value} value={value}>{label}</SelectItem>
                   ))}
                 </SelectContent>
@@ -235,8 +235,8 @@ export function ProductsAdmin() {
             </div>
 
             <div className="space-y-1.5">
-              <Label htmlFor="cardSet">Card set</Label>
-              <Input id="cardSet" {...field('cardSet')} />
+              <Label htmlFor="sport">Sport</Label>
+              <Input id="sport" placeholder="Running, Basketball…" {...field('sport')} />
             </div>
 
             <div className="space-y-1.5">

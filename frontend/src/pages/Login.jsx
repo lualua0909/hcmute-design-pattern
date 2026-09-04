@@ -36,7 +36,7 @@ export function Login() {
     <div className="container flex min-h-[70vh] items-center justify-center py-12">
       <Card className="w-full max-w-md">
         <CardHeader>
-          <CardTitle>Sign in to PokeShop</CardTitle>
+          <CardTitle>Sign in to SportHub</CardTitle>
           <CardDescription>
             {firebaseReady ? 'Authenticated with Firebase Auth.' : 'Firebase keys are still placeholders — using the gateway dev token.'}
           </CardDescription>

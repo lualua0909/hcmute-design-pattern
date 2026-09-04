@@ -12,9 +12,9 @@ firebase.initializeApp({
 });
 
 firebase.messaging().onBackgroundMessage((payload) => {
-  self.registration.showNotification(payload.notification?.title || 'PokeShop', {
+  self.registration.showNotification(payload.notification?.title || 'SportHub', {
     body: payload.notification?.body,
-    icon: '/pokeball.svg',
+    icon: '/sporthub.svg',
     data: payload.data,
   });
 });

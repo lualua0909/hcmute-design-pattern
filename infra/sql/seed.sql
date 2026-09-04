@@ -1,57 +1,65 @@
--- Demo data for PokeShop
--- cat_products / inv_stock rows generated from data-seed.json.
--- image_url = the card's "image" field (product thumbnail).
-INSERT IGNORE INTO cat_categories (id, name, slug) VALUES
- (1,'Booster Pack','booster-pack'),
- (2,'Single Card','single-card'),
- (3,'Elite Trainer Box','elite-trainer-box'),
- (4,'Accessories','accessories');
+-- Dữ liệu mẫu cho SportHub (đồ thể thao: giày, quần áo, phụ kiện).
+-- Sinh từ data-seed.json. Ảnh và giá gốc lấy từ product feed API công khai của Nike,
+-- giá quy đổi sang VND, nội dung mô tả viết lại bằng tiếng Việt.
 
-INSERT INTO cat_products (id, sku, name, slug, description, image_url, price, category_id, rarity, card_set, status) VALUES
- (1,'PKM-31506','Pikachu','pikachu-55','Common Pokémon card from Ascended Heroes. 70 HP. art by kamonabe. ASC 55.','https://images.tcggo.com/tcggo/storage/32001/pikachu-asc-55-ascended-heroes.png',0.21,2,'common','Ascended Heroes','published'),
- (2,'PKM-31508','Pikachu ex','pikachu-ex-57','Double Rare Pokémon card from Ascended Heroes. 200 HP. art by aky CG Works. ASC 57.','https://images.tcggo.com/tcggo/storage/31743/pikachu-ex-asc-57-ascended-heroes.png',3.33,2,'rare','Ascended Heroes','published'),
- (3,'PKM-31727','Pikachu ex','pikachu-ex-276','Special Illustration Rare Pokémon card from Ascended Heroes. 200 HP. art by booota. ASC 276.','https://images.tcggo.com/tcggo/storage/31939/pikachu-ex-asc-276-ascended-heroes.png',882.97,2,'secret_rare','Ascended Heroes','published'),
- (4,'PKM-31728','Pikachu ex','pikachu-ex-277','Special Illustration Rare Pokémon card from Ascended Heroes. 200 HP. art by James Turner. ASC 277.','https://images.tcggo.com/tcggo/storage/31958/pikachu-ex-asc-277-ascended-heroes.png',285.73,2,'secret_rare','Ascended Heroes','published'),
- (5,'PKM-33669','Pikachu at the Museum','pikachu-at-the-museum-mep','Oversized card from MEP Black Star Promos. art by Naoyo Kimura. MEP.','https://images.tcggo.com/tcggo/storage/36914/pikachu-at-the-museum-mep-mep-mep-black-star-promos.png',17.00,2,'rare','MEP Black Star Promos','published'),
- (6,'PKM-48518','Pikachu','pikachu-mep-093','Promo card from MEP Black Star Promos. art by DOM. MEP 093.','https://images.tcggo.com/tcggo/storage/36762/pikachu-mep-mep-093-mep-black-star-promos.png',10.00,2,'uncommon','MEP Black Star Promos','published'),
- (7,'PKM-48519','Pikachu','pikachu-mep-093-48519','Promo card from MEP Black Star Promos. art by DOM. MEP 093.','https://images.tcggo.com/tcggo/storage/36763/pikachu-mep-mep-093-mep-black-star-promos.png',130.00,2,'uncommon','MEP Black Star Promos','published'),
- (8,'PKM-48552','Pikachu ex','pikachu-ex-mep-107','Promo card from MEP Black Star Promos. art by YOSHIROTTEN. MEP 107.','https://images.tcggo.com/tcggo/storage/36796/pikachu-ex-mep-mep-107-mep-black-star-promos.png',9.99,2,'uncommon','MEP Black Star Promos','published'),
- (9,'PKM-48554','Pikachu ex','pikachu-ex-mep-109','Promo card from MEP Black Star Promos. art by YOSHIROTTEN. MEP 109.','https://images.tcggo.com/tcggo/storage/36798/pikachu-ex-mep-mep-109-mep-black-star-promos.png',9.99,2,'uncommon','MEP Black Star Promos','published'),
- (10,'PKM-21421','Pikachu ex','pikachu-ex-28','Double Rare Pokémon card from Prismatic Evolutions. 190 HP. art by N-DESIGN Inc.. PRE 28.','https://images.tcggo.com/tcggo/storage/21443/pikachu-ex-pre-28-prismatic-evolutions.png',2.14,2,'rare','Prismatic Evolutions','published'),
- (11,'PKM-21572','Pikachu ex','pikachu-ex-179','Hyper Rare Pokémon card from Prismatic Evolutions. 200 HP. art by aky CG Works. PRE 179.','https://images.tcggo.com/tcggo/storage/21594/pikachu-ex-pre-179-prismatic-evolutions.png',52.19,2,'secret_rare','Prismatic Evolutions','published'),
- (12,'PKM-20845','Pikachu ex','pikachu-ex-57-20845','Double Rare Pokémon card from Surging Sparks. 200 HP. art by aky CG Works. SSP 57.','https://images.tcggo.com/tcggo/storage/21011/pikachu-ex-ssp-57-surging-sparks.png',4.05,2,'rare','Surging Sparks','published'),
- (13,'PKM-21007','Pikachu ex','pikachu-ex-219','Ultra Rare Pokémon card from Surging Sparks. 200 HP. art by aky CG Works. SSP 219.','https://images.tcggo.com/tcggo/storage/21170/pikachu-ex-ssp-219-surging-sparks.png',25.56,2,'ultra_rare','Surging Sparks','published'),
- (14,'PKM-21026','Pikachu ex','pikachu-ex-238','Special Illustration Rare Pokémon card from Surging Sparks. 200 HP. art by GIDORA. SSP 238.','https://images.tcggo.com/tcggo/storage/21188/pikachu-ex-ssp-238-surging-sparks.png',246.83,2,'secret_rare','Surging Sparks','published'),
- (15,'PKM-21035','Pikachu ex','pikachu-ex-247','Hyper Rare Pokémon card from Surging Sparks. 200 HP. art by aky CG Works. SSP 247.','https://images.tcggo.com/tcggo/storage/21197/pikachu-ex-ssp-247-surging-sparks.png',77.06,2,'secret_rare','Surging Sparks','published'),
- (16,'PKM-1805','Pikachu','pikachu-51','Common Pokémon card from Temporal Forces. 70 HP. art by kodama. TEF 51.','https://images.tcggo.com/tcggo/storage/21357/pikachu-tef-51-temporal-forces.png',0.54,2,'common','Temporal Forces','published'),
- (17,'PKM-1980','Pikachu','pikachu-18','Common Pokémon card from Paldean Fates. 70 HP. art by OKACHEKE. PAF 18.','https://images.tcggo.com/tcggo/storage/1990/pikachu-paf-18-paldean-fates-pokemon.png',0.36,2,'common','Paldean Fates','published'),
- (18,'PKM-2105','Pikachu','pikachu-131','Shiny Rare Pokémon card from Paldean Fates. 70 HP. art by Yuu Nishida. PAF 131.','https://images.tcggo.com/tcggo/storage/2115/pikachu-paf-131-paldean-fates-pokemon.png',67.21,2,'ultra_rare','Paldean Fates','published'),
- (19,'PKM-2494','Pikachu','pikachu-25','Common Pokémon card from 151. 60 HP. art by Naoyo Kimura. MEW 25.','https://images.tcggo.com/tcggo/storage/2508/pikachu-mew-25-151-pokemon.png',1.10,2,'common','151','published'),
- (20,'PKM-2635','Pikachu','pikachu-173','Illustration Rare Pokémon card from 151. 60 HP. art by Hiroyuki Yamamoto. MEW 173.','https://images.tcggo.com/tcggo/storage/2649/pikachu-mew-173-151-pokemon.png',72.37,2,'holo_rare','151','published')
+INSERT IGNORE INTO cat_categories (id, name, slug) VALUES
+ (1,'Giày','giay'),
+ (2,'Quần áo','quan-ao'),
+ (3,'Phụ kiện','phu-kien');
+
+INSERT INTO cat_products (id, sku, name, slug, description, image_url, price, category_id, gender, sport, status) VALUES
+ (1,'NK-IV6297-300','Nike Vomero Premium','nike-vomero-premium-giay-chay-bo-duong-truong-nam','Giày chạy bộ đường trường nam. Đệm êm tối đa với hai buồng khí Air Zoom cho cảm giác đàn hồi mượt mà. Lớp foam ZoomX dày trả lực tốt, giúp bạn kéo dài quãng đường mà chân vẫn nhẹ. Thân giày lưới thoáng khí, phối màu lấy cảm hứng từ giải marathon Chicago.','https://static.nike.com/a/images/t_default/u_9ddf04c7-2a9a-4d76-add1-d15af8f0263d,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/f95c93c6-2f2d-4571-8574-e7546cc1a9f1/vomero-premium-mens-road-running-shoes-QmkmgBY7.png',6240000.00,1,'men','Chạy bộ','published'),
+ (2,'NK-IQ4927-001','Air Jordan 1 Brooklyn Low','air-jordan-1-brooklyn-low-giay-thoi-trang-nu','Giày thời trang nữ. Da mềm kết hợp đế platform dày tôn dáng. Đế ngoài vấu lớn bám chắc, đệm Nike Air trong gót hấp thụ lực cho từng bước đi. Lót giày in logo Jumpman, giữ trọn chất bóng rổ của dòng AJ1.','https://static.nike.com/a/images/t_default/u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/e05c6836-1fab-4b4d-8412-4c38d6463bb9/air-jordan-1-brooklyn-low-womens-shoes-aWWErs6z.png',4290000.00,1,'women','Thời trang','published'),
+ (3,'NK-II7346-401','Nike Diamond Gamer MCS','nike-diamond-gamer-mcs-giay-bong-chay','Giày bóng chày. Chất liệu tổng hợp và đế giữa foam mang lại độ bền, sự thoải mái và nâng đỡ tốt. Phần ôm giữa bàn chân giữ vững khi vào nhịp, mảng đế đàn hồi hỗ trợ những pha bứt tốc trên sân.','https://static.nike.com/a/images/t_default/u_9ddf04c7-2a9a-4d76-add1-d15af8f0263d,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/f42f3159-d827-41fa-9f2f-21952216c3bb/diamond-gamer-mcs-baseball-shoes-aSIXJYWr.png',2340000.00,1,'unisex','Bóng mềm','published'),
+ (4,'NK-IO1528-001','Nike Jr. Mercurial Superfly 11 Academy','nike-jr-mercurial-superfly-11-academy-giay-da-bong-co-cao-san-co-nhan-tao-cho-tre-em','Giày đá bóng cổ cao sân cỏ nhân tạo cho trẻ em. Thân giày NikeSkin không dây mềm mại, nhẹ hơn phiên bản trước, giúp bé tăng tốc nhanh trong không gian trống. Cổ giày dệt Dynamic Fit ôm chân, cho cảm giác chạm bóng gần như chân trần khi rê dắt.','https://static.nike.com/a/images/t_default/u_9ddf04c7-2a9a-4d76-add1-d15af8f0263d,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/2f397df8-d62a-413b-89ca-313f5b673018/jr-mercurial-superfly-11-academy-big-kids-artificial-grass-high-top-soccer-cleats-KXBPiRUV.png',1950000.00,1,'kids','Bóng đá','published'),
+ (5,'NK-IX1201-102','Tennis Classic CS','tennis-classic-cs-giay-thoi-trang-nam','Giày thời trang nam. Thiết kế tối giản sinh ra từ sân tennis, làm lại cho nhịp sống thường ngày. Da mềm mịn đẹp dần theo thời gian, lót giày cải tiến êm cả ngày dài, đế cao su khâu cupsole nguyên khối rất bền.','https://static.nike.com/a/images/t_default/u_9ddf04c7-2a9a-4d76-add1-d15af8f0263d,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/892ec254-78f3-4bb7-8ed1-f23db0afba83/tennis-classic-cs-mens-shoes-ziwKIeku.png',2470000.00,1,'men','Tennis','published'),
+ (6,'NK-IV5651-500','Nike S.T. Dynamite','nike-s-t-dynamite-giay-bong-ro-tre-em','Giày bóng rổ trẻ em. Đế gai đa hướng bám tốt trên cả sàn gỗ lẫn sân xi măng, thân lưới thoáng khí giữ đôi chân nhẹ nhàng. Quai kéo ở gót giúp bé xỏ giày dễ dàng, sẵn sàng cho mọi lối chơi.','https://static.nike.com/a/images/t_default/u_9ddf04c7-2a9a-4d76-add1-d15af8f0263d,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/ee388850-3704-4ced-8b37-9bd8bd63d232/st-dynamite-big-kids-basketball-shoes-mxhIu7FW.png',1560000.00,1,'kids','Bóng rổ','published'),
+ (7,'NK-IQ1045-103','Nike Diamond Clutch','nike-diamond-clutch-giay-dinh-bong-chay','Giày đinh bóng chày. Đi vừa là chơi được ngay: thân giày thoáng khí với hệ dây cải tiến ôm chặt giữa bàn chân, cổ giày thấp dễ xỏ. Đinh cao su bám chắc mặt sân, đủ bền cho cả mùa giải.','https://static.nike.com/a/images/t_default/u_9ddf04c7-2a9a-4d76-add1-d15af8f0263d,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/648c7aab-104c-47f0-947f-1eeaeb003f82/diamond-clutch-baseball-cleats-olFA2oek.png',1430000.00,1,'unisex','Bóng chày','published'),
+ (8,'NK-IM8814-200','Nike Air Max Phenomena','nike-air-max-phenomena-giay-thoi-trang-nu','Giày thời trang nữ. Air Max SNDR được kể lại theo phom loafer thanh lịch. Da thật kết hợp da tổng hợp cho form dáng chắc chắn, đệm Max Air êm ái đủ để mang cả ngày và đủ đẹp để mang cả tối.','https://static.nike.com/a/images/t_default/u_9ddf04c7-2a9a-4d76-add1-d15af8f0263d,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/dddb10c3-0d83-4693-8efb-27d1d11b2c1d/air-max-phenomena-womens-shoes-lwJyYh3s.png',3900000.00,1,'women','Thời trang','published'),
+ (9,'NK-IV6298-300','Nike Vomero Plus','nike-vomero-plus-giay-chay-bo-duong-truong-nam','Giày chạy bộ đường trường nam. Đệm dày nguyên bàn chân bằng foam ZoomX — chất đệm trả lực tốt nhất của Nike — cho cảm giác chạy siêu êm mỗi ngày. Thân lưới kỹ thuật dệt sợi mềm, thoáng và ôm chân.','https://static.nike.com/a/images/t_default/u_9ddf04c7-2a9a-4d76-add1-d15af8f0263d,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/64ed43c7-36e5-4def-9b62-dce4add2480e/vomero-plus-mens-road-running-shoes-Pph5w9Gb.png',4940000.00,1,'men','Chạy bộ','published'),
+ (10,'NK-IX6036-101','Nike Diamond Standout','nike-diamond-standout-giay-dinh-bong-mem','Giày đinh bóng mềm. Mảng đế tách đôi hoàn toàn mới vừa linh hoạt vừa nhẹ, hỗ trợ những chuyển động nhanh. Mảng đế nhỏ ở giữa bàn chân tạo độ vững khi đổi hướng liên tục trên sân đất.','https://static.nike.com/a/images/t_default/u_9ddf04c7-2a9a-4d76-add1-d15af8f0263d,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/524009a9-c7ef-4c5b-99eb-bc4059bf9ab6/diamond-standout-softball-cleats-g23I1149.png',3380000.00,1,'women','Bóng mềm','published'),
+ (11,'NK-IU7631-010','Nike SB','nike-sb-ao-hoodie-khoa-keo-ni-truot-van','Áo hoodie khóa kéo nỉ trượt ván. Vải nỉ dày dặn, mềm bên trong, đủ ấm cho những buổi tập tối muộn. Khóa kéo full-zip dễ mặc, túi trước rộng, form thoải mái đúng chất skate.','https://static.nike.com/a/images/t_default/u_9ddf04c7-2a9a-4d76-add1-d15af8f0263d,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/5c6d00be-5f6c-4846-a354-27dcfb6ba1ec/sb-fleece-full-zip-skate-hoodie-Ue2rTIoj.png',2600000.00,2,'unisex','Trượt ván','published'),
+ (12,'NK-IU3220-320','Nike Primary Nanoknit','nike-primary-nanoknit-ao-hoodie-chui-dau-dri-fit-chong-nang-cho-be-trai','Áo hoodie chui đầu Dri-FIT chống nắng cho bé trai. Công nghệ Dri-FIT thấm hút mồ hôi giữ bé khô ráo, chất liệu chống tia UV bảo vệ da khi vận động ngoài trời. Vải dệt Nanoknit co giãn nhẹ, thoải mái từ khởi động tới hết buổi tập.','https://static.nike.com/a/images/t_default/u_9ddf04c7-2a9a-4d76-add1-d15af8f0263d,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/c6ca0b9d-8d34-46c8-91fb-a211a677a1d3/primary-nanoknit-big-kids-boys-dri-fit-uv-protection-pullover-hoodie-2eF4cVJc.png',1768000.00,2,'kids','Tập luyện','published'),
+ (13,'NK-IO0711-104','Nike Repel','nike-repel-ao-khoac-golf-chong-nuoc-nam','Áo khoác golf chống nước nam. Lớp phủ Repel cản nước nhẹ giúp bạn tiếp tục vòng đấu khi trời lất phất mưa. Form áo gọn không cản vung gậy, khóa kéo cao cổ chắn gió trên đường ra green.','https://static.nike.com/a/images/t_default/u_9ddf04c7-2a9a-4d76-add1-d15af8f0263d,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/df459394-93ca-4533-880d-3127ada74dd8/mens-repel-golf-jacket-LwvacRly.png',4680000.00,2,'men','Golf','published'),
+ (14,'NK-IF5959-654','Nike Golf Club','nike-golf-club-ao-polo-golf-tay-ngan-dri-fit-chong-nang-nu','Áo polo golf tay ngắn Dri-FIT chống nắng nữ. Dri-FIT thấm hút nhanh, giữ bạn mát và khô suốt 18 hố. Chất liệu chống tia UV, cổ áo dựng form, đường cắt ôm nhẹ tôn dáng mà vẫn thoải mái khi xoay người.','https://static.nike.com/a/images/t_default/u_9ddf04c7-2a9a-4d76-add1-d15af8f0263d,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/caf85109-cb5b-42bd-896e-0558513990dc/golf-club-womens-dri-fit-uv-short-sleeve-golf-polo-FIHzU1sZ.png',2340000.00,2,'women','Golf','published'),
+ (15,'NK-IU3118-451','Nike Primary Nano','nike-primary-nano-quan-jogger-dri-fit-chong-nang-cho-be-trai','Quần jogger Dri-FIT chống nắng cho bé trai. Vải Nano mềm mại, nhẹ và thoáng, có khả năng chống tia UV. Lưng thun rút dây, ống bo gấu gọn gàng, phù hợp cả khi tập luyện lẫn mặc hằng ngày.','https://static.nike.com/a/images/t_default/u_9ddf04c7-2a9a-4d76-add1-d15af8f0263d,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/9b562d0f-ba77-479b-ba7b-ebd9647e0151/primary-nano-big-kids-boys-dri-fit-uv-nano-joggers-PmlRaGCM.png',1768000.00,2,'kids','Tập luyện','published'),
+ (16,'NK-HF0784-010','Nike Academy','nike-academy-khan-ong-giu-am-co-dri-fit-bong-da','Khăn ống giữ ấm cổ Dri-FIT bóng đá. Khăn ống co giãn ôm cổ, chắn gió lạnh trong buổi tập mùa đông. Vải Dri-FIT thấm hút mồ hôi, kéo lên che mũi hoặc hạ xuống cổ tùy nhiệt độ sân.','https://static.nike.com/a/images/t_default/u_9ddf04c7-2a9a-4d76-add1-d15af8f0263d,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/7c6cdbd9-d48c-4b2e-be8c-f085edbbb144/academy-dri-fit-soccer-snood-DB8Qb3.png',702000.00,2,'unisex','Bóng đá','published'),
+ (17,'NK-SLE5-100','Nike Vapor Elite','nike-vapor-elite-ao-lot-giap-vai-lacrosse-nam','Áo lót giáp vai lacrosse nam. Lớp lót mỏng mặc bên trong giáp vai, giảm cọ xát và thấm hút mồ hôi. Form ôm sát cơ thể, không xô lệch khi va chạm hay tăng tốc.','https://static.nike.com/a/images/t_default/u_9ddf04c7-2a9a-4d76-add1-d15af8f0263d,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/458a2a0f-1e7c-4137-aa8c-a64618eceff6/vapor-elite-lacrosse-shoulder-pad-liner-RSHNMx.png',3900000.00,2,'men','Lacrosse','published'),
+ (18,'NK-IX3515-645','Nike Radical AirFlow After Dark Tour','nike-radical-airflow-after-dark-tour-ao-chay-bo-tay-dai-croptop-aero-fit-nu','Áo chạy bộ tay dài croptop Aero-FIT nữ. Công nghệ Aero-FIT đẩy nhiệt và mồ hôi ra ngoài, giữ bạn mát khi chạy đêm. Dáng croptop tay dài, chi tiết phản quang tăng độ nhận diện dưới ánh đèn đường.','https://static.nike.com/a/images/t_default/u_9ddf04c7-2a9a-4d76-add1-d15af8f0263d,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/59e4399c-7e5a-425d-93b4-68b53921f3b9/radical-airflow-after-dark-tour-womens-aero-fit-long-sleeve-cropped-running-top-a070WfKn.png',3900000.00,2,'women','Chạy bộ','published'),
+ (19,'NK-IF2821-084','Nike Sportswear Windrunner','nike-sportswear-windrunner-ao-khoac-co-mu-chong-nuoc-cho-tre-em','Áo khoác có mũ chống nước cho trẻ em. Phom Windrunner kinh điển với đường chevron ở ngực, nay dùng vải Repel cản nước nhẹ. Mũ trùm điều chỉnh được, gấu áo bo thun giữ ấm khi trời trở gió.','https://static.nike.com/a/images/t_default/u_9ddf04c7-2a9a-4d76-add1-d15af8f0263d,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/565f2788-70fe-4c48-b0ed-918f2ab730af/sportswear-windrunner-big-kids-hooded-repel-jacket-fUNjyLas.png',1768000.00,2,'kids','Thời trang','published'),
+ (20,'NK-IQ1332-491','Nike Pro','nike-pro-mu-golf-storm-fit-co-form','Mũ golf Storm-FIT có form. Vải Storm-FIT cản nước và gió, giữ đầu khô ráo khi thời tiết xấu. Form mũ dựng cứng, khóa sau điều chỉnh vừa mọi vòng đầu.','https://static.nike.com/a/images/t_default/u_9ddf04c7-2a9a-4d76-add1-d15af8f0263d,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/21180484-336c-480d-bc8e-da7e3d9a0a97/pro-storm-fit-structured-golf-cap-VGaMjRZt.png',1092000.00,3,'unisex','Tập luyện','published'),
+ (21,'NK-II1736-657','Nike Rise','nike-rise-mu-golf-dri-fit-adv-swooshflex-co-form','Mũ golf Dri-FIT ADV SwooshFlex có form. Công nghệ Dri-FIT ADV thấm hút và thoát ẩm nhanh trong ngày nắng gắt. Vành SwooshFlex ôm nhẹ và bền form, che nắng tốt suốt vòng đấu.','https://static.nike.com/a/images/t_default/u_9ddf04c7-2a9a-4d76-add1-d15af8f0263d,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/6fbb7728-a400-48ce-9227-067762bd6d94/rise-dri-fit-adv-swooshflex-structured-golf-cap-ZMA4ZrIL.png',884000.00,3,'unisex','Golf','published'),
+ (22,'NK-CLEVGHWNC01KKE-IOW','Nike Club Iowa','nike-club-iowa-mu-luoi-trai-dieu-chinh-duoc-nam','Mũ lưỡi trai điều chỉnh được nam. Mũ cotton mềm phom cong cổ điển, thêu logo ở mặt trước. Khóa sau điều chỉnh dễ dàng, phối được với mọi outfit thường ngày.','https://static.nike.com/a/images/t_default/u_9ddf04c7-2a9a-4d76-add1-d15af8f0263d,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/be307e2a-a597-4cc8-b286-d8ed96a3631a/iowa-club-mens-nike-college-adjustable-hat-wQVHDm.png',728000.00,3,'men','Thời trang','published'),
+ (23,'NK-IQ0648-100','Nike Skills','nike-skills-bong-da-size-mini','Bóng đá size mini. Bóng size nhỏ dùng để luyện kỹ thuật và cảm giác bóng. Vỏ máy khâu bền, giữ hơi tốt, phù hợp tập tâng bóng và rê dắt trong không gian hẹp.','https://static.nike.com/a/images/t_default/u_9ddf04c7-2a9a-4d76-add1-d15af8f0263d,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/8f278362-2b27-43b2-b603-0a68d56c681f/skills-soccer-ball-PcrykusZ.png',572000.00,3,'unisex','Bóng đá','published'),
+ (24,'NK-CLEVGHWNC01KKE-GEO','Nike Club Georgia','nike-club-georgia-mu-luoi-trai-dieu-chinh-duoc-nam','Mũ lưỡi trai điều chỉnh được nam. Mũ cotton mềm phom cong cổ điển, thêu logo ở mặt trước. Khóa sau điều chỉnh dễ dàng, phối được với mọi outfit thường ngày.','https://static.nike.com/a/images/t_default/u_9ddf04c7-2a9a-4d76-add1-d15af8f0263d,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/e0303bd4-9f18-4a42-8a26-adfd6e47cc10/georgia-club-mens-nike-college-adjustable-hat-wQVHDm.png',728000.00,3,'men','Thời trang','published')
 ON DUPLICATE KEY UPDATE
   sku=VALUES(sku), name=VALUES(name), slug=VALUES(slug), description=VALUES(description),
   image_url=VALUES(image_url), price=VALUES(price), category_id=VALUES(category_id),
-  rarity=VALUES(rarity), card_set=VALUES(card_set), status=VALUES(status);
+  gender=VALUES(gender), sport=VALUES(sport), status=VALUES(status);
 
 INSERT INTO inv_stock (product_id, sku, on_hand, reserved) VALUES
- (1,'PKM-31506',400,0),
- (2,'PKM-31508',60,0),
- (3,'PKM-31727',6,0),
- (4,'PKM-31728',6,0),
- (5,'PKM-33669',60,0),
- (6,'PKM-48518',150,0),
- (7,'PKM-48519',150,0),
- (8,'PKM-48552',150,0),
- (9,'PKM-48554',150,0),
- (10,'PKM-21421',60,0),
- (11,'PKM-21572',6,0),
- (12,'PKM-20845',60,0),
- (13,'PKM-21007',15,0),
- (14,'PKM-21026',6,0),
- (15,'PKM-21035',6,0),
- (16,'PKM-1805',400,0),
- (17,'PKM-1980',400,0),
- (18,'PKM-2105',15,0),
- (19,'PKM-2494',400,0),
- (20,'PKM-2635',30,0)
+ (1,'NK-IV6297-300',12,0),
+ (2,'NK-IQ4927-001',45,0),
+ (3,'NK-II7346-401',120,0),
+ (4,'NK-IO1528-001',120,0),
+ (5,'NK-IX1201-102',120,0),
+ (6,'NK-IV5651-500',120,0),
+ (7,'NK-IQ1045-103',300,0),
+ (8,'NK-IM8814-200',45,0),
+ (9,'NK-IV6298-300',12,0),
+ (10,'NK-IX6036-101',45,0),
+ (11,'NK-IU7631-010',45,0),
+ (12,'NK-IU3220-320',120,0),
+ (13,'NK-IO0711-104',12,0),
+ (14,'NK-IF5959-654',120,0),
+ (15,'NK-IU3118-451',120,0),
+ (16,'NK-HF0784-010',300,0),
+ (17,'NK-SLE5-100',45,0),
+ (18,'NK-IX3515-645',45,0),
+ (19,'NK-IF2821-084',120,0),
+ (20,'NK-IQ1332-491',300,0),
+ (21,'NK-II1736-657',300,0),
+ (22,'NK-CLEVGHWNC01KKE-IOW',300,0),
+ (23,'NK-IQ0648-100',300,0),
+ (24,'NK-CLEVGHWNC01KKE-GEO',300,0)
 ON DUPLICATE KEY UPDATE sku=VALUES(sku), on_hand=VALUES(on_hand);

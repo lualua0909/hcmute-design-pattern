@@ -62,8 +62,8 @@ export async function recordStep(orderId, { userId, step, status, reason, meta }
       orderId,
       title: 'Order confirmed 🎉',
       body: total
-        ? `Your PokeShop order ${orderId} is confirmed. Total $${Number(total).toFixed(2)}.`
-        : `Your PokeShop order ${orderId} is confirmed.`,
+        ? `Your SportHub order ${orderId} is confirmed. Total $${Number(total).toFixed(2)}.`
+        : `Your SportHub order ${orderId} is confirmed.`,
       data: { type: 'order_confirmed', status: 'confirmed' },
     });
   } else if (nextStatus === 'failed' && failed[1].status === 'failed') {

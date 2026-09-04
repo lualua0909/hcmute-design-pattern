@@ -8,7 +8,7 @@ import { auth, firebaseReady, googleProvider, requestNotificationToken, onForegr
 import { api, setTokenProvider } from '@/lib/api';
 
 const AuthContext = createContext(null);
-const DEV_KEY = 'pokeshop.devUser';
+const DEV_KEY = 'sporthub.devUser';
 const devBypass = String(import.meta.env.VITE_AUTH_DEV_BYPASS) === 'true';
 
 /**
@@ -70,7 +70,7 @@ export function AuthProvider({ children }) {
       .then((token) => token && api.users.saveFcmToken(token))
       .catch(() => {});
     return onForegroundMessage((payload) => {
-      toast(payload.notification?.title || 'PokeShop', { description: payload.notification?.body });
+      toast(payload.notification?.title || 'SportHub', { description: payload.notification?.body });
     });
   }, [profile]);
 

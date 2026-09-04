@@ -5,10 +5,10 @@
 @layer base {
   :root {
     --background: 0 0% 100%;
-    --foreground: 224 15% 12%;
+    --foreground: 0 0% 7%;
     --card: 0 0% 100%;
-    --card-foreground: 224 15% 12%;
-    --primary: 224 15% 12%;
+    --card-foreground: 0 0% 7%;
+    --primary: 0 0% 7%;
     --primary-foreground: 0 0% 98%;
     --secondary: 220 14% 96%;
     --secondary-foreground: 224 15% 12%;
@@ -21,7 +21,7 @@
     --border: 220 13% 91%;
     --input: 220 13% 91%;
     --ring: 224 15% 12%;
-    --radius: 0.75rem;
+    --radius: 0rem;
   }
 
   .dark {
@@ -46,6 +46,10 @@
 
   * { @apply border-border; }
   body { @apply bg-background text-foreground antialiased; font-feature-settings: 'cv11', 'ss01'; }
+
+  /* Nike-style display headings: tight, heavy, uppercase. */
+  .display { @apply font-extrabold uppercase tracking-tighter leading-[0.92]; }
+  .eyebrow { @apply text-xs font-medium uppercase tracking-[0.2em]; }
 }
 
 /* Hide number input spinners in the CMS forms */

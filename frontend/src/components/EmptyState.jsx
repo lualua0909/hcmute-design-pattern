@@ -1,6 +1,6 @@
 import { PackageOpen } from 'lucide-react';
 
-export function EmptyState({ title = 'Nothing here yet', description, action, icon: Icon = PackageOpen }) {
+export function EmptyState({ title = 'Chưa có gì ở đây', description, action, icon: Icon = PackageOpen }) {
   return (
     <div className="flex flex-col items-center justify-center gap-3 rounded-xl border border-dashed py-16 text-center">
       <Icon className="h-8 w-8 text-muted-foreground" />

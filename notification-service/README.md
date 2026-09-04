@@ -35,6 +35,6 @@ cp .env.example .env
 npm install
 npm start                       # http://localhost:7000
 
-docker build -t pokeshop/notification-service .
-docker run --rm -p 7000:7000 --env-file .env pokeshop/notification-service
+docker build -t sporthub/notification-service .
+docker run --rm -p 7000:7000 --env-file .env sporthub/notification-service
 ```

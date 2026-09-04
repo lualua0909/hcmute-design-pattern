@@ -5,11 +5,14 @@ import { config } from '../config/env.js';
 
 /**
  * Applies infra/sql/init.sql (+ seed.sql with --seed).
+ * With --reset, drops the old catalogue tables first so the sports schema is rebuilt.
  * Multi-statement connection, used once at setup time only.
  */
 const run = async () => {
   const root = path.resolve(process.cwd(), '..');
-  const files = ['infra/sql/init.sql'];
+  const files = [];
+  if (process.argv.includes('--reset')) files.push('infra/sql/reset-catalog.sql');
+  files.push('infra/sql/init.sql');
   if (process.argv.includes('--seed')) files.push('infra/sql/seed.sql');
 
   const conn = await mysql.createConnection({

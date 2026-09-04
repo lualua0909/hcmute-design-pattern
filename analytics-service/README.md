@@ -17,7 +17,7 @@ Queue: `analytics.events` (durable, prefetch 10).
 ## HTTP (internal, called by the gateway only)
 
 `GET /health` · `GET /reports/overview?days=30` · `GET /reports/revenue?days=30` ·
-`GET /reports/top-products?limit=10&days=30` · `GET /reports/rarity-mix?days=30` ·
+`GET /reports/top-products?limit=10&days=30` · `GET /reports/gender-mix?days=30` ·
 `POST /reports/rebuild`
 
 Interactive docs: `http://localhost:8000/docs`
@@ -30,6 +30,6 @@ python -m venv .venv && source .venv/bin/activate
 pip install -r requirements.txt
 uvicorn app.main:app --reload --port 8000
 
-docker build -t pokeshop/analytics-service .
-docker run --rm -p 8000:8000 --env-file .env pokeshop/analytics-service
+docker build -t sporthub/analytics-service .
+docker run --rm -p 8000:8000 --env-file .env sporthub/analytics-service
 ```

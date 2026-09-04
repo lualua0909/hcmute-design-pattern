@@ -35,6 +35,6 @@ cp .env.example .env
 npm install
 npm run dev                    # http://localhost:5173
 
-docker build -t pokeshop/frontend --build-arg VITE_API_BASE_URL=http://localhost:8080 .
-docker run --rm -p 5173:80 pokeshop/frontend
+docker build -t sporthub/frontend --build-arg VITE_API_BASE_URL=http://localhost:8080 .
+docker run --rm -p 5173:80 sporthub/frontend
 ```

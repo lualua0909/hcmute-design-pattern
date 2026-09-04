@@ -25,8 +25,8 @@ async def lifespan(app: FastAPI):
 
 
 app = FastAPI(
-    title="PokeShop Analytics Service",
-    description="Statistics and reporting for the PokeShop microservices project.",
+    title="SportHub Analytics Service",
+    description="Statistics and reporting for the SportHub microservices project.",
     version="1.0.0",
     lifespan=lifespan,
 )

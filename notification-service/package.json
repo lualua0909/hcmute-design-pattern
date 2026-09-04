@@ -1,9 +1,9 @@
 {
-  "name": "pokeshop-notification-service",
+  "name": "sporthub-notification-service",
   "version": "1.0.0",
   "private": true,
   "type": "module",
-  "description": "PokeShop Notification Service - saga completion tracker + Firebase Cloud Messaging fan-out",
+  "description": "SportHub Notification Service - saga completion tracker + Firebase Cloud Messaging fan-out",
   "main": "src/server.js",
   "scripts": {
     "start": "node src/server.js",

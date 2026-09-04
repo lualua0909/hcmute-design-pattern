@@ -7,7 +7,7 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Skeleton } from '@/components/ui/skeleton';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { api } from '@/lib/api';
-import { formatCurrency, RARITY_LABELS } from '@/lib/utils';
+import { formatCurrency, GENDER_LABELS } from '@/lib/utils';
 
 const COLORS = ['#0ea5e9', '#8b5cf6', '#f59e0b', '#ef4444', '#10b981', '#64748b'];
 
@@ -21,7 +21,7 @@ export function AnalyticsAdmin() {
     Promise.all([
       api.analytics.revenue(window),
       api.analytics.topProducts(8, window),
-      api.analytics.rarityMix(window),
+      api.analytics.genderMix(window),
     ])
       .then(([revenue, top, mix]) => setData({ revenue: revenue.series, top: top.items, mix: mix.items }))
       .catch(() => setData({ revenue: [], top: [], mix: [] }));
@@ -82,22 +82,22 @@ export function AnalyticsAdmin() {
           </Card>
 
           <Card>
-            <CardHeader><CardTitle>Revenue by rarity</CardTitle></CardHeader>
+            <CardHeader><CardTitle>Revenue by gender</CardTitle></CardHeader>
             <CardContent className="h-80">
               <ResponsiveContainer width="100%" height="100%">
                 <PieChart>
                   <Pie
                     data={data.mix}
                     dataKey="revenue"
-                    nameKey="rarity"
+                    nameKey="gender"
                     innerRadius={60}
                     outerRadius={110}
                     paddingAngle={2}
                   >
-                    {data.mix.map((entry, index) => <Cell key={entry.rarity} fill={COLORS[index % COLORS.length]} />)}
+                    {data.mix.map((entry, index) => <Cell key={entry.gender} fill={COLORS[index % COLORS.length]} />)}
                   </Pie>
-                  <Tooltip formatter={(value, name) => [formatCurrency(value), RARITY_LABELS[name] || name]} />
-                  <Legend formatter={(value) => RARITY_LABELS[value] || value} />
+                  <Tooltip formatter={(value, name) => [formatCurrency(value), GENDER_LABELS[name] || name]} />
+                  <Legend formatter={(value) => GENDER_LABELS[value] || value} />
                 </PieChart>
               </ResponsiveContainer>
             </CardContent>

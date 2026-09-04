@@ -1,5 +1,5 @@
 # Convenience targets. Each service is independent - these just save typing.
-.PHONY: setup migrate seed build up down logs health
+.PHONY: setup migrate seed reseed build up down logs health
 
 setup:            ## copy every .env.example to .env
 	@for d in api-gateway analytics-service inventory-service notification-service frontend; do \
@@ -11,6 +11,9 @@ migrate:          ## create the MySQL schema
 
 seed:             ## create the schema and load demo data
 	cd api-gateway && npm run migrate -- --seed
+
+reseed:           ## drop the old catalogue, rebuild the schema and reload demo data
+	cd api-gateway && npm run migrate -- --reset --seed
 
 build:            ## build all five images
 	docker compose build

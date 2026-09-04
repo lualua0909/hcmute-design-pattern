@@ -8,7 +8,7 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@
 import { ProductCard } from '@/components/ProductCard';
 import { EmptyState } from '@/components/EmptyState';
 import { api } from '@/lib/api';
-import { RARITY_LABELS } from '@/lib/utils';
+import { GENDER_LABELS } from '@/lib/utils';
 
 const SORTS = [
   { value: 'newest', label: 'Newest' },
@@ -21,18 +21,23 @@ export function Products() {
   const [params, setParams] = useSearchParams();
   const [data, setData] = useState(null);
   const [categories, setCategories] = useState([]);
+  const [sports, setSports] = useState([]);
   const [search, setSearch] = useState(params.get('q') || '');
 
   const query = useMemo(() => ({
     q: params.get('q') || undefined,
     category: params.get('category') || undefined,
-    rarity: params.get('rarity') || undefined,
+    gender: params.get('gender') || undefined,
+    sport: params.get('sport') || undefined,
     sort: params.get('sort') || 'newest',
     page: Number(params.get('page') || 1),
     limit: 12,
   }), [params]);
 
-  useEffect(() => { api.categories.list().then(setCategories).catch(() => {}); }, []);
+  useEffect(() => {
+    api.categories.list().then(setCategories).catch(() => {});
+    api.products.facets().then((r) => setSports(r.sports)).catch(() => {});
+  }, []);
 
   useEffect(() => {
     setData(null);
@@ -52,7 +57,9 @@ export function Products() {
   return (
     <div className="container space-y-8 py-10">
       <div className="space-y-2">
-        <h1 className="text-3xl font-semibold tracking-tight">Pokémon cards</h1>
+        <h1 className="display text-3xl">
+          {GENDER_LABELS[params.get('gender')] ? `${GENDER_LABELS[params.get('gender')]} gear` : 'All products'}
+        </h1>
         <p className="text-sm text-muted-foreground">
           {data ? `${data.pagination.total} products` : 'Loading catalogue…'}
         </p>
@@ -67,7 +74,7 @@ export function Products() {
           <Input
             value={search}
             onChange={(e) => setSearch(e.target.value)}
-            placeholder="Search by name, SKU or set…"
+            placeholder="Search by name, SKU or sport…"
             className="pl-9"
           />
         </form>
@@ -80,13 +87,21 @@ export function Products() {
           </SelectContent>
         </Select>
 
-        <Select value={params.get('rarity') || 'all'} onValueChange={(v) => patch({ rarity: v })}>
-          <SelectTrigger className="md:w-44"><SelectValue placeholder="Rarity" /></SelectTrigger>
+        <Select value={params.get('gender') || 'all'} onValueChange={(v) => patch({ gender: v })}>
+          <SelectTrigger className="md:w-40"><SelectValue placeholder="Gender" /></SelectTrigger>
           <SelectContent>
-            <SelectItem value="all">All rarities</SelectItem>
-            {Object.entries(RARITY_LABELS).map(([value, label]) => (
+            <SelectItem value="all">Everyone</SelectItem>
+            {Object.entries(GENDER_LABELS).map(([value, label]) => (
               <SelectItem key={value} value={value}>{label}</SelectItem>
             ))}
+          </SelectContent>
+        </Select>
+
+        <Select value={params.get('sport') || 'all'} onValueChange={(v) => patch({ sport: v })}>
+          <SelectTrigger className="md:w-44"><SelectValue placeholder="Sport" /></SelectTrigger>
+          <SelectContent>
+            <SelectItem value="all">All sports</SelectItem>
+            {sports.map((s) => <SelectItem key={s.sport} value={s.sport}>{s.sport} · {s.count}</SelectItem>)}
           </SelectContent>
         </Select>
 
@@ -105,12 +120,12 @@ export function Products() {
       )}
 
       {data && data.items.length === 0 && (
-        <EmptyState title="No cards match those filters" description="Try clearing the search or picking another rarity." />
+        <EmptyState title="No products match those filters" description="Try clearing the search or picking another sport." />
       )}
 
       {data && data.items.length > 0 && (
         <>
-          <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
             {data.items.map((p) => <ProductCard key={p.id} product={p} />)}
           </div>
 

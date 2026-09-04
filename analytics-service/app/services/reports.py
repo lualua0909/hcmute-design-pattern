@@ -166,12 +166,12 @@ def top_products(limit: int = 10, days: int = 30) -> list[dict]:
         rows = session.execute(
             text(
                 """
-                SELECT f.product_id, f.sku, p.name, p.rarity,
+                SELECT f.product_id, f.sku, p.name, p.gender,
                        SUM(f.quantity) AS units, SUM(f.line_total) AS revenue
                   FROM ana_sales_facts f
                   LEFT JOIN cat_products p ON p.id = f.product_id
                  WHERE f.occurred_at >= :since
-                 GROUP BY f.product_id, f.sku, p.name, p.rarity
+                 GROUP BY f.product_id, f.sku, p.name, p.gender
                  ORDER BY revenue DESC
                  LIMIT :limit
                 """
@@ -184,7 +184,7 @@ def top_products(limit: int = 10, days: int = 30) -> list[dict]:
             "productId": r["product_id"],
             "sku": r["sku"],
             "name": r["name"] or r["sku"],
-            "rarity": r["rarity"],
+            "gender": r["gender"],
             "units": int(r["units"] or 0),
             "revenue": round(_num(r["revenue"]), 2),
         }
@@ -192,19 +192,19 @@ def top_products(limit: int = 10, days: int = 30) -> list[dict]:
     ]
 
 
-def rarity_mix(days: int = 30) -> list[dict]:
+def gender_mix(days: int = 30) -> list[dict]:
     since = date.today() - timedelta(days=days)
     with SessionLocal() as session:
         rows = session.execute(
             text(
                 """
-                SELECT COALESCE(p.rarity, 'unknown') AS rarity,
+                SELECT COALESCE(p.gender, 'unknown') AS gender,
                        SUM(f.quantity) AS units,
                        SUM(f.line_total) AS revenue
                   FROM ana_sales_facts f
                   LEFT JOIN cat_products p ON p.id = f.product_id
                  WHERE f.occurred_at >= :since
-                 GROUP BY COALESCE(p.rarity, 'unknown')
+                 GROUP BY COALESCE(p.gender, 'unknown')
                  ORDER BY revenue DESC
                 """
             ),
@@ -212,7 +212,7 @@ def rarity_mix(days: int = 30) -> list[dict]:
         ).mappings().all()
 
     return [
-        {"rarity": r["rarity"], "units": int(r["units"] or 0), "revenue": round(_num(r["revenue"]), 2)}
+        {"gender": r["gender"], "units": int(r["units"] or 0), "revenue": round(_num(r["revenue"]), 2)}
         for r in rows
     ]
 

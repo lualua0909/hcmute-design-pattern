@@ -16,8 +16,8 @@ npm start                   # http://localhost:8080
 Docker (standalone, no compose):
 
 ```bash
-docker build -t pokeshop/api-gateway .
-docker run --rm -p 8080:8080 --env-file .env pokeshop/api-gateway
+docker build -t sporthub/api-gateway .
+docker run --rm -p 8080:8080 --env-file .env sporthub/api-gateway
 ```
 
 ## Endpoints
@@ -25,7 +25,7 @@ docker run --rm -p 8080:8080 --env-file .env pokeshop/api-gateway
 | Method | Path | Auth | Notes |
 | --- | --- | --- | --- |
 | GET | `/health` | – | MySQL + RabbitMQ + Firebase status |
-| GET | `/api/products` | optional | filters: `q, category, rarity, minPrice, maxPrice, sort, page, limit` |
+| GET | `/api/products` | optional | filters: `q, category, gender, sport, minPrice, maxPrice, sort, page, limit` |
 | GET | `/api/products/:idOrSlug` | optional | |
 | POST/PUT/DELETE | `/api/products[/:id]` | admin | CMS; emits `product.*` |
 | GET | `/api/categories` | – | |

@@ -10,7 +10,7 @@ import (
 	amqp "github.com/rabbitmq/amqp091-go"
 )
 
-// Event is the envelope every PokeShop service publishes and consumes.
+// Event is the envelope every SportHub service publishes and consumes.
 type Event struct {
 	EventID       string          `json:"eventId"`
 	Type          string          `json:"type"`

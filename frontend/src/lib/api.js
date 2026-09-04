@@ -46,6 +46,7 @@ export const api = {
   products: {
     list: (params) => request(`/api/products${qs(params)}`),
     get: (idOrSlug) => request(`/api/products/${idOrSlug}`),
+    facets: () => request('/api/products/facets', { auth: false }),
     create: (data) => request('/api/products', { method: 'POST', body: data }),
     update: (id, data) => request(`/api/products/${id}`, { method: 'PUT', body: data }),
     remove: (id, hard = false) => request(`/api/products/${id}${qs({ hard: hard || undefined })}`, { method: 'DELETE' }),
@@ -77,7 +78,7 @@ export const api = {
     overview: (days = 30) => request(`/api/analytics/overview${qs({ days })}`),
     revenue: (days = 30) => request(`/api/analytics/revenue${qs({ days })}`),
     topProducts: (limit = 8, days = 30) => request(`/api/analytics/top-products${qs({ limit, days })}`),
-    rarityMix: (days = 30) => request(`/api/analytics/rarity-mix${qs({ days })}`),
+    genderMix: (days = 30) => request(`/api/analytics/gender-mix${qs({ days })}`),
   },
 
   inventory: {

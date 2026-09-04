@@ -1,7 +1,7 @@
-# PokeShop — Pokémon Trading Card E-commerce
+# SportHub — Sportswear & Footwear E-commerce
 
 Đồ án môn **Thiết kế thành phần và Kiến trúc hệ thống** — website thương mại điện tử
-bán thẻ bài Pokémon, thiết kế theo **kiến trúc Microservices** và mô tả bằng **C4 Model**.
+bán đồ thể thao (giày, quần áo, phụ kiện), thiết kế theo **kiến trúc Microservices** và mô tả bằng **C4 Model**.
 
 Hệ thống gồm 5 thành phần triển khai độc lập (mỗi thư mục = 1 Dockerfile riêng), giao tiếp
 bất đồng bộ qua **RabbitMQ (CloudAMQP)**, dùng chung **MySQL (Aiven)**, xác thực bằng
@@ -27,20 +27,20 @@ graph TB
     customer["👤 Khách hàng<br/>(Trainer)"]
     admin["👤 Quản trị viên<br/>(CMS)"]
 
-    subgraph boundary["PokeShop System"]
-        pokeshop["PokeShop<br/>Website bán thẻ bài Pokémon<br/>(Microservices)"]
+    subgraph boundary["SportHub System"]
+        sporthub["SportHub<br/>Website bán đồ thể thao<br/>(Microservices)"]
     end
 
     firebase["Firebase<br/>Auth + Cloud Messaging"]
     rabbit["CloudAMQP<br/>RabbitMQ broker"]
     mysql["Aiven MySQL<br/>Cơ sở dữ liệu"]
 
-    customer -->|"Duyệt thẻ, đặt hàng, nhận thông báo (HTTPS)"| pokeshop
-    admin -->|"Quản lý sản phẩm, kho, xem báo cáo (HTTPS)"| pokeshop
+    customer -->|"Duyệt sản phẩm, đặt hàng, nhận thông báo (HTTPS)"| sporthub
+    admin -->|"Quản lý sản phẩm, kho, xem báo cáo (HTTPS)"| sporthub
 
-    pokeshop -->|"Xác thực ID token / gửi push"| firebase
-    pokeshop -->|"Publish & consume domain events (AMQPS)"| rabbit
-    pokeshop -->|"Đọc / ghi dữ liệu (TLS)"| mysql
+    sporthub -->|"Xác thực ID token / gửi push"| firebase
+    sporthub -->|"Publish & consume domain events (AMQPS)"| rabbit
+    sporthub -->|"Đọc / ghi dữ liệu (TLS)"| mysql
     firebase -.->|"Web push notification"| customer
 ```
 
@@ -50,7 +50,7 @@ graph TB
 graph TB
     customer["👤 Khách hàng / Quản trị viên"]
 
-    subgraph pokeshop["PokeShop System"]
+    subgraph sporthub["SportHub System"]
         fe["Frontend SPA<br/>[React + Vite + Tailwind + shadcn/ui]<br/>Storefront &amp; CMS<br/>:5173"]
         gw["API Gateway / Orchestrator<br/>[Node.js + Express]<br/>Routing, Auth, CMS, Orders<br/>:8080"]
         inv["Inventory Service<br/>[Go]<br/>Giữ / commit / hoàn kho<br/>:9000"]
@@ -183,7 +183,8 @@ erDiagram
         string sku
         string name
         decimal price
-        string rarity
+        string gender
+        string sport
         string status
     }
     cat_orders {
@@ -572,11 +573,11 @@ stateDiagram-v2
 ```mermaid
 graph TB
     subgraph host["Docker host (mỗi service 1 container độc lập)"]
-        c1["pokeshop-frontend<br/>nginx:80 -> 5173"]
-        c2["pokeshop-api-gateway<br/>node:8080"]
-        c3["pokeshop-inventory-service<br/>go:9000"]
-        c4["pokeshop-analytics-service<br/>uvicorn:8000"]
-        c5["pokeshop-notification-service<br/>node:7000"]
+        c1["sporthub-frontend<br/>nginx:80 -> 5173"]
+        c2["sporthub-api-gateway<br/>node:8080"]
+        c3["sporthub-inventory-service<br/>go:9000"]
+        c4["sporthub-analytics-service<br/>uvicorn:8000"]
+        c5["sporthub-notification-service<br/>node:7000"]
     end
 
     subgraph cloud["Dịch vụ đám mây"]
@@ -596,8 +597,8 @@ graph TB
 Mỗi thư mục có `Dockerfile` riêng, `.env.example` riêng, build/run độc lập:
 
 ```bash
-docker build -t pokeshop/inventory-service ./inventory-service
-docker run --rm -p 9000:9000 --env-file inventory-service/.env pokeshop/inventory-service
+docker build -t sporthub/inventory-service ./inventory-service
+docker run --rm -p 9000:9000 --env-file inventory-service/.env sporthub/inventory-service
 ```
 
 `docker-compose.yml` ở thư mục gốc chỉ là tiện ích chạy cả 5 cùng lúc — không có
@@ -612,6 +613,7 @@ container nào dùng chung image hay Dockerfile.
 ```bash
 make setup     # copy .env.example -> .env cho cả 5 thư mục
 make seed      # tạo bảng trong MySQL cloud + nạp dữ liệu mẫu
+make reseed    # xoá catalogue cũ, tạo lại schema và nạp lại dữ liệu mẫu
 ```
 
 Hoặc thủ công:
@@ -708,7 +710,8 @@ trước khi triển khai thật** — để `true` nghĩa là bất kỳ ai cũ
 | Method | Endpoint | Quyền | Mô tả |
 | --- | --- | --- | --- |
 | GET | `/health` | công khai | Trạng thái MySQL / RabbitMQ / Firebase |
-| GET | `/api/products` | công khai | Lọc `q, category, rarity, minPrice, maxPrice, sort, page, limit` |
+| GET | `/api/products` | công khai | Lọc `q, category, gender, sport, minPrice, maxPrice, sort, page, limit` |
+| GET | `/api/products/facets` | công khai | Danh sách môn thể thao để lọc |
 | GET | `/api/products/:idOrSlug` | công khai | Chi tiết sản phẩm |
 | POST · PUT · DELETE | `/api/products[/:id]` | admin | CMS — phát `product.*` |
 | GET | `/api/categories` | công khai | Danh mục |
@@ -720,7 +723,7 @@ trước khi triển khai thật** — để `true` nghĩa là bất kỳ ai cũ
 | GET | `/api/users/me` | user | Đồng bộ hồ sơ từ Firebase |
 | PUT | `/api/users/me/fcm-token` | user | Đăng ký token push |
 | GET | `/api/users` · PUT `/api/users/:id/role` | admin | Quản lý người dùng |
-| GET | `/api/analytics/{overview,revenue,top-products,rarity-mix}` | admin | Proxy → FastAPI |
+| GET | `/api/analytics/{overview,revenue,top-products,gender-mix}` | admin | Proxy → FastAPI |
 | GET | `/api/inventory/stock/:productId` | công khai | Proxy → Go |
 | GET | `/api/inventory/{stock,movements}` · POST `/api/inventory/restock` | admin | Proxy → Go |
 | GET | `/api/notifications` · POST `/api/notifications/read-all` | user | Feed thông báo |

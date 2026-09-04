@@ -1,2254 +1,314 @@
-{
-    "data": [
-        {
-            "id": 31506,
-            "name": "Pikachu",
-            "name_numbered": "Pikachu 55",
-            "slug": "pikachu",
-            "card_code_number": "ASC 55",
-            "type": "singles",
-            "card_number": 55,
-            "hp": 70,
-            "rarity": "Common",
-            "supertype": "Pokémon",
-            "tcgid": "me2pt5-55",
-            "cardmarket_id": 869666,
-            "tcgplayer_id": 675867,
-            "prices": {
-                "cardmarket": {
-                    "currency": "EUR",
-                    "lowest_near_mint": 0.03,
-                    "lowest_near_mint_EU_only": 0.02,
-                    "lowest_near_mint_DE": 0.02,
-                    "lowest_near_mint_DE_EU_only": 0.02,
-                    "lowest_near_mint_FR": 0.02,
-                    "lowest_near_mint_FR_EU_only": 0.02,
-                    "lowest_near_mint_ES": 0.02,
-                    "lowest_near_mint_ES_EU_only": 0.02,
-                    "lowest_near_mint_IT": 0.02,
-                    "lowest_near_mint_IT_EU_only": 0.02,
-                    "30d_average": 0.1,
-                    "7d_average": 0.13,
-                    "available_items": 6948,
-                    "graded": []
-                },
-                "tcg_player": {
-                    "currency": "EUR",
-                    "market_price": 0.21
-                }
-            },
-            "episode": {
-                "id": 396,
-                "name": "Ascended Heroes",
-                "slug": "ascended-heroes",
-                "released_at": "2026-01-30",
-                "logo": "https://images.tcggo.com/tcggo/storage/34000/ascended_heroes.png",
-                "code": "ASC",
-                "cards_total": 295,
-                "cards_printed_total": 217,
-                "prices": {
-                    "cardmarket": {
-                        "total": 4564.38,
-                        "currency": "EUR"
-                    },
-                    "tcgplayer": {
-                        "total": 4813.47,
-                        "currency": "EUR"
-                    }
-                },
-                "game": {
-                    "name": "Pokémon",
-                    "slug": "pokemon"
-                },
-                "series": {
-                    "id": 17,
-                    "name": "Mega Evolution",
-                    "slug": "mega-evolution"
-                }
-            },
-            "artist": {
-                "id": 773,
-                "name": "kamonabe",
-                "slug": "kamonabe"
-            },
-            "image": "https://images.tcggo.com/tcggo/storage/32001/pikachu-asc-55-ascended-heroes.png",
-            "tcggo_url": "https://www.tcggo.com/pokemon/ascended-heroes/pikachu-55-1",
-            "links": {
-                "cardmarket": "https://www.tcggo.com/external/cm/31506",
-                "tcgplayer": "https://www.tcggo.com/external/tcgplayer/31506"
-            }
-        },
-        {
-            "id": 31508,
-            "name": "Pikachu ex",
-            "name_numbered": "Pikachu ex 57",
-            "slug": "pikachu-ex",
-            "card_code_number": "ASC 57",
-            "type": "singles",
-            "card_number": 57,
-            "hp": 200,
-            "rarity": "Double Rare",
-            "supertype": "Pokémon",
-            "tcgid": "me2pt5-57",
-            "cardmarket_id": 869668,
-            "tcgplayer_id": 675869,
-            "prices": {
-                "cardmarket": {
-                    "currency": "EUR",
-                    "lowest_near_mint": 2.9,
-                    "lowest_near_mint_EU_only": 2.9,
-                    "lowest_near_mint_DE": 3.99,
-                    "lowest_near_mint_DE_EU_only": 4,
-                    "lowest_near_mint_FR": 3,
-                    "lowest_near_mint_FR_EU_only": 4,
-                    "lowest_near_mint_ES": 3,
-                    "lowest_near_mint_ES_EU_only": 3,
-                    "lowest_near_mint_IT": 1,
-                    "lowest_near_mint_IT_EU_only": 1,
-                    "30d_average": 4.15,
-                    "7d_average": 3.9,
-                    "available_items": 437,
-                    "graded": []
-                },
-                "ebay": {
-                    "currency": "USD",
-                    "graded": {
-                        "psa": {
-                            "10": {
-                                "median_price": 88.67,
-                                "sample_size": 1
-                            }
-                        }
-                    }
-                },
-                "tcg_player": {
-                    "currency": "EUR",
-                    "market_price": 3.33
-                }
-            },
-            "episode": {
-                "id": 396,
-                "name": "Ascended Heroes",
-                "slug": "ascended-heroes",
-                "released_at": "2026-01-30",
-                "logo": "https://images.tcggo.com/tcggo/storage/34000/ascended_heroes.png",
-                "code": "ASC",
-                "cards_total": 295,
-                "cards_printed_total": 217,
-                "prices": {
-                    "cardmarket": {
-                        "total": 4564.38,
-                        "currency": "EUR"
-                    },
-                    "tcgplayer": {
-                        "total": 4813.47,
-                        "currency": "EUR"
-                    }
-                },
-                "game": {
-                    "name": "Pokémon",
-                    "slug": "pokemon"
-                },
-                "series": {
-                    "id": 17,
-                    "name": "Mega Evolution",
-                    "slug": "mega-evolution"
-                }
-            },
-            "artist": {
-                "id": 371,
-                "name": "aky CG Works",
-                "slug": "aky-cg-works"
-            },
-            "image": "https://images.tcggo.com/tcggo/storage/31743/pikachu-ex-asc-57-ascended-heroes.png",
-            "tcggo_url": "https://www.tcggo.com/pokemon/ascended-heroes/pikachu-ex-57-1",
-            "links": {
-                "cardmarket": "https://www.tcggo.com/external/cm/31508",
-                "tcgplayer": "https://www.tcggo.com/external/tcgplayer/31508"
-            }
-        },
-        {
-            "id": 31727,
-            "name": "Pikachu ex",
-            "name_numbered": "Pikachu ex 276",
-            "slug": "pikachu-ex",
-            "card_code_number": "ASC 276",
-            "type": "singles",
-            "card_number": 276,
-            "hp": 200,
-            "rarity": "Special Illustration Rare",
-            "supertype": "Pokémon",
-            "tcgid": "me2pt5-276",
-            "cardmarket_id": 869888,
-            "tcgplayer_id": 676088,
-            "prices": {
-                "cardmarket": {
-                    "currency": "EUR",
-                    "lowest_near_mint": 875,
-                    "lowest_near_mint_EU_only": 1145,
-                    "lowest_near_mint_DE": 743.95,
-                    "lowest_near_mint_DE_EU_only": 1000,
-                    "lowest_near_mint_FR": 1180,
-                    "lowest_near_mint_FR_EU_only": 1180,
-                    "lowest_near_mint_ES": 500,
-                    "lowest_near_mint_ES_EU_only": 500,
-                    "lowest_near_mint_IT": 500,
-                    "lowest_near_mint_IT_EU_only": 500,
-                    "30d_average": 961.45,
-                    "7d_average": 1240.91,
-                    "available_items": 270,
-                    "graded": []
-                },
-                "ebay": {
-                    "currency": "USD",
-                    "graded": {
-                        "ace": {
-                            "10": {
-                                "median_price": 1000,
-                                "sample_size": 5
-                            },
-                            "9": {
-                                "median_price": 844.33,
-                                "sample_size": 5
-                            },
-                            "8": {
-                                "median_price": 825,
-                                "sample_size": 1
-                            }
-                        },
-                        "bgs": {
-                            "10": {
-                                "median_price": 3999.9,
-                                "sample_size": 5
-                            },
-                            "9": {
-                                "median_price": 1022.73,
-                                "sample_size": 5
-                            }
-                        },
-                        "cgc": {
-                            "10": {
-                                "median_price": 1366.52,
-                                "sample_size": 5
-                            },
-                            "9": {
-                                "median_price": 609.57,
-                                "sample_size": 5
-                            }
-                        },
-                        "psa": {
-                            "10": {
-                                "median_price": 1606.59,
-                                "sample_size": 5
-                            },
-                            "9": {
-                                "median_price": 635.25,
-                                "sample_size": 5
-                            },
-                            "8": {
-                                "median_price": 634.51,
-                                "sample_size": 5
-                            }
-                        },
-                        "tag": {
-                            "10": {
-                                "median_price": 1495.79,
-                                "sample_size": 5
-                            },
-                            "9": {
-                                "median_price": 877.53,
-                                "sample_size": 5
-                            },
-                            "8": {
-                                "median_price": 1250,
-                                "sample_size": 1
-                            }
-                        }
-                    }
-                },
-                "tcg_player": {
-                    "currency": "EUR",
-                    "market_price": 882.97
-                }
-            },
-            "episode": {
-                "id": 396,
-                "name": "Ascended Heroes",
-                "slug": "ascended-heroes",
-                "released_at": "2026-01-30",
-                "logo": "https://images.tcggo.com/tcggo/storage/34000/ascended_heroes.png",
-                "code": "ASC",
-                "cards_total": 295,
-                "cards_printed_total": 217,
-                "prices": {
-                    "cardmarket": {
-                        "total": 4564.38,
-                        "currency": "EUR"
-                    },
-                    "tcgplayer": {
-                        "total": 4813.47,
-                        "currency": "EUR"
-                    }
-                },
-                "game": {
-                    "name": "Pokémon",
-                    "slug": "pokemon"
-                },
-                "series": {
-                    "id": 17,
-                    "name": "Mega Evolution",
-                    "slug": "mega-evolution"
-                }
-            },
-            "artist": {
-                "id": 1072,
-                "name": "booota",
-                "slug": "booota"
-            },
-            "image": "https://images.tcggo.com/tcggo/storage/31939/pikachu-ex-asc-276-ascended-heroes.png",
-            "tcggo_url": "https://www.tcggo.com/pokemon/ascended-heroes/pikachu-ex-276",
-            "links": {
-                "cardmarket": "https://www.tcggo.com/external/cm/31727",
-                "tcgplayer": "https://www.tcggo.com/external/tcgplayer/31727"
-            }
-        },
-        {
-            "id": 31728,
-            "name": "Pikachu ex",
-            "name_numbered": "Pikachu ex 277",
-            "slug": "pikachu-ex",
-            "card_code_number": "ASC 277",
-            "type": "singles",
-            "card_number": 277,
-            "hp": 200,
-            "rarity": "Special Illustration Rare",
-            "supertype": "Pokémon",
-            "tcgid": "me2pt5-277",
-            "cardmarket_id": 869887,
-            "tcgplayer_id": 676089,
-            "prices": {
-                "cardmarket": {
-                    "currency": "EUR",
-                    "lowest_near_mint": 251.71,
-                    "lowest_near_mint_EU_only": 315,
-                    "lowest_near_mint_DE": 210,
-                    "lowest_near_mint_DE_EU_only": 245,
-                    "lowest_near_mint_FR": 299,
-                    "lowest_near_mint_FR_EU_only": 299,
-                    "lowest_near_mint_ES": 260,
-                    "lowest_near_mint_ES_EU_only": 260,
-                    "lowest_near_mint_IT": 169.9,
-                    "lowest_near_mint_IT_EU_only": 169.9,
-                    "30d_average": 303.05,
-                    "7d_average": 295.41,
-                    "available_items": 257,
-                    "graded": []
-                },
-                "ebay": {
-                    "currency": "USD",
-                    "graded": {
-                        "ace": {
-                            "10": {
-                                "median_price": 427.5,
-                                "sample_size": 5
-                            },
-                            "9": {
-                                "median_price": 309.55,
-                                "sample_size": 5
-                            }
-                        },
-                        "bgs": {
-                            "10": {
-                                "median_price": 1581.71,
-                                "sample_size": 5
-                            },
-                            "9": {
-                                "median_price": 378.26,
-                                "sample_size": 5
-                            },
-                            "8": {
-                                "median_price": 280.39,
-                                "sample_size": 1
-                            }
-                        },
-                        "cgc": {
-                            "10": {
-                                "median_price": 388.76,
-                                "sample_size": 5
-                            },
-                            "9": {
-                                "median_price": 264.65,
-                                "sample_size": 1
-                            }
-                        },
-                        "psa": {
-                            "10": {
-                                "median_price": 841.06,
-                                "sample_size": 5
-                            },
-                            "9": {
-                                "median_price": 299.04,
-                                "sample_size": 5
-                            },
-                            "8": {
-                                "median_price": 246.71,
-                                "sample_size": 5
-                            }
-                        },
-                        "tag": {
-                            "10": {
-                                "median_price": 1121.41,
-                                "sample_size": 5
-                            },
-                            "9": {
-                                "median_price": 576.45,
-                                "sample_size": 5
-                            },
-                            "8": {
-                                "median_price": 257.92,
-                                "sample_size": 1
-                            }
-                        }
-                    }
-                },
-                "tcg_player": {
-                    "currency": "EUR",
-                    "market_price": 285.73
-                }
-            },
-            "episode": {
-                "id": 396,
-                "name": "Ascended Heroes",
-                "slug": "ascended-heroes",
-                "released_at": "2026-01-30",
-                "logo": "https://images.tcggo.com/tcggo/storage/34000/ascended_heroes.png",
-                "code": "ASC",
-                "cards_total": 295,
-                "cards_printed_total": 217,
-                "prices": {
-                    "cardmarket": {
-                        "total": 4564.38,
-                        "currency": "EUR"
-                    },
-                    "tcgplayer": {
-                        "total": 4813.47,
-                        "currency": "EUR"
-                    }
-                },
-                "game": {
-                    "name": "Pokémon",
-                    "slug": "pokemon"
-                },
-                "series": {
-                    "id": 17,
-                    "name": "Mega Evolution",
-                    "slug": "mega-evolution"
-                }
-            },
-            "artist": {
-                "id": 622,
-                "name": "James Turner",
-                "slug": "james-turner"
-            },
-            "image": "https://images.tcggo.com/tcggo/storage/31958/pikachu-ex-asc-277-ascended-heroes.png",
-            "tcggo_url": "https://www.tcggo.com/pokemon/ascended-heroes/pikachu-ex-277",
-            "links": {
-                "cardmarket": "https://www.tcggo.com/external/cm/31728",
-                "tcgplayer": "https://www.tcggo.com/external/tcgplayer/31728"
-            }
-        },
-        {
-            "id": 33669,
-            "name": "Pikachu at the Museum",
-            "name_numbered": "Pikachu at the Museum MEP",
-            "slug": "pikachu-at-the-museum",
-            "card_code_number": "MEP",
-            "type": "singles",
-            "card_number": "MEP",
-            "hp": null,
-            "rarity": "Oversized",
-            "supertype": null,
-            "tcgid": "mepr-MEPos",
-            "cardmarket_id": 865392,
-            "tcgplayer_id": 678659,
-            "prices": {
-                "cardmarket": {
-                    "currency": "EUR",
-                    "lowest_near_mint": 17,
-                    "lowest_near_mint_EU_only": 24.99,
-                    "30d_average": 25.79,
-                    "7d_average": 19.86,
-                    "available_items": 368,
-                    "graded": []
-                },
-                "ebay": {
-                    "currency": "USD",
-                    "graded": {
-                        "psa": {
-                            "9": {
-                                "median_price": 282.29,
-                                "sample_size": 5
-                            },
-                            "8": {
-                                "median_price": 123.27,
-                                "sample_size": 5
-                            },
-                            "7": {
-                                "median_price": 58.84,
-                                "sample_size": 1
-                            }
-                        }
-                    }
-                },
-                "tcg_player": {
-                    "currency": "EUR",
-                    "market_price": 0
-                }
-            },
-            "episode": {
-                "id": 412,
-                "name": "MEP Black Star Promos",
-                "slug": "mep-black-star-promos",
-                "released_at": "2025-09-26",
-                "logo": "https://images.tcggo.com/tcggo/storage/33951/300px-Black_Star_Promos_Symbol.png",
-                "code": "MEP",
-                "cards_total": 0,
-                "cards_printed_total": 0,
-                "prices": {
-                    "cardmarket": {
-                        "total": 1992.49,
-                        "currency": "EUR"
-                    },
-                    "tcgplayer": {
-                        "total": 2256.61,
-                        "currency": "EUR"
-                    }
-                },
-                "game": {
-                    "name": "Pokémon",
-                    "slug": "pokemon"
-                },
-                "series": {
-                    "id": 17,
-                    "name": "Mega Evolution",
-                    "slug": "mega-evolution"
-                }
-            },
-            "artist": {
-                "id": 362,
-                "name": "Naoyo Kimura",
-                "slug": "naoyo-kimura"
-            },
-            "image": "https://images.tcggo.com/tcggo/storage/36914/pikachu-at-the-museum-mep-mep-mep-black-star-promos.png",
-            "tcggo_url": "https://www.tcggo.com/pokemon/mep-black-star-promos/pikachu-at-the-museum",
-            "links": {
-                "cardmarket": "https://www.tcggo.com/external/cm/33669",
-                "tcgplayer": "https://www.tcggo.com/external/tcgplayer/33669"
-            }
-        },
-        {
-            "id": 48518,
-            "name": "Pikachu",
-            "name_numbered": "Pikachu MEP 093",
-            "slug": "pikachu",
-            "card_code_number": "MEP 093",
-            "type": "singles",
-            "card_number": "MEP 093",
-            "hp": null,
-            "rarity": "Promo",
-            "supertype": null,
-            "tcgid": "MEP-MEP 093",
-            "cardmarket_id": 894884,
-            "tcgplayer_id": null,
-            "prices": {
-                "cardmarket": {
-                    "currency": "EUR",
-                    "lowest_near_mint": 10,
-                    "lowest_near_mint_EU_only": 12,
-                    "lowest_near_mint_DE": 10.99,
-                    "lowest_near_mint_DE_EU_only": 10.99,
-                    "lowest_near_mint_FR": 10,
-                    "lowest_near_mint_FR_EU_only": 10,
-                    "lowest_near_mint_ES": 6.5,
-                    "lowest_near_mint_ES_EU_only": 6.5,
-                    "lowest_near_mint_IT": 4.5,
-                    "lowest_near_mint_IT_EU_only": 4.5,
-                    "30d_average": 15.31,
-                    "7d_average": 13.8,
-                    "available_items": 329,
-                    "graded": []
-                }
-            },
-            "episode": {
-                "id": 412,
-                "name": "MEP Black Star Promos",
-                "slug": "mep-black-star-promos",
-                "released_at": "2025-09-26",
-                "logo": "https://images.tcggo.com/tcggo/storage/33951/300px-Black_Star_Promos_Symbol.png",
-                "code": "MEP",
-                "cards_total": 0,
-                "cards_printed_total": 0,
-                "prices": {
-                    "cardmarket": {
-                        "total": 1992.49,
-                        "currency": "EUR"
-                    },
-                    "tcgplayer": {
-                        "total": 2256.61,
-                        "currency": "EUR"
-                    }
-                },
-                "game": {
-                    "name": "Pokémon",
-                    "slug": "pokemon"
-                },
-                "series": {
-                    "id": 17,
-                    "name": "Mega Evolution",
-                    "slug": "mega-evolution"
-                }
-            },
-            "artist": {
-                "id": 429,
-                "name": "DOM",
-                "slug": "dom"
-            },
-            "image": "https://images.tcggo.com/tcggo/storage/36762/pikachu-mep-mep-093-mep-black-star-promos.png",
-            "tcggo_url": "https://www.tcggo.com/pokemon/mep-black-star-promos/pikachu-97",
-            "links": {
-                "cardmarket": "https://www.tcggo.com/external/cm/48518"
-            }
-        },
-        {
-            "id": 48519,
-            "name": "Pikachu",
-            "name_numbered": "Pikachu MEP 093",
-            "slug": "pikachu",
-            "card_code_number": "MEP 093",
-            "type": "singles",
-            "card_number": "MEP 093",
-            "hp": null,
-            "rarity": "Promo",
-            "version": "Winner",
-            "supertype": null,
-            "tcgid": "MEP-MEP 093",
-            "cardmarket_id": 370729,
-            "tcgplayer_id": null,
-            "prices": {
-                "cardmarket": {
-                    "currency": "EUR",
-                    "lowest_near_mint": 130,
-                    "lowest_near_mint_EU_only": 130,
-                    "lowest_near_mint_DE": 115,
-                    "lowest_near_mint_DE_EU_only": 125,
-                    "lowest_near_mint_FR": 125,
-                    "lowest_near_mint_FR_EU_only": 125,
-                    "lowest_near_mint_ES": 70,
-                    "lowest_near_mint_ES_EU_only": 70,
-                    "lowest_near_mint_IT": 74.9,
-                    "lowest_near_mint_IT_EU_only": 74.9,
-                    "30d_average": 140.49,
-                    "7d_average": 136.46,
-                    "available_items": 101,
-                    "graded": []
-                }
-            },
-            "episode": {
-                "id": 412,
-                "name": "MEP Black Star Promos",
-                "slug": "mep-black-star-promos",
-                "released_at": "2025-09-26",
-                "logo": "https://images.tcggo.com/tcggo/storage/33951/300px-Black_Star_Promos_Symbol.png",
-                "code": "MEP",
-                "cards_total": 0,
-                "cards_printed_total": 0,
-                "prices": {
-                    "cardmarket": {
-                        "total": 1992.49,
-                        "currency": "EUR"
-                    },
-                    "tcgplayer": {
-                        "total": 2256.61,
-                        "currency": "EUR"
-                    }
-                },
-                "game": {
-                    "name": "Pokémon",
-                    "slug": "pokemon"
-                },
-                "series": {
-                    "id": 17,
-                    "name": "Mega Evolution",
-                    "slug": "mega-evolution"
-                }
-            },
-            "artist": {
-                "id": 429,
-                "name": "DOM",
-                "slug": "dom"
-            },
-            "image": "https://images.tcggo.com/tcggo/storage/36763/pikachu-mep-mep-093-mep-black-star-promos.png",
-            "tcggo_url": "https://www.tcggo.com/pokemon/mep-black-star-promos/pikachu-98",
-            "links": {
-                "cardmarket": "https://www.tcggo.com/external/cm/48519"
-            }
-        },
-        {
-            "id": 48552,
-            "name": "Pikachu ex",
-            "name_numbered": "Pikachu ex MEP 107",
-            "slug": "pikachu-ex",
-            "card_code_number": "MEP 107",
-            "type": "singles",
-            "card_number": "MEP 107",
-            "hp": null,
-            "rarity": "Promo",
-            "supertype": null,
-            "tcgid": "MEP-MEP 107",
-            "cardmarket_id": 895615,
-            "tcgplayer_id": null,
-            "prices": {
-                "cardmarket": {
-                    "currency": "EUR",
-                    "lowest_near_mint": null,
-                    "available_items": null,
-                    "graded": []
-                }
-            },
-            "episode": {
-                "id": 412,
-                "name": "MEP Black Star Promos",
-                "slug": "mep-black-star-promos",
-                "released_at": "2025-09-26",
-                "logo": "https://images.tcggo.com/tcggo/storage/33951/300px-Black_Star_Promos_Symbol.png",
-                "code": "MEP",
-                "cards_total": 0,
-                "cards_printed_total": 0,
-                "prices": {
-                    "cardmarket": {
-                        "total": 1992.49,
-                        "currency": "EUR"
-                    },
-                    "tcgplayer": {
-                        "total": 2256.61,
-                        "currency": "EUR"
-                    }
-                },
-                "game": {
-                    "name": "Pokémon",
-                    "slug": "pokemon"
-                },
-                "series": {
-                    "id": 17,
-                    "name": "Mega Evolution",
-                    "slug": "mega-evolution"
-                }
-            },
-            "artist": {
-                "id": 1252,
-                "name": "YOSHIROTTEN",
-                "slug": "yoshirotten"
-            },
-            "image": "https://images.tcggo.com/tcggo/storage/36796/pikachu-ex-mep-mep-107-mep-black-star-promos.png",
-            "tcggo_url": "https://www.tcggo.com/pokemon/mep-black-star-promos/pikachu-ex-2",
-            "links": {
-                "cardmarket": "https://www.tcggo.com/external/cm/48552"
-            }
-        },
-        {
-            "id": 48554,
-            "name": "Pikachu ex",
-            "name_numbered": "Pikachu ex MEP 109",
-            "slug": "pikachu-ex",
-            "card_code_number": "MEP 109",
-            "type": "singles",
-            "card_number": "MEP 109",
-            "hp": null,
-            "rarity": "Promo",
-            "supertype": null,
-            "tcgid": "MEP-MEP 109",
-            "cardmarket_id": 895617,
-            "tcgplayer_id": null,
-            "prices": {
-                "cardmarket": {
-                    "currency": "EUR",
-                    "lowest_near_mint": null,
-                    "available_items": null,
-                    "graded": []
-                }
-            },
-            "episode": {
-                "id": 412,
-                "name": "MEP Black Star Promos",
-                "slug": "mep-black-star-promos",
-                "released_at": "2025-09-26",
-                "logo": "https://images.tcggo.com/tcggo/storage/33951/300px-Black_Star_Promos_Symbol.png",
-                "code": "MEP",
-                "cards_total": 0,
-                "cards_printed_total": 0,
-                "prices": {
-                    "cardmarket": {
-                        "total": 1992.49,
-                        "currency": "EUR"
-                    },
-                    "tcgplayer": {
-                        "total": 2256.61,
-                        "currency": "EUR"
-                    }
-                },
-                "game": {
-                    "name": "Pokémon",
-                    "slug": "pokemon"
-                },
-                "series": {
-                    "id": 17,
-                    "name": "Mega Evolution",
-                    "slug": "mega-evolution"
-                }
-            },
-            "artist": {
-                "id": 1252,
-                "name": "YOSHIROTTEN",
-                "slug": "yoshirotten"
-            },
-            "image": "https://images.tcggo.com/tcggo/storage/36798/pikachu-ex-mep-mep-109-mep-black-star-promos.png",
-            "tcggo_url": "https://www.tcggo.com/pokemon/mep-black-star-promos/pikachu-ex-3",
-            "links": {
-                "cardmarket": "https://www.tcggo.com/external/cm/48554"
-            }
-        },
-        {
-            "id": 21421,
-            "name": "Pikachu ex",
-            "name_numbered": "Pikachu ex 28",
-            "slug": "pikachu-ex",
-            "card_code_number": "PRE 28",
-            "type": "singles",
-            "card_number": 28,
-            "hp": 190,
-            "rarity": "Double Rare",
-            "supertype": "Pokémon",
-            "tcgid": "sv8pt5-28",
-            "cardmarket_id": 805417,
-            "tcgplayer_id": 610383,
-            "prices": {
-                "cardmarket": {
-                    "currency": "EUR",
-                    "lowest_near_mint": 2,
-                    "lowest_near_mint_EU_only": 2.48,
-                    "lowest_near_mint_DE": 1.75,
-                    "lowest_near_mint_DE_EU_only": 1.72,
-                    "lowest_near_mint_FR": 1.19,
-                    "lowest_near_mint_FR_EU_only": 1,
-                    "lowest_near_mint_ES": 2,
-                    "lowest_near_mint_ES_EU_only": 2,
-                    "lowest_near_mint_IT": 0.79,
-                    "lowest_near_mint_IT_EU_only": 0.79,
-                    "30d_average": 2.79,
-                    "7d_average": 2.87,
-                    "available_items": 551,
-                    "graded": []
-                },
-                "tcg_player": {
-                    "currency": "EUR",
-                    "market_price": 2.14
-                }
-            },
-            "episode": {
-                "id": 212,
-                "name": "Prismatic Evolutions",
-                "slug": "prismatic-evolutions",
-                "released_at": "2025-01-17",
-                "logo": "https://images.tcggo.com/tcggo/storage/21414/prismatic-evolutions-logo.png",
-                "code": "PRE",
-                "cards_total": 180,
-                "cards_printed_total": 131,
-                "prices": {
-                    "cardmarket": {
-                        "total": 3603.23,
-                        "currency": "EUR"
-                    },
-                    "tcgplayer": {
-                        "total": 4275.28,
-                        "currency": "EUR"
-                    }
-                },
-                "game": {
-                    "name": "Pokémon",
-                    "slug": "pokemon"
-                },
-                "series": {
-                    "id": 1,
-                    "name": "Scarlet & Violet",
-                    "slug": "scarlet-violet"
-                }
-            },
-            "artist": {
-                "id": 489,
-                "name": "N-DESIGN Inc.",
-                "slug": "n-design-inc"
-            },
-            "image": "https://images.tcggo.com/tcggo/storage/21443/pikachu-ex-pre-28-prismatic-evolutions.png",
-            "tcggo_url": "https://www.tcggo.com/pokemon/prismatic-evolutions/pikachu-ex-28",
-            "links": {
-                "cardmarket": "https://www.tcggo.com/external/cm/21421",
-                "tcgplayer": "https://www.tcggo.com/external/tcgplayer/21421"
-            }
-        },
-        {
-            "id": 21572,
-            "name": "Pikachu ex",
-            "name_numbered": "Pikachu ex 179",
-            "slug": "pikachu-ex",
-            "card_code_number": "PRE 179",
-            "type": "singles",
-            "card_number": 179,
-            "hp": 200,
-            "rarity": "Hyper Rare",
-            "supertype": "Pokémon",
-            "tcgid": "sv8pt5-179",
-            "cardmarket_id": 805573,
-            "tcgplayer_id": 610534,
-            "prices": {
-                "cardmarket": {
-                    "currency": "EUR",
-                    "lowest_near_mint": 54.99,
-                    "lowest_near_mint_EU_only": 54.99,
-                    "lowest_near_mint_DE": 48,
-                    "lowest_near_mint_DE_EU_only": 48,
-                    "lowest_near_mint_FR": 62,
-                    "lowest_near_mint_FR_EU_only": 62,
-                    "lowest_near_mint_ES": 39.95,
-                    "lowest_near_mint_ES_EU_only": 39.95,
-                    "lowest_near_mint_IT": 30,
-                    "lowest_near_mint_IT_EU_only": 30,
-                    "30d_average": 65.4,
-                    "7d_average": 87.59,
-                    "available_items": 270,
-                    "graded": {
-                        "psa": {
-                            "psa10": 2700,
-                            "psa9": 114
-                        },
-                        "bgs": {
-                            "bgs9": 130
-                        },
-                        "cgc": {
-                            "cgc10": 900,
-                            "cgc9": 129
-                        }
-                    }
-                },
-                "ebay": {
-                    "currency": "USD",
-                    "graded": {
-                        "ace": {
-                            "10": {
-                                "median_price": 148.35,
-                                "sample_size": 5
-                            },
-                            "9": {
-                                "median_price": 61.65,
-                                "sample_size": 5
-                            }
-                        },
-                        "bgs": {
-                            "9": {
-                                "median_price": 49,
-                                "sample_size": 3
-                            }
-                        },
-                        "cgc": {
-                            "10": {
-                                "median_price": 426.13,
-                                "sample_size": 5
-                            },
-                            "9": {
-                                "median_price": 88.82,
-                                "sample_size": 5
-                            }
-                        },
-                        "psa": {
-                            "10": {
-                                "median_price": 308.01,
-                                "sample_size": 5
-                            },
-                            "9": {
-                                "median_price": 89.32,
-                                "sample_size": 5
-                            },
-                            "8": {
-                                "median_price": 59.2,
-                                "sample_size": 5
-                            },
-                            "7": {
-                                "median_price": 50,
-                                "sample_size": 5
-                            }
-                        },
-                        "sgc": {
-                            "10": {
-                                "median_price": 199.99,
-                                "sample_size": 1
-                            }
-                        },
-                        "tag": {
-                            "10": {
-                                "median_price": 335.68,
-                                "sample_size": 5
-                            },
-                            "9": {
-                                "median_price": 90.96,
-                                "sample_size": 5
-                            },
-                            "8": {
-                                "median_price": 50,
-                                "sample_size": 1
-                            }
-                        }
-                    }
-                },
-                "tcg_player": {
-                    "currency": "EUR",
-                    "market_price": 52.19
-                }
-            },
-            "episode": {
-                "id": 212,
-                "name": "Prismatic Evolutions",
-                "slug": "prismatic-evolutions",
-                "released_at": "2025-01-17",
-                "logo": "https://images.tcggo.com/tcggo/storage/21414/prismatic-evolutions-logo.png",
-                "code": "PRE",
-                "cards_total": 180,
-                "cards_printed_total": 131,
-                "prices": {
-                    "cardmarket": {
-                        "total": 3603.23,
-                        "currency": "EUR"
-                    },
-                    "tcgplayer": {
-                        "total": 4275.28,
-                        "currency": "EUR"
-                    }
-                },
-                "game": {
-                    "name": "Pokémon",
-                    "slug": "pokemon"
-                },
-                "series": {
-                    "id": 1,
-                    "name": "Scarlet & Violet",
-                    "slug": "scarlet-violet"
-                }
-            },
-            "artist": {
-                "id": 371,
-                "name": "aky CG Works",
-                "slug": "aky-cg-works"
-            },
-            "image": "https://images.tcggo.com/tcggo/storage/21594/pikachu-ex-pre-179-prismatic-evolutions.png",
-            "tcggo_url": "https://www.tcggo.com/pokemon/prismatic-evolutions/pikachu-ex-179",
-            "links": {
-                "cardmarket": "https://www.tcggo.com/external/cm/21572",
-                "tcgplayer": "https://www.tcggo.com/external/tcgplayer/21572"
-            }
-        },
-        {
-            "id": 20845,
-            "name": "Pikachu ex",
-            "name_numbered": "Pikachu ex 57",
-            "slug": "pikachu-ex",
-            "card_code_number": "SSP 57",
-            "type": "singles",
-            "card_number": 57,
-            "hp": 200,
-            "rarity": "Double Rare",
-            "supertype": "Pokémon",
-            "tcgid": "sv8-57",
-            "cardmarket_id": 794329,
-            "tcgplayer_id": 590025,
-            "prices": {
-                "cardmarket": {
-                    "currency": "EUR",
-                    "lowest_near_mint": 3.44,
-                    "lowest_near_mint_EU_only": 3.5,
-                    "lowest_near_mint_DE": 2,
-                    "lowest_near_mint_DE_EU_only": 2,
-                    "lowest_near_mint_FR": 2.5,
-                    "lowest_near_mint_FR_EU_only": 2.5,
-                    "lowest_near_mint_ES": 3,
-                    "lowest_near_mint_ES_EU_only": 3,
-                    "lowest_near_mint_IT": 1.4,
-                    "lowest_near_mint_IT_EU_only": 1.4,
-                    "30d_average": 4.12,
-                    "7d_average": 4.36,
-                    "available_items": 979,
-                    "graded": {
-                        "psa": {
-                            "psa10": 115,
-                            "psa9": 30,
-                            "psa8": 80
-                        },
-                        "cgc": {
-                            "cgc10": 38
-                        }
-                    }
-                },
-                "tcg_player": {
-                    "currency": "EUR",
-                    "market_price": 4.05,
-                    "mid_price": 3.91
-                }
-            },
-            "episode": {
-                "id": 172,
-                "name": "Surging Sparks",
-                "slug": "surging-sparks",
-                "released_at": "2024-11-08",
-                "logo": "https://images.tcggo.com/tcggo/storage/20954/surging-sparks-logo.png",
-                "code": "SSP",
-                "cards_total": 252,
-                "cards_printed_total": 191,
-                "prices": {
-                    "cardmarket": {
-                        "total": 1063.56,
-                        "currency": "EUR"
-                    },
-                    "tcgplayer": {
-                        "total": 1090.83,
-                        "currency": "EUR"
-                    }
-                },
-                "game": {
-                    "name": "Pokémon",
-                    "slug": "pokemon"
-                },
-                "series": {
-                    "id": 1,
-                    "name": "Scarlet & Violet",
-                    "slug": "scarlet-violet"
-                }
-            },
-            "artist": {
-                "id": 371,
-                "name": "aky CG Works",
-                "slug": "aky-cg-works"
-            },
-            "image": "https://images.tcggo.com/tcggo/storage/21011/pikachu-ex-ssp-57-surging-sparks.png",
-            "tcggo_url": "https://www.tcggo.com/pokemon/surging-sparks/pikachu-ex-57",
-            "links": {
-                "cardmarket": "https://www.tcggo.com/external/cm/20845",
-                "tcgplayer": "https://www.tcggo.com/external/tcgplayer/20845"
-            }
-        },
-        {
-            "id": 21007,
-            "name": "Pikachu ex",
-            "name_numbered": "Pikachu ex 219",
-            "slug": "pikachu-ex",
-            "card_code_number": "SSP 219",
-            "type": "singles",
-            "card_number": 219,
-            "hp": 200,
-            "rarity": "Ultra Rare",
-            "supertype": "Pokémon",
-            "tcgid": "sv8-219",
-            "cardmarket_id": 794592,
-            "tcgplayer_id": 590026,
-            "prices": {
-                "cardmarket": {
-                    "currency": "EUR",
-                    "lowest_near_mint": 25,
-                    "lowest_near_mint_EU_only": 25,
-                    "lowest_near_mint_DE": 19.5,
-                    "lowest_near_mint_DE_EU_only": 19.5,
-                    "lowest_near_mint_FR": 23,
-                    "lowest_near_mint_FR_EU_only": 25,
-                    "lowest_near_mint_ES": 18,
-                    "lowest_near_mint_ES_EU_only": 18,
-                    "lowest_near_mint_IT": 14.85,
-                    "lowest_near_mint_IT_EU_only": 14.85,
-                    "30d_average": 27.27,
-                    "7d_average": 24.61,
-                    "available_items": 459,
-                    "graded": {
-                        "psa": {
-                            "psa10": 200,
-                            "psa9": 50,
-                            "psa8": 55
-                        },
-                        "bgs": {
-                            "bgs10": 420,
-                            "bgs9": 32
-                        },
-                        "cgc": {
-                            "cgc10": 84,
-                            "cgc9": 69
-                        }
-                    }
-                },
-                "ebay": {
-                    "currency": "USD",
-                    "graded": {
-                        "ace": {
-                            "10": {
-                                "median_price": 78.08,
-                                "sample_size": 5
-                            },
-                            "9": {
-                                "median_price": 31.76,
-                                "sample_size": 5
-                            }
-                        },
-                        "bgs": {
-                            "10": {
-                                "median_price": 300,
-                                "sample_size": 1
-                            },
-                            "9": {
-                                "median_price": 30.65,
-                                "sample_size": 1
-                            }
-                        },
-                        "cgc": {
-                            "10": {
-                                "median_price": 98.68,
-                                "sample_size": 5
-                            },
-                            "9": {
-                                "median_price": 32.99,
-                                "sample_size": 5
-                            }
-                        },
-                        "psa": {
-                            "10": {
-                                "median_price": 179.42,
-                                "sample_size": 5
-                            },
-                            "9": {
-                                "median_price": 41.92,
-                                "sample_size": 5
-                            },
-                            "8": {
-                                "median_price": 33.39,
-                                "sample_size": 5
-                            },
-                            "7": {
-                                "median_price": 34.99,
-                                "sample_size": 5
-                            }
-                        },
-                        "sgc": {
-                            "9": {
-                                "median_price": 35.89,
-                                "sample_size": 1
-                            }
-                        },
-                        "tag": {
-                            "10": {
-                                "median_price": 174.94,
-                                "sample_size": 5
-                            },
-                            "9": {
-                                "median_price": 45.47,
-                                "sample_size": 5
-                            }
-                        }
-                    }
-                },
-                "tcg_player": {
-                    "currency": "EUR",
-                    "market_price": 25.56,
-                    "mid_price": 24.62
-                }
-            },
-            "episode": {
-                "id": 172,
-                "name": "Surging Sparks",
-                "slug": "surging-sparks",
-                "released_at": "2024-11-08",
-                "logo": "https://images.tcggo.com/tcggo/storage/20954/surging-sparks-logo.png",
-                "code": "SSP",
-                "cards_total": 252,
-                "cards_printed_total": 191,
-                "prices": {
-                    "cardmarket": {
-                        "total": 1063.56,
-                        "currency": "EUR"
-                    },
-                    "tcgplayer": {
-                        "total": 1090.83,
-                        "currency": "EUR"
-                    }
-                },
-                "game": {
-                    "name": "Pokémon",
-                    "slug": "pokemon"
-                },
-                "series": {
-                    "id": 1,
-                    "name": "Scarlet & Violet",
-                    "slug": "scarlet-violet"
-                }
-            },
-            "artist": {
-                "id": 371,
-                "name": "aky CG Works",
-                "slug": "aky-cg-works"
-            },
-            "image": "https://images.tcggo.com/tcggo/storage/21170/pikachu-ex-ssp-219-surging-sparks.png",
-            "tcggo_url": "https://www.tcggo.com/pokemon/surging-sparks/pikachu-ex-219",
-            "links": {
-                "cardmarket": "https://www.tcggo.com/external/cm/21007",
-                "tcgplayer": "https://www.tcggo.com/external/tcgplayer/21007"
-            }
-        },
-        {
-            "id": 21026,
-            "name": "Pikachu ex",
-            "name_numbered": "Pikachu ex 238",
-            "slug": "pikachu-ex",
-            "card_code_number": "SSP 238",
-            "type": "singles",
-            "card_number": 238,
-            "hp": 200,
-            "rarity": "Special Illustration Rare",
-            "supertype": "Pokémon",
-            "tcgid": "sv8-238",
-            "cardmarket_id": 794611,
-            "tcgplayer_id": 590027,
-            "prices": {
-                "cardmarket": {
-                    "currency": "EUR",
-                    "lowest_near_mint": 260,
-                    "lowest_near_mint_EU_only": 260,
-                    "lowest_near_mint_DE": 175,
-                    "lowest_near_mint_DE_EU_only": 175,
-                    "lowest_near_mint_FR": 380,
-                    "lowest_near_mint_FR_EU_only": 380,
-                    "lowest_near_mint_ES": 259.9,
-                    "lowest_near_mint_ES_EU_only": 259.9,
-                    "lowest_near_mint_IT": 250,
-                    "lowest_near_mint_IT_EU_only": 250,
-                    "30d_average": 257.2,
-                    "7d_average": 245.8,
-                    "available_items": 408,
-                    "graded": {
-                        "psa": {
-                            "psa10": 320,
-                            "psa9": 299,
-                            "psa8": 270
-                        },
-                        "bgs": {
-                            "bgs9": 334
-                        },
-                        "cgc": {
-                            "cgc10": 650,
-                            "cgc9": 344
-                        }
-                    }
-                },
-                "ebay": {
-                    "currency": "USD",
-                    "graded": {
-                        "ace": {
-                            "10": {
-                                "median_price": 427.49,
-                                "sample_size": 5
-                            },
-                            "9": {
-                                "median_price": 223.44,
-                                "sample_size": 5
-                            }
-                        },
-                        "bgs": {
-                            "10": {
-                                "median_price": 1402.6,
-                                "sample_size": 2
-                            },
-                            "9": {
-                                "median_price": 239.37,
-                                "sample_size": 5
-                            },
-                            "8": {
-                                "median_price": 218,
-                                "sample_size": 1
-                            }
-                        },
-                        "cgc": {
-                            "10": {
-                                "median_price": 312.7,
-                                "sample_size": 5
-                            },
-                            "9": {
-                                "median_price": 219.64,
-                                "sample_size": 5
-                            }
-                        },
-                        "psa": {
-                            "10": {
-                                "median_price": 780.28,
-                                "sample_size": 5
-                            },
-                            "9": {
-                                "median_price": 223.36,
-                                "sample_size": 5
-                            },
-                            "8": {
-                                "median_price": 204.75,
-                                "sample_size": 5
-                            },
-                            "7": {
-                                "median_price": 212.25,
-                                "sample_size": 4
-                            }
-                        },
-                        "tag": {
-                            "10": {
-                                "median_price": 684.98,
-                                "sample_size": 5
-                            },
-                            "9": {
-                                "median_price": 230.81,
-                                "sample_size": 5
-                            }
-                        }
-                    }
-                },
-                "tcg_player": {
-                    "currency": "EUR",
-                    "market_price": 246.83,
-                    "mid_price": 256.41
-                }
-            },
-            "episode": {
-                "id": 172,
-                "name": "Surging Sparks",
-                "slug": "surging-sparks",
-                "released_at": "2024-11-08",
-                "logo": "https://images.tcggo.com/tcggo/storage/20954/surging-sparks-logo.png",
-                "code": "SSP",
-                "cards_total": 252,
-                "cards_printed_total": 191,
-                "prices": {
-                    "cardmarket": {
-                        "total": 1063.56,
-                        "currency": "EUR"
-                    },
-                    "tcgplayer": {
-                        "total": 1090.83,
-                        "currency": "EUR"
-                    }
-                },
-                "game": {
-                    "name": "Pokémon",
-                    "slug": "pokemon"
-                },
-                "series": {
-                    "id": 1,
-                    "name": "Scarlet & Violet",
-                    "slug": "scarlet-violet"
-                }
-            },
-            "artist": {
-                "id": 459,
-                "name": "GIDORA",
-                "slug": "gidora"
-            },
-            "image": "https://images.tcggo.com/tcggo/storage/21188/pikachu-ex-ssp-238-surging-sparks.png",
-            "tcggo_url": "https://www.tcggo.com/pokemon/surging-sparks/pikachu-ex-238",
-            "links": {
-                "cardmarket": "https://www.tcggo.com/external/cm/21026",
-                "tcgplayer": "https://www.tcggo.com/external/tcgplayer/21026"
-            }
-        },
-        {
-            "id": 21035,
-            "name": "Pikachu ex",
-            "name_numbered": "Pikachu ex 247",
-            "slug": "pikachu-ex",
-            "card_code_number": "SSP 247",
-            "type": "singles",
-            "card_number": 247,
-            "hp": 200,
-            "rarity": "Hyper Rare",
-            "supertype": "Pokémon",
-            "tcgid": "sv8-247",
-            "cardmarket_id": 794621,
-            "tcgplayer_id": 593169,
-            "prices": {
-                "cardmarket": {
-                    "currency": "EUR",
-                    "lowest_near_mint": 77,
-                    "lowest_near_mint_EU_only": 77,
-                    "lowest_near_mint_DE": 59.95,
-                    "lowest_near_mint_DE_EU_only": 59.95,
-                    "lowest_near_mint_FR": 73,
-                    "lowest_near_mint_FR_EU_only": 73,
-                    "lowest_near_mint_ES": 75,
-                    "lowest_near_mint_ES_EU_only": 75,
-                    "lowest_near_mint_IT": 49.9,
-                    "lowest_near_mint_IT_EU_only": 49.9,
-                    "30d_average": 77.7,
-                    "7d_average": 77.51,
-                    "available_items": 277,
-                    "graded": {
-                        "psa": {
-                            "psa10": 95,
-                            "psa9": 95
-                        },
-                        "bgs": {
-                            "bgs9": 105
-                        },
-                        "cgc": {
-                            "cgc10": 385
-                        }
-                    }
-                },
-                "ebay": {
-                    "currency": "USD",
-                    "graded": {
-                        "ace": {
-                            "10": {
-                                "median_price": 134.99,
-                                "sample_size": 5
-                            },
-                            "9": {
-                                "median_price": 73.5,
-                                "sample_size": 5
-                            }
-                        },
-                        "bgs": {
-                            "9": {
-                                "median_price": 89.21,
-                                "sample_size": 5
-                            }
-                        },
-                        "cgc": {
-                            "10": {
-                                "median_price": 325.41,
-                                "sample_size": 5
-                            },
-                            "9": {
-                                "median_price": 66.9,
-                                "sample_size": 5
-                            }
-                        },
-                        "psa": {
-                            "10": {
-                                "median_price": 307.83,
-                                "sample_size": 5
-                            },
-                            "9": {
-                                "median_price": 83.55,
-                                "sample_size": 5
-                            },
-                            "8": {
-                                "median_price": 70.36,
-                                "sample_size": 5
-                            },
-                            "7": {
-                                "median_price": 62.88,
-                                "sample_size": 4
-                            }
-                        },
-                        "sgc": {
-                            "10": {
-                                "median_price": 199.97,
-                                "sample_size": 3
-                            }
-                        },
-                        "tag": {
-                            "10": {
-                                "median_price": 342.13,
-                                "sample_size": 5
-                            },
-                            "9": {
-                                "median_price": 70.36,
-                                "sample_size": 5
-                            }
-                        }
-                    }
-                },
-                "tcg_player": {
-                    "currency": "EUR",
-                    "market_price": 77.06,
-                    "mid_price": 69.11
-                }
-            },
-            "episode": {
-                "id": 172,
-                "name": "Surging Sparks",
-                "slug": "surging-sparks",
-                "released_at": "2024-11-08",
-                "logo": "https://images.tcggo.com/tcggo/storage/20954/surging-sparks-logo.png",
-                "code": "SSP",
-                "cards_total": 252,
-                "cards_printed_total": 191,
-                "prices": {
-                    "cardmarket": {
-                        "total": 1063.56,
-                        "currency": "EUR"
-                    },
-                    "tcgplayer": {
-                        "total": 1090.83,
-                        "currency": "EUR"
-                    }
-                },
-                "game": {
-                    "name": "Pokémon",
-                    "slug": "pokemon"
-                },
-                "series": {
-                    "id": 1,
-                    "name": "Scarlet & Violet",
-                    "slug": "scarlet-violet"
-                }
-            },
-            "artist": {
-                "id": 371,
-                "name": "aky CG Works",
-                "slug": "aky-cg-works"
-            },
-            "image": "https://images.tcggo.com/tcggo/storage/21197/pikachu-ex-ssp-247-surging-sparks.png",
-            "tcggo_url": "https://www.tcggo.com/pokemon/surging-sparks/pikachu-ex-247",
-            "links": {
-                "cardmarket": "https://www.tcggo.com/external/cm/21035",
-                "tcgplayer": "https://www.tcggo.com/external/tcgplayer/21035"
-            }
-        },
-        {
-            "id": 1805,
-            "name": "Pikachu",
-            "name_numbered": "Pikachu 51",
-            "slug": "pikachu",
-            "card_code_number": "TEF 51",
-            "type": "singles",
-            "card_number": 51,
-            "hp": 70,
-            "rarity": "Common",
-            "supertype": "Pokémon",
-            "tcgid": "sv5-51",
-            "cardmarket_id": 760681,
-            "tcgplayer_id": 542795,
-            "prices": {
-                "cardmarket": {
-                    "currency": "EUR",
-                    "lowest_near_mint": 0.02,
-                    "lowest_near_mint_EU_only": 0.02,
-                    "lowest_near_mint_DE": 0.02,
-                    "lowest_near_mint_DE_EU_only": 0.02,
-                    "lowest_near_mint_FR": 0.02,
-                    "lowest_near_mint_FR_EU_only": 0.02,
-                    "lowest_near_mint_ES": 0.02,
-                    "lowest_near_mint_ES_EU_only": 0.02,
-                    "lowest_near_mint_IT": 0.02,
-                    "lowest_near_mint_IT_EU_only": 0.02,
-                    "30d_average": 0.14,
-                    "7d_average": 0.11,
-                    "available_items": null,
-                    "graded": []
-                },
-                "tcg_player": {
-                    "currency": "EUR",
-                    "market_price": 0.54,
-                    "mid_price": 0.21
-                }
-            },
-            "episode": {
-                "id": 13,
-                "name": "Temporal Forces",
-                "slug": "temporal-forces",
-                "released_at": "2024-03-22",
-                "logo": "https://images.tcggo.com/tcggo/storage/1763/temporal-forces-logo.png",
-                "code": "TEF",
-                "cards_total": 218,
-                "cards_printed_total": 162,
-                "prices": {
-                    "cardmarket": {
-                        "total": 786.47,
-                        "currency": "EUR"
-                    },
-                    "tcgplayer": {
-                        "total": 1075.91,
-                        "currency": "EUR"
-                    }
-                },
-                "game": {
-                    "name": "Pokémon",
-                    "slug": "pokemon"
-                },
-                "series": {
-                    "id": 1,
-                    "name": "Scarlet & Violet",
-                    "slug": "scarlet-violet"
-                }
-            },
-            "artist": {
-                "id": 414,
-                "name": "kodama",
-                "slug": "kodama"
-            },
-            "image": "https://images.tcggo.com/tcggo/storage/21357/pikachu-tef-51-temporal-forces.png",
-            "tcggo_url": "https://www.tcggo.com/pokemon/temporal-forces/pikachu-51",
-            "links": {
-                "cardmarket": "https://www.tcggo.com/external/cm/1805",
-                "tcgplayer": "https://www.tcggo.com/external/tcgplayer/1805"
-            }
-        },
-        {
-            "id": 1980,
-            "name": "Pikachu",
-            "name_numbered": "Pikachu 18",
-            "slug": "pikachu",
-            "card_code_number": "PAF 18",
-            "type": "singles",
-            "card_number": 18,
-            "hp": 70,
-            "rarity": "Common",
-            "supertype": "Pokémon",
-            "tcgid": "sv4pt5-18",
-            "cardmarket_id": 751545,
-            "tcgplayer_id": 534163,
-            "prices": {
-                "cardmarket": {
-                    "currency": "EUR",
-                    "lowest_near_mint": 0.02,
-                    "lowest_near_mint_EU_only": 0.02,
-                    "lowest_near_mint_DE": 0.02,
-                    "lowest_near_mint_DE_EU_only": 0.02,
-                    "lowest_near_mint_FR": 0.02,
-                    "lowest_near_mint_FR_EU_only": 0.02,
-                    "lowest_near_mint_ES": 0.02,
-                    "lowest_near_mint_ES_EU_only": 0.02,
-                    "lowest_near_mint_IT": 0.02,
-                    "lowest_near_mint_IT_EU_only": 0.02,
-                    "30d_average": 0.1,
-                    "7d_average": 0.1,
-                    "available_items": 13144,
-                    "graded": []
-                },
-                "ebay": {
-                    "currency": "USD",
-                    "graded": {
-                        "cgc": {
-                            "10": {
-                                "median_price": 74.3,
-                                "sample_size": 1
-                            }
-                        },
-                        "psa": {
-                            "9": {
-                                "median_price": 45.52,
-                                "sample_size": 1
-                            }
-                        }
-                    }
-                },
-                "tcg_player": {
-                    "currency": "EUR",
-                    "market_price": 0.36,
-                    "mid_price": 0.17
-                }
-            },
-            "episode": {
-                "id": 14,
-                "name": "Paldean Fates",
-                "slug": "paldean-fates",
-                "released_at": "2024-01-26",
-                "logo": "https://images.tcggo.com/tcggo/storage/1981/paldean-fates-logo.png",
-                "code": "PAF",
-                "cards_total": 245,
-                "cards_printed_total": 91,
-                "prices": {
-                    "cardmarket": {
-                        "total": 1715.81,
-                        "currency": "EUR"
-                    },
-                    "tcgplayer": {
-                        "total": 2268.22,
-                        "currency": "EUR"
-                    }
-                },
-                "game": {
-                    "name": "Pokémon",
-                    "slug": "pokemon"
-                },
-                "series": {
-                    "id": 1,
-                    "name": "Scarlet & Violet",
-                    "slug": "scarlet-violet"
-                }
-            },
-            "artist": {
-                "id": 394,
-                "name": "OKACHEKE",
-                "slug": "okacheke"
-            },
-            "image": "https://images.tcggo.com/tcggo/storage/1990/pikachu-paf-18-paldean-fates-pokemon.png",
-            "tcggo_url": "https://www.tcggo.com/pokemon/paldean-fates/pikachu-18",
-            "links": {
-                "cardmarket": "https://www.tcggo.com/external/cm/1980",
-                "tcgplayer": "https://www.tcggo.com/external/tcgplayer/1980"
-            }
-        },
-        {
-            "id": 2105,
-            "name": "Pikachu",
-            "name_numbered": "Pikachu 131",
-            "slug": "pikachu",
-            "card_code_number": "PAF 131",
-            "type": "singles",
-            "card_number": 131,
-            "hp": 70,
-            "rarity": "Shiny Rare",
-            "supertype": "Pokémon",
-            "tcgid": "sv4pt5-131",
-            "cardmarket_id": 751670,
-            "tcgplayer_id": 534522,
-            "prices": {
-                "cardmarket": {
-                    "currency": "EUR",
-                    "lowest_near_mint": 72,
-                    "lowest_near_mint_EU_only": 72,
-                    "lowest_near_mint_DE": 40,
-                    "lowest_near_mint_DE_EU_only": 40,
-                    "lowest_near_mint_FR": 57,
-                    "lowest_near_mint_FR_EU_only": 57,
-                    "lowest_near_mint_ES": 53.95,
-                    "lowest_near_mint_ES_EU_only": 53.95,
-                    "lowest_near_mint_IT": 39.99,
-                    "lowest_near_mint_IT_EU_only": 39.99,
-                    "30d_average": 75.39,
-                    "7d_average": 61.85,
-                    "available_items": 228,
-                    "graded": {
-                        "psa": {
-                            "psa10": 130,
-                            "psa9": 200,
-                            "psa8": 89
-                        }
-                    }
-                },
-                "ebay": {
-                    "currency": "USD",
-                    "graded": {
-                        "ace": {
-                            "10": {
-                                "median_price": 450,
-                                "sample_size": 1
-                            },
-                            "9": {
-                                "median_price": 52,
-                                "sample_size": 5
-                            },
-                            "8": {
-                                "median_price": 31.58,
-                                "sample_size": 1
-                            }
-                        },
-                        "bgs": {
-                            "9": {
-                                "median_price": 72.9,
-                                "sample_size": 3
-                            }
-                        },
-                        "cgc": {
-                            "10": {
-                                "median_price": 260.59,
-                                "sample_size": 5
-                            },
-                            "9": {
-                                "median_price": 80.41,
-                                "sample_size": 1
-                            },
-                            "8": {
-                                "median_price": 67,
-                                "sample_size": 1
-                            }
-                        },
-                        "psa": {
-                            "10": {
-                                "median_price": 594.89,
-                                "sample_size": 5
-                            },
-                            "9": {
-                                "median_price": 107.21,
-                                "sample_size": 5
-                            },
-                            "8": {
-                                "median_price": 80.41,
-                                "sample_size": 5
-                            },
-                            "7": {
-                                "median_price": 42.44,
-                                "sample_size": 5
-                            }
-                        },
-                        "tag": {
-                            "10": {
-                                "median_price": 514.11,
-                                "sample_size": 2
-                            },
-                            "9": {
-                                "median_price": 48.46,
-                                "sample_size": 2
-                            },
-                            "8": {
-                                "median_price": 71.48,
-                                "sample_size": 1
-                            }
-                        }
-                    }
-                },
-                "tcg_player": {
-                    "currency": "EUR",
-                    "market_price": 67.21,
-                    "mid_price": 45.94
-                }
-            },
-            "episode": {
-                "id": 14,
-                "name": "Paldean Fates",
-                "slug": "paldean-fates",
-                "released_at": "2024-01-26",
-                "logo": "https://images.tcggo.com/tcggo/storage/1981/paldean-fates-logo.png",
-                "code": "PAF",
-                "cards_total": 245,
-                "cards_printed_total": 91,
-                "prices": {
-                    "cardmarket": {
-                        "total": 1715.81,
-                        "currency": "EUR"
-                    },
-                    "tcgplayer": {
-                        "total": 2268.22,
-                        "currency": "EUR"
-                    }
-                },
-                "game": {
-                    "name": "Pokémon",
-                    "slug": "pokemon"
-                },
-                "series": {
-                    "id": 1,
-                    "name": "Scarlet & Violet",
-                    "slug": "scarlet-violet"
-                }
-            },
-            "artist": {
-                "id": 409,
-                "name": "Yuu Nishida",
-                "slug": "yuu-nishida"
-            },
-            "image": "https://images.tcggo.com/tcggo/storage/2115/pikachu-paf-131-paldean-fates-pokemon.png",
-            "tcggo_url": "https://www.tcggo.com/pokemon/paldean-fates/pikachu-131",
-            "links": {
-                "cardmarket": "https://www.tcggo.com/external/cm/2105",
-                "tcgplayer": "https://www.tcggo.com/external/tcgplayer/2105"
-            }
-        },
-        {
-            "id": 2494,
-            "name": "Pikachu",
-            "name_numbered": "Pikachu 25",
-            "slug": "pikachu",
-            "card_code_number": "MEW 25",
-            "type": "singles",
-            "card_number": 25,
-            "hp": 60,
-            "rarity": "Common",
-            "supertype": "Pokémon",
-            "tcgid": "sv3pt5-25",
-            "cardmarket_id": 733620,
-            "tcgplayer_id": 517033,
-            "prices": {
-                "cardmarket": {
-                    "currency": "EUR",
-                    "lowest_near_mint": 0.02,
-                    "lowest_near_mint_EU_only": 0.02,
-                    "lowest_near_mint_DE": 0.02,
-                    "lowest_near_mint_DE_EU_only": 0.02,
-                    "lowest_near_mint_FR": 0.02,
-                    "lowest_near_mint_FR_EU_only": 0.02,
-                    "lowest_near_mint_ES": 0.02,
-                    "lowest_near_mint_ES_EU_only": 0.02,
-                    "lowest_near_mint_IT": 0.02,
-                    "lowest_near_mint_IT_EU_only": 0.02,
-                    "30d_average": 0.53,
-                    "7d_average": 1.25,
-                    "available_items": 7988,
-                    "graded": []
-                },
-                "ebay": {
-                    "currency": "USD",
-                    "graded": {
-                        "bgs": {
-                            "10": {
-                                "median_price": 355.55,
-                                "sample_size": 1
-                            }
-                        },
-                        "cgc": {
-                            "10": {
-                                "median_price": 32.98,
-                                "sample_size": 5
-                            },
-                            "9": {
-                                "median_price": 96.44,
-                                "sample_size": 2
-                            }
-                        },
-                        "psa": {
-                            "10": {
-                                "median_price": 268.13,
-                                "sample_size": 5
-                            },
-                            "9": {
-                                "median_price": 44.85,
-                                "sample_size": 5
-                            },
-                            "8": {
-                                "median_price": 93,
-                                "sample_size": 5
-                            },
-                            "7": {
-                                "median_price": 382.25,
-                                "sample_size": 1
-                            }
-                        }
-                    }
-                },
-                "tcg_player": {
-                    "currency": "EUR",
-                    "market_price": 1.1,
-                    "mid_price": 0.18
-                }
-            },
-            "episode": {
-                "id": 16,
-                "name": "151",
-                "slug": "151",
-                "released_at": "2023-09-22",
-                "logo": "https://images.tcggo.com/tcggo/storage/2496/151-logo.png",
-                "code": "MEW",
-                "cards_total": 207,
-                "cards_printed_total": 165,
-                "prices": {
-                    "cardmarket": {
-                        "total": 1775.33,
-                        "currency": "EUR"
-                    },
-                    "tcgplayer": {
-                        "total": 1746.5,
-                        "currency": "EUR"
-                    }
-                },
-                "game": {
-                    "name": "Pokémon",
-                    "slug": "pokemon"
-                },
-                "series": {
-                    "id": 1,
-                    "name": "Scarlet & Violet",
-                    "slug": "scarlet-violet"
-                }
-            },
-            "artist": {
-                "id": 362,
-                "name": "Naoyo Kimura",
-                "slug": "naoyo-kimura"
-            },
-            "image": "https://images.tcggo.com/tcggo/storage/2508/pikachu-mew-25-151-pokemon.png",
-            "tcggo_url": "https://www.tcggo.com/pokemon/151/pikachu-25",
-            "links": {
-                "cardmarket": "https://www.tcggo.com/external/cm/2494",
-                "tcgplayer": "https://www.tcggo.com/external/tcgplayer/2494"
-            }
-        },
-        {
-            "id": 2635,
-            "name": "Pikachu",
-            "name_numbered": "Pikachu 173",
-            "slug": "pikachu",
-            "card_code_number": "MEW 173",
-            "type": "singles",
-            "card_number": 173,
-            "hp": 60,
-            "rarity": "Illustration Rare",
-            "supertype": "Pokémon",
-            "tcgid": "sv3pt5-173",
-            "cardmarket_id": 733768,
-            "tcgplayer_id": 513721,
-            "prices": {
-                "cardmarket": {
-                    "currency": "EUR",
-                    "lowest_near_mint": 83.99,
-                    "lowest_near_mint_EU_only": 83.99,
-                    "lowest_near_mint_DE": 70,
-                    "lowest_near_mint_DE_EU_only": 70,
-                    "lowest_near_mint_FR": 75,
-                    "lowest_near_mint_FR_EU_only": 75,
-                    "lowest_near_mint_ES": 110,
-                    "lowest_near_mint_ES_EU_only": 110,
-                    "lowest_near_mint_IT": 59,
-                    "lowest_near_mint_IT_EU_only": 59,
-                    "30d_average": 81.6,
-                    "7d_average": 79.41,
-                    "available_items": 412,
-                    "graded": {
-                        "psa": {
-                            "psa10": 559,
-                            "psa9": 149
-                        },
-                        "bgs": {
-                            "bgs9": 137
-                        },
-                        "cgc": {
-                            "cgc10": 250
-                        }
-                    }
-                },
-                "ebay": {
-                    "currency": "USD",
-                    "graded": {
-                        "ace": {
-                            "10": {
-                                "median_price": 62.58,
-                                "sample_size": 5
-                            },
-                            "9": {
-                                "median_price": 78.08,
-                                "sample_size": 5
-                            },
-                            "8": {
-                                "median_price": 36.74,
-                                "sample_size": 5
-                            }
-                        },
-                        "ars": {
-                            "10": {
-                                "median_price": 107.99,
-                                "sample_size": 1
-                            }
-                        },
-                        "bgs": {
-                            "10": {
-                                "median_price": 1555.55,
-                                "sample_size": 5
-                            },
-                            "9": {
-                                "median_price": 84.75,
-                                "sample_size": 4
-                            }
-                        },
-                        "cgc": {
-                            "10": {
-                                "median_price": 71.78,
-                                "sample_size": 5
-                            },
-                            "9": {
-                                "median_price": 49.88,
-                                "sample_size": 5
-                            },
-                            "8": {
-                                "median_price": 30.66,
-                                "sample_size": 2
-                            }
-                        },
-                        "psa": {
-                            "10": {
-                                "median_price": 156.94,
-                                "sample_size": 5
-                            },
-                            "9": {
-                                "median_price": 78.88,
-                                "sample_size": 5
-                            },
-                            "8": {
-                                "median_price": 60.56,
-                                "sample_size": 5
-                            },
-                            "7": {
-                                "median_price": 37.9,
-                                "sample_size": 4
-                            }
-                        },
-                        "sgc": {
-                            "10": {
-                                "median_price": 37.19,
-                                "sample_size": 1
-                            }
-                        },
-                        "tag": {
-                            "10": {
-                                "median_price": 170.42,
-                                "sample_size": 5
-                            },
-                            "9": {
-                                "median_price": 107.66,
-                                "sample_size": 5
-                            },
-                            "8": {
-                                "median_price": 89.99,
-                                "sample_size": 1
-                            }
-                        }
-                    }
-                },
-                "tcg_player": {
-                    "currency": "EUR",
-                    "market_price": 72.37,
-                    "mid_price": 76.92
-                }
-            },
-            "episode": {
-                "id": 16,
-                "name": "151",
-                "slug": "151",
-                "released_at": "2023-09-22",
-                "logo": "https://images.tcggo.com/tcggo/storage/2496/151-logo.png",
-                "code": "MEW",
-                "cards_total": 207,
-                "cards_printed_total": 165,
-                "prices": {
-                    "cardmarket": {
-                        "total": 1775.33,
-                        "currency": "EUR"
-                    },
-                    "tcgplayer": {
-                        "total": 1746.5,
-                        "currency": "EUR"
-                    }
-                },
-                "game": {
-                    "name": "Pokémon",
-                    "slug": "pokemon"
-                },
-                "series": {
-                    "id": 1,
-                    "name": "Scarlet & Violet",
-                    "slug": "scarlet-violet"
-                }
-            },
-            "artist": {
-                "id": 540,
-                "name": "Hiroyuki Yamamoto",
-                "slug": "hiroyuki-yamamoto"
-            },
-            "image": "https://images.tcggo.com/tcggo/storage/2649/pikachu-mew-173-151-pokemon.png",
-            "tcggo_url": "https://www.tcggo.com/pokemon/151/pikachu-173",
-            "links": {
-                "cardmarket": "https://www.tcggo.com/external/cm/2635",
-                "tcgplayer": "https://www.tcggo.com/external/tcgplayer/2635"
-            }
-        }
-    ],
-    "paging": {
-        "current": 1,
-        "total": 12,
-        "per_page": 20
-    },
-    "results": 222
-}
+[
+  {
+    "sku": "NK-IV6297-300",
+    "name": "Nike Vomero Premium",
+    "kind": "Giày chạy bộ đường trường nam",
+    "slug": "nike-vomero-premium-giay-chay-bo-duong-truong-nam",
+    "description": "Giày chạy bộ đường trường nam. Đệm êm tối đa với hai buồng khí Air Zoom cho cảm giác đàn hồi mượt mà. Lớp foam ZoomX dày trả lực tốt, giúp bạn kéo dài quãng đường mà chân vẫn nhẹ. Thân giày lưới thoáng khí, phối màu lấy cảm hứng từ giải marathon Chicago.",
+    "imageUrl": "https://static.nike.com/a/images/t_default/u_9ddf04c7-2a9a-4d76-add1-d15af8f0263d,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/f95c93c6-2f2d-4571-8574-e7546cc1a9f1/vomero-premium-mens-road-running-shoes-QmkmgBY7.png",
+    "price": 6240000,
+    "category": "Giày",
+    "gender": "men",
+    "sport": "Chạy bộ",
+    "stock": 12
+  },
+  {
+    "sku": "NK-IQ4927-001",
+    "name": "Air Jordan 1 Brooklyn Low",
+    "kind": "Giày thời trang nữ",
+    "slug": "air-jordan-1-brooklyn-low-giay-thoi-trang-nu",
+    "description": "Giày thời trang nữ. Da mềm kết hợp đế platform dày tôn dáng. Đế ngoài vấu lớn bám chắc, đệm Nike Air trong gót hấp thụ lực cho từng bước đi. Lót giày in logo Jumpman, giữ trọn chất bóng rổ của dòng AJ1.",
+    "imageUrl": "https://static.nike.com/a/images/t_default/u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/e05c6836-1fab-4b4d-8412-4c38d6463bb9/air-jordan-1-brooklyn-low-womens-shoes-aWWErs6z.png",
+    "price": 4290000,
+    "category": "Giày",
+    "gender": "women",
+    "sport": "Thời trang",
+    "stock": 45
+  },
+  {
+    "sku": "NK-II7346-401",
+    "name": "Nike Diamond Gamer MCS",
+    "kind": "Giày bóng chày",
+    "slug": "nike-diamond-gamer-mcs-giay-bong-chay",
+    "description": "Giày bóng chày. Chất liệu tổng hợp và đế giữa foam mang lại độ bền, sự thoải mái và nâng đỡ tốt. Phần ôm giữa bàn chân giữ vững khi vào nhịp, mảng đế đàn hồi hỗ trợ những pha bứt tốc trên sân.",
+    "imageUrl": "https://static.nike.com/a/images/t_default/u_9ddf04c7-2a9a-4d76-add1-d15af8f0263d,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/f42f3159-d827-41fa-9f2f-21952216c3bb/diamond-gamer-mcs-baseball-shoes-aSIXJYWr.png",
+    "price": 2340000,
+    "category": "Giày",
+    "gender": "unisex",
+    "sport": "Bóng mềm",
+    "stock": 120
+  },
+  {
+    "sku": "NK-IO1528-001",
+    "name": "Nike Jr. Mercurial Superfly 11 Academy",
+    "kind": "Giày đá bóng cổ cao sân cỏ nhân tạo cho trẻ em",
+    "slug": "nike-jr-mercurial-superfly-11-academy-giay-da-bong-co-cao-san-co-nhan-tao-cho-tre-em",
+    "description": "Giày đá bóng cổ cao sân cỏ nhân tạo cho trẻ em. Thân giày NikeSkin không dây mềm mại, nhẹ hơn phiên bản trước, giúp bé tăng tốc nhanh trong không gian trống. Cổ giày dệt Dynamic Fit ôm chân, cho cảm giác chạm bóng gần như chân trần khi rê dắt.",
+    "imageUrl": "https://static.nike.com/a/images/t_default/u_9ddf04c7-2a9a-4d76-add1-d15af8f0263d,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/2f397df8-d62a-413b-89ca-313f5b673018/jr-mercurial-superfly-11-academy-big-kids-artificial-grass-high-top-soccer-cleats-KXBPiRUV.png",
+    "price": 1950000,
+    "category": "Giày",
+    "gender": "kids",
+    "sport": "Bóng đá",
+    "stock": 120
+  },
+  {
+    "sku": "NK-IX1201-102",
+    "name": "Tennis Classic CS",
+    "kind": "Giày thời trang nam",
+    "slug": "tennis-classic-cs-giay-thoi-trang-nam",
+    "description": "Giày thời trang nam. Thiết kế tối giản sinh ra từ sân tennis, làm lại cho nhịp sống thường ngày. Da mềm mịn đẹp dần theo thời gian, lót giày cải tiến êm cả ngày dài, đế cao su khâu cupsole nguyên khối rất bền.",
+    "imageUrl": "https://static.nike.com/a/images/t_default/u_9ddf04c7-2a9a-4d76-add1-d15af8f0263d,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/892ec254-78f3-4bb7-8ed1-f23db0afba83/tennis-classic-cs-mens-shoes-ziwKIeku.png",
+    "price": 2470000,
+    "category": "Giày",
+    "gender": "men",
+    "sport": "Tennis",
+    "stock": 120
+  },
+  {
+    "sku": "NK-IV5651-500",
+    "name": "Nike S.T. Dynamite",
+    "kind": "Giày bóng rổ trẻ em",
+    "slug": "nike-s-t-dynamite-giay-bong-ro-tre-em",
+    "description": "Giày bóng rổ trẻ em. Đế gai đa hướng bám tốt trên cả sàn gỗ lẫn sân xi măng, thân lưới thoáng khí giữ đôi chân nhẹ nhàng. Quai kéo ở gót giúp bé xỏ giày dễ dàng, sẵn sàng cho mọi lối chơi.",
+    "imageUrl": "https://static.nike.com/a/images/t_default/u_9ddf04c7-2a9a-4d76-add1-d15af8f0263d,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/ee388850-3704-4ced-8b37-9bd8bd63d232/st-dynamite-big-kids-basketball-shoes-mxhIu7FW.png",
+    "price": 1560000,
+    "category": "Giày",
+    "gender": "kids",
+    "sport": "Bóng rổ",
+    "stock": 120
+  },
+  {
+    "sku": "NK-IQ1045-103",
+    "name": "Nike Diamond Clutch",
+    "kind": "Giày đinh bóng chày",
+    "slug": "nike-diamond-clutch-giay-dinh-bong-chay",
+    "description": "Giày đinh bóng chày. Đi vừa là chơi được ngay: thân giày thoáng khí với hệ dây cải tiến ôm chặt giữa bàn chân, cổ giày thấp dễ xỏ. Đinh cao su bám chắc mặt sân, đủ bền cho cả mùa giải.",
+    "imageUrl": "https://static.nike.com/a/images/t_default/u_9ddf04c7-2a9a-4d76-add1-d15af8f0263d,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/648c7aab-104c-47f0-947f-1eeaeb003f82/diamond-clutch-baseball-cleats-olFA2oek.png",
+    "price": 1430000,
+    "category": "Giày",
+    "gender": "unisex",
+    "sport": "Bóng chày",
+    "stock": 300
+  },
+  {
+    "sku": "NK-IM8814-200",
+    "name": "Nike Air Max Phenomena",
+    "kind": "Giày thời trang nữ",
+    "slug": "nike-air-max-phenomena-giay-thoi-trang-nu",
+    "description": "Giày thời trang nữ. Air Max SNDR được kể lại theo phom loafer thanh lịch. Da thật kết hợp da tổng hợp cho form dáng chắc chắn, đệm Max Air êm ái đủ để mang cả ngày và đủ đẹp để mang cả tối.",
+    "imageUrl": "https://static.nike.com/a/images/t_default/u_9ddf04c7-2a9a-4d76-add1-d15af8f0263d,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/dddb10c3-0d83-4693-8efb-27d1d11b2c1d/air-max-phenomena-womens-shoes-lwJyYh3s.png",
+    "price": 3900000,
+    "category": "Giày",
+    "gender": "women",
+    "sport": "Thời trang",
+    "stock": 45
+  },
+  {
+    "sku": "NK-IV6298-300",
+    "name": "Nike Vomero Plus",
+    "kind": "Giày chạy bộ đường trường nam",
+    "slug": "nike-vomero-plus-giay-chay-bo-duong-truong-nam",
+    "description": "Giày chạy bộ đường trường nam. Đệm dày nguyên bàn chân bằng foam ZoomX — chất đệm trả lực tốt nhất của Nike — cho cảm giác chạy siêu êm mỗi ngày. Thân lưới kỹ thuật dệt sợi mềm, thoáng và ôm chân.",
+    "imageUrl": "https://static.nike.com/a/images/t_default/u_9ddf04c7-2a9a-4d76-add1-d15af8f0263d,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/64ed43c7-36e5-4def-9b62-dce4add2480e/vomero-plus-mens-road-running-shoes-Pph5w9Gb.png",
+    "price": 4940000,
+    "category": "Giày",
+    "gender": "men",
+    "sport": "Chạy bộ",
+    "stock": 12
+  },
+  {
+    "sku": "NK-IX6036-101",
+    "name": "Nike Diamond Standout",
+    "kind": "Giày đinh bóng mềm",
+    "slug": "nike-diamond-standout-giay-dinh-bong-mem",
+    "description": "Giày đinh bóng mềm. Mảng đế tách đôi hoàn toàn mới vừa linh hoạt vừa nhẹ, hỗ trợ những chuyển động nhanh. Mảng đế nhỏ ở giữa bàn chân tạo độ vững khi đổi hướng liên tục trên sân đất.",
+    "imageUrl": "https://static.nike.com/a/images/t_default/u_9ddf04c7-2a9a-4d76-add1-d15af8f0263d,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/524009a9-c7ef-4c5b-99eb-bc4059bf9ab6/diamond-standout-softball-cleats-g23I1149.png",
+    "price": 3380000,
+    "category": "Giày",
+    "gender": "women",
+    "sport": "Bóng mềm",
+    "stock": 45
+  },
+  {
+    "sku": "NK-IU7631-010",
+    "name": "Nike SB",
+    "kind": "Áo hoodie khóa kéo nỉ trượt ván",
+    "slug": "nike-sb-ao-hoodie-khoa-keo-ni-truot-van",
+    "description": "Áo hoodie khóa kéo nỉ trượt ván. Vải nỉ dày dặn, mềm bên trong, đủ ấm cho những buổi tập tối muộn. Khóa kéo full-zip dễ mặc, túi trước rộng, form thoải mái đúng chất skate.",
+    "imageUrl": "https://static.nike.com/a/images/t_default/u_9ddf04c7-2a9a-4d76-add1-d15af8f0263d,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/5c6d00be-5f6c-4846-a354-27dcfb6ba1ec/sb-fleece-full-zip-skate-hoodie-Ue2rTIoj.png",
+    "price": 2600000,
+    "category": "Quần áo",
+    "gender": "unisex",
+    "sport": "Trượt ván",
+    "stock": 45
+  },
+  {
+    "sku": "NK-IU3220-320",
+    "name": "Nike Primary Nanoknit",
+    "kind": "Áo hoodie chui đầu Dri-FIT chống nắng cho bé trai",
+    "slug": "nike-primary-nanoknit-ao-hoodie-chui-dau-dri-fit-chong-nang-cho-be-trai",
+    "description": "Áo hoodie chui đầu Dri-FIT chống nắng cho bé trai. Công nghệ Dri-FIT thấm hút mồ hôi giữ bé khô ráo, chất liệu chống tia UV bảo vệ da khi vận động ngoài trời. Vải dệt Nanoknit co giãn nhẹ, thoải mái từ khởi động tới hết buổi tập.",
+    "imageUrl": "https://static.nike.com/a/images/t_default/u_9ddf04c7-2a9a-4d76-add1-d15af8f0263d,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/c6ca0b9d-8d34-46c8-91fb-a211a677a1d3/primary-nanoknit-big-kids-boys-dri-fit-uv-protection-pullover-hoodie-2eF4cVJc.png",
+    "price": 1768000,
+    "category": "Quần áo",
+    "gender": "kids",
+    "sport": "Tập luyện",
+    "stock": 120
+  },
+  {
+    "sku": "NK-IO0711-104",
+    "name": "Nike Repel",
+    "kind": "Áo khoác golf chống nước nam",
+    "slug": "nike-repel-ao-khoac-golf-chong-nuoc-nam",
+    "description": "Áo khoác golf chống nước nam. Lớp phủ Repel cản nước nhẹ giúp bạn tiếp tục vòng đấu khi trời lất phất mưa. Form áo gọn không cản vung gậy, khóa kéo cao cổ chắn gió trên đường ra green.",
+    "imageUrl": "https://static.nike.com/a/images/t_default/u_9ddf04c7-2a9a-4d76-add1-d15af8f0263d,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/df459394-93ca-4533-880d-3127ada74dd8/mens-repel-golf-jacket-LwvacRly.png",
+    "price": 4680000,
+    "category": "Quần áo",
+    "gender": "men",
+    "sport": "Golf",
+    "stock": 12
+  },
+  {
+    "sku": "NK-IF5959-654",
+    "name": "Nike Golf Club",
+    "kind": "Áo polo golf tay ngắn Dri-FIT chống nắng nữ",
+    "slug": "nike-golf-club-ao-polo-golf-tay-ngan-dri-fit-chong-nang-nu",
+    "description": "Áo polo golf tay ngắn Dri-FIT chống nắng nữ. Dri-FIT thấm hút nhanh, giữ bạn mát và khô suốt 18 hố. Chất liệu chống tia UV, cổ áo dựng form, đường cắt ôm nhẹ tôn dáng mà vẫn thoải mái khi xoay người.",
+    "imageUrl": "https://static.nike.com/a/images/t_default/u_9ddf04c7-2a9a-4d76-add1-d15af8f0263d,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/caf85109-cb5b-42bd-896e-0558513990dc/golf-club-womens-dri-fit-uv-short-sleeve-golf-polo-FIHzU1sZ.png",
+    "price": 2340000,
+    "category": "Quần áo",
+    "gender": "women",
+    "sport": "Golf",
+    "stock": 120
+  },
+  {
+    "sku": "NK-IU3118-451",
+    "name": "Nike Primary Nano",
+    "kind": "Quần jogger Dri-FIT chống nắng cho bé trai",
+    "slug": "nike-primary-nano-quan-jogger-dri-fit-chong-nang-cho-be-trai",
+    "description": "Quần jogger Dri-FIT chống nắng cho bé trai. Vải Nano mềm mại, nhẹ và thoáng, có khả năng chống tia UV. Lưng thun rút dây, ống bo gấu gọn gàng, phù hợp cả khi tập luyện lẫn mặc hằng ngày.",
+    "imageUrl": "https://static.nike.com/a/images/t_default/u_9ddf04c7-2a9a-4d76-add1-d15af8f0263d,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/9b562d0f-ba77-479b-ba7b-ebd9647e0151/primary-nano-big-kids-boys-dri-fit-uv-nano-joggers-PmlRaGCM.png",
+    "price": 1768000,
+    "category": "Quần áo",
+    "gender": "kids",
+    "sport": "Tập luyện",
+    "stock": 120
+  },
+  {
+    "sku": "NK-HF0784-010",
+    "name": "Nike Academy",
+    "kind": "Khăn ống giữ ấm cổ Dri-FIT bóng đá",
+    "slug": "nike-academy-khan-ong-giu-am-co-dri-fit-bong-da",
+    "description": "Khăn ống giữ ấm cổ Dri-FIT bóng đá. Khăn ống co giãn ôm cổ, chắn gió lạnh trong buổi tập mùa đông. Vải Dri-FIT thấm hút mồ hôi, kéo lên che mũi hoặc hạ xuống cổ tùy nhiệt độ sân.",
+    "imageUrl": "https://static.nike.com/a/images/t_default/u_9ddf04c7-2a9a-4d76-add1-d15af8f0263d,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/7c6cdbd9-d48c-4b2e-be8c-f085edbbb144/academy-dri-fit-soccer-snood-DB8Qb3.png",
+    "price": 702000,
+    "category": "Quần áo",
+    "gender": "unisex",
+    "sport": "Bóng đá",
+    "stock": 300
+  },
+  {
+    "sku": "NK-SLE5-100",
+    "name": "Nike Vapor Elite",
+    "kind": "Áo lót giáp vai lacrosse nam",
+    "slug": "nike-vapor-elite-ao-lot-giap-vai-lacrosse-nam",
+    "description": "Áo lót giáp vai lacrosse nam. Lớp lót mỏng mặc bên trong giáp vai, giảm cọ xát và thấm hút mồ hôi. Form ôm sát cơ thể, không xô lệch khi va chạm hay tăng tốc.",
+    "imageUrl": "https://static.nike.com/a/images/t_default/u_9ddf04c7-2a9a-4d76-add1-d15af8f0263d,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/458a2a0f-1e7c-4137-aa8c-a64618eceff6/vapor-elite-lacrosse-shoulder-pad-liner-RSHNMx.png",
+    "price": 3900000,
+    "category": "Quần áo",
+    "gender": "men",
+    "sport": "Lacrosse",
+    "stock": 45
+  },
+  {
+    "sku": "NK-IX3515-645",
+    "name": "Nike Radical AirFlow After Dark Tour",
+    "kind": "Áo chạy bộ tay dài croptop Aero-FIT nữ",
+    "slug": "nike-radical-airflow-after-dark-tour-ao-chay-bo-tay-dai-croptop-aero-fit-nu",
+    "description": "Áo chạy bộ tay dài croptop Aero-FIT nữ. Công nghệ Aero-FIT đẩy nhiệt và mồ hôi ra ngoài, giữ bạn mát khi chạy đêm. Dáng croptop tay dài, chi tiết phản quang tăng độ nhận diện dưới ánh đèn đường.",
+    "imageUrl": "https://static.nike.com/a/images/t_default/u_9ddf04c7-2a9a-4d76-add1-d15af8f0263d,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/59e4399c-7e5a-425d-93b4-68b53921f3b9/radical-airflow-after-dark-tour-womens-aero-fit-long-sleeve-cropped-running-top-a070WfKn.png",
+    "price": 3900000,
+    "category": "Quần áo",
+    "gender": "women",
+    "sport": "Chạy bộ",
+    "stock": 45
+  },
+  {
+    "sku": "NK-IF2821-084",
+    "name": "Nike Sportswear Windrunner",
+    "kind": "Áo khoác có mũ chống nước cho trẻ em",
+    "slug": "nike-sportswear-windrunner-ao-khoac-co-mu-chong-nuoc-cho-tre-em",
+    "description": "Áo khoác có mũ chống nước cho trẻ em. Phom Windrunner kinh điển với đường chevron ở ngực, nay dùng vải Repel cản nước nhẹ. Mũ trùm điều chỉnh được, gấu áo bo thun giữ ấm khi trời trở gió.",
+    "imageUrl": "https://static.nike.com/a/images/t_default/u_9ddf04c7-2a9a-4d76-add1-d15af8f0263d,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/565f2788-70fe-4c48-b0ed-918f2ab730af/sportswear-windrunner-big-kids-hooded-repel-jacket-fUNjyLas.png",
+    "price": 1768000,
+    "category": "Quần áo",
+    "gender": "kids",
+    "sport": "Thời trang",
+    "stock": 120
+  },
+  {
+    "sku": "NK-IQ1332-491",
+    "name": "Nike Pro",
+    "kind": "Mũ golf Storm-FIT có form",
+    "slug": "nike-pro-mu-golf-storm-fit-co-form",
+    "description": "Mũ golf Storm-FIT có form. Vải Storm-FIT cản nước và gió, giữ đầu khô ráo khi thời tiết xấu. Form mũ dựng cứng, khóa sau điều chỉnh vừa mọi vòng đầu.",
+    "imageUrl": "https://static.nike.com/a/images/t_default/u_9ddf04c7-2a9a-4d76-add1-d15af8f0263d,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/21180484-336c-480d-bc8e-da7e3d9a0a97/pro-storm-fit-structured-golf-cap-VGaMjRZt.png",
+    "price": 1092000,
+    "category": "Phụ kiện",
+    "gender": "unisex",
+    "sport": "Tập luyện",
+    "stock": 300
+  },
+  {
+    "sku": "NK-II1736-657",
+    "name": "Nike Rise",
+    "kind": "Mũ golf Dri-FIT ADV SwooshFlex có form",
+    "slug": "nike-rise-mu-golf-dri-fit-adv-swooshflex-co-form",
+    "description": "Mũ golf Dri-FIT ADV SwooshFlex có form. Công nghệ Dri-FIT ADV thấm hút và thoát ẩm nhanh trong ngày nắng gắt. Vành SwooshFlex ôm nhẹ và bền form, che nắng tốt suốt vòng đấu.",
+    "imageUrl": "https://static.nike.com/a/images/t_default/u_9ddf04c7-2a9a-4d76-add1-d15af8f0263d,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/6fbb7728-a400-48ce-9227-067762bd6d94/rise-dri-fit-adv-swooshflex-structured-golf-cap-ZMA4ZrIL.png",
+    "price": 884000,
+    "category": "Phụ kiện",
+    "gender": "unisex",
+    "sport": "Golf",
+    "stock": 300
+  },
+  {
+    "sku": "NK-CLEVGHWNC01KKE-IOW",
+    "name": "Nike Club Iowa",
+    "kind": "Mũ lưỡi trai điều chỉnh được nam",
+    "slug": "nike-club-iowa-mu-luoi-trai-dieu-chinh-duoc-nam",
+    "description": "Mũ lưỡi trai điều chỉnh được nam. Mũ cotton mềm phom cong cổ điển, thêu logo ở mặt trước. Khóa sau điều chỉnh dễ dàng, phối được với mọi outfit thường ngày.",
+    "imageUrl": "https://static.nike.com/a/images/t_default/u_9ddf04c7-2a9a-4d76-add1-d15af8f0263d,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/be307e2a-a597-4cc8-b286-d8ed96a3631a/iowa-club-mens-nike-college-adjustable-hat-wQVHDm.png",
+    "price": 728000,
+    "category": "Phụ kiện",
+    "gender": "men",
+    "sport": "Thời trang",
+    "stock": 300
+  },
+  {
+    "sku": "NK-IQ0648-100",
+    "name": "Nike Skills",
+    "kind": "Bóng đá size mini",
+    "slug": "nike-skills-bong-da-size-mini",
+    "description": "Bóng đá size mini. Bóng size nhỏ dùng để luyện kỹ thuật và cảm giác bóng. Vỏ máy khâu bền, giữ hơi tốt, phù hợp tập tâng bóng và rê dắt trong không gian hẹp.",
+    "imageUrl": "https://static.nike.com/a/images/t_default/u_9ddf04c7-2a9a-4d76-add1-d15af8f0263d,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/8f278362-2b27-43b2-b603-0a68d56c681f/skills-soccer-ball-PcrykusZ.png",
+    "price": 572000,
+    "category": "Phụ kiện",
+    "gender": "unisex",
+    "sport": "Bóng đá",
+    "stock": 300
+  },
+  {
+    "sku": "NK-CLEVGHWNC01KKE-GEO",
+    "name": "Nike Club Georgia",
+    "kind": "Mũ lưỡi trai điều chỉnh được nam",
+    "slug": "nike-club-georgia-mu-luoi-trai-dieu-chinh-duoc-nam",
+    "description": "Mũ lưỡi trai điều chỉnh được nam. Mũ cotton mềm phom cong cổ điển, thêu logo ở mặt trước. Khóa sau điều chỉnh dễ dàng, phối được với mọi outfit thường ngày.",
+    "imageUrl": "https://static.nike.com/a/images/t_default/u_9ddf04c7-2a9a-4d76-add1-d15af8f0263d,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/e0303bd4-9f18-4a42-8a26-adfd6e47cc10/georgia-club-mens-nike-college-adjustable-hat-wQVHDm.png",
+    "price": 728000,
+    "category": "Phụ kiện",
+    "gender": "men",
+    "sport": "Thời trang",
+    "stock": 300
+  }
+]

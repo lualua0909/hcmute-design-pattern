@@ -2,7 +2,7 @@ import { createContext, useContext, useEffect, useMemo, useState } from 'react';
 import { toast } from 'sonner';
 
 const CartContext = createContext(null);
-const STORAGE_KEY = 'pokeshop.cart';
+const STORAGE_KEY = 'sporthub.cart';
 
 /** Cart lives in localStorage only - the server is the authority on stock. */
 export function CartProvider({ children }) {
