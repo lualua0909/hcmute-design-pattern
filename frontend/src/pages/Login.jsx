@@ -26,7 +26,7 @@ export function Login() {
       await fn();
       navigate(redirect, { replace: true });
     } catch (err) {
-      toast.error('Sign in failed', { description: err.message });
+      toast.error('Đăng nhập thất bại', { description: err.message });
     } finally {
       setBusy(false);
     }
@@ -36,9 +36,9 @@ export function Login() {
     <div className="container flex min-h-[70vh] items-center justify-center py-12">
       <Card className="w-full max-w-md">
         <CardHeader>
-          <CardTitle>Sign in to SportHub</CardTitle>
+          <CardTitle>Đăng nhập SportHub</CardTitle>
           <CardDescription>
-            {firebaseReady ? 'Authenticated with Firebase Auth.' : 'Firebase keys are still placeholders — using the gateway dev token.'}
+            {firebaseReady ? 'Xác thực bằng Firebase Auth.' : 'Khoá Firebase còn là placeholder — đang dùng dev token của gateway.'}
           </CardDescription>
         </CardHeader>
 
@@ -46,12 +46,12 @@ export function Login() {
           {firebaseReady && (
             <>
               <Button variant="outline" className="w-full" disabled={busy} onClick={() => run(signInWithGoogle)}>
-                Continue with Google
+                Đăng nhập với Google
               </Button>
 
               <div className="flex items-center gap-3">
                 <Separator className="flex-1" />
-                <span className="text-xs text-muted-foreground">or</span>
+                <span className="text-xs text-muted-foreground">hoặc</span>
                 <Separator className="flex-1" />
               </div>
 
@@ -64,17 +64,17 @@ export function Login() {
                   <Input id="email" type="email" value={email} onChange={(e) => setEmail(e.target.value)} required />
                 </div>
                 <div className="space-y-1.5">
-                  <Label htmlFor="password">Password</Label>
+                  <Label htmlFor="password">Mật khẩu</Label>
                   <Input id="password" type="password" value={password} onChange={(e) => setPassword(e.target.value)} required />
                 </div>
                 <Button type="submit" className="w-full" disabled={busy}>
-                  {busy && <Loader2 className="h-4 w-4 animate-spin" />}Sign in
+                  {busy && <Loader2 className="h-4 w-4 animate-spin" />}Đăng nhập
                 </Button>
                 <Button
                   type="button" variant="ghost" className="w-full" disabled={busy}
                   onClick={() => run(() => registerWithEmail(email, password))}
                 >
-                  Create an account
+                  Tạo tài khoản mới
                 </Button>
                 </form>
               </>
@@ -95,17 +95,17 @@ export function Login() {
                 onSubmit={(e) => { e.preventDefault(); run(() => signInAsDev(devUid, 'customer')); }}
               >
                 <div className="space-y-1.5">
-                  <Label htmlFor="uid">Demo user id</Label>
+                  <Label htmlFor="uid">Mã người dùng demo</Label>
                   <Input id="uid" value={devUid} onChange={(e) => setDevUid(e.target.value)} required />
                 </div>
                 <Button type="submit" className="w-full" disabled={busy}>
-                  {busy && <Loader2 className="h-4 w-4 animate-spin" />}Sign in as customer
+                  {busy && <Loader2 className="h-4 w-4 animate-spin" />}Đăng nhập as customer
                 </Button>
                 <Button
                   type="button" variant="outline" className="w-full" disabled={busy}
                   onClick={() => run(() => signInAsDev('demo-admin', 'admin'))}
                 >
-                  Sign in as admin (CMS)
+                  Đăng nhập với vai trò quản trị (CMS)
                 </Button>
               </form>
             </>
@@ -113,12 +113,12 @@ export function Login() {
 
           {!firebaseReady && !devBypass && (
             <p className="text-sm text-destructive">
-              Firebase is not configured and the dev bypass is disabled. Fill in the Firebase keys to sign in.
+              Firebase chưa được cấu hình và dev bypass đang tắt. Điền khoá Firebase để đăng nhập.
             </p>
           )}
 
           <p className="text-center text-xs text-muted-foreground">
-            <Link to="/" className="underline">Back to storefront</Link>
+            <Link to="/" className="underline">Về trang cửa hàng</Link>
           </p>
         </CardContent>
       </Card>

@@ -6,7 +6,7 @@ import { Card, CardContent } from '@/components/ui/card';
 import { Skeleton } from '@/components/ui/skeleton';
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '@/components/ui/table';
 import { api } from '@/lib/api';
-import { formatDate } from '@/lib/utils';
+import { formatDate, ROLE_LABELS } from '@/lib/utils';
 
 export function UsersAdmin() {
   const [users, setUsers] = useState(null);
@@ -18,7 +18,7 @@ export function UsersAdmin() {
     const role = user.role === 'admin' ? 'customer' : 'admin';
     try {
       await api.users.setRole(user.id, role);
-      toast.success(`${user.email} is now ${role}`);
+      toast.success(`${user.email} giờ là ${ROLE_LABELS[role]}`);
       load();
     } catch (err) {
       toast.error(err.message);
@@ -28,8 +28,8 @@ export function UsersAdmin() {
   return (
     <div className="space-y-6">
       <div>
-        <h1 className="text-2xl font-semibold tracking-tight">Users</h1>
-        <p className="text-sm text-muted-foreground">Identities synced from Firebase Auth on first sign-in.</p>
+        <h1 className="text-2xl font-semibold tracking-tight">Người dùng</h1>
+        <p className="text-sm text-muted-foreground">Tài khoản được đồng bộ từ Firebase Auth ở lần đăng nhập đầu tiên.</p>
       </div>
 
       <Card>
@@ -40,12 +40,12 @@ export function UsersAdmin() {
             <Table>
               <TableHeader>
                 <TableRow>
-                  <TableHead>User</TableHead>
+                  <TableHead>Người dùng</TableHead>
                   <TableHead>UID</TableHead>
-                  <TableHead>Role</TableHead>
-                  <TableHead>Push</TableHead>
-                  <TableHead>Joined</TableHead>
-                  <TableHead className="text-right">Actions</TableHead>
+                  <TableHead>Vai trò</TableHead>
+                  <TableHead>Thông báo đẩy</TableHead>
+                  <TableHead>Ngày tham gia</TableHead>
+                  <TableHead className="text-right">Thao tác</TableHead>
                 </TableRow>
               </TableHeader>
               <TableBody>
@@ -57,15 +57,15 @@ export function UsersAdmin() {
                     </TableCell>
                     <TableCell className="font-mono text-xs">{user.id}</TableCell>
                     <TableCell>
-                      <Badge variant={user.role === 'admin' ? 'default' : 'secondary'}>{user.role}</Badge>
+                      <Badge variant={user.role === 'admin' ? 'default' : 'secondary'}>{ROLE_LABELS[user.role]}</Badge>
                     </TableCell>
                     <TableCell className="text-xs text-muted-foreground">
-                      {user.hasFcmToken ? 'registered' : 'not registered'}
+                      {user.hasFcmToken ? 'Đã đăng ký' : 'Chưa đăng ký'}
                     </TableCell>
                     <TableCell className="text-xs text-muted-foreground">{formatDate(user.createdAt)}</TableCell>
                     <TableCell className="text-right">
                       <Button variant="ghost" size="sm" onClick={() => toggleRole(user)}>
-                        Make {user.role === 'admin' ? 'customer' : 'admin'}
+                        Chuyển thành {user.role === 'admin' ? 'khách hàng' : 'quản trị'}
                       </Button>
                     </TableCell>
                   </TableRow>

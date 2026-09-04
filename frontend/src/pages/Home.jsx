@@ -12,13 +12,16 @@ const PERKS = [
   { icon: RotateCcw, title: 'Đổi trả trong 30 ngày', text: 'Mang thử, chạy thử, không vừa ý thì gửi lại.' },
 ];
 
+// Tên môn thể thao có dấu, nên phải encode khi đưa vào query string.
+const sportLink = (sport) => `/products?sport=${encodeURIComponent(sport)}`;
+
 const SHOP_BY = [
   { label: 'Nam', to: '/products?gender=men' },
   { label: 'Nữ', to: '/products?gender=women' },
   { label: 'Trẻ em', to: '/products?gender=kids' },
-  { label: 'Chạy bộ', to: '/products?sport=Ch%E1%BA%A1y%20b%E1%BB%99' },
-  { label: 'Bóng rổ', to: '/products?sport=B%C3%B3ng%20r%E1%BB%95' },
-  { label: 'Bóng đá', to: '/products?sport=B%C3%B3ng%20%C4%91%C3%A1' },
+  { label: 'Chạy bộ', to: sportLink('Chạy bộ') },
+  { label: 'Bóng rổ', to: sportLink('Bóng rổ') },
+  { label: 'Bóng đá', to: sportLink('Bóng đá') },
 ];
 
 export function Home() {
@@ -51,7 +54,7 @@ export function Home() {
                 <Link to="/products">Mua sắm ngay <ArrowRight className="h-4 w-4" /></Link>
               </Button>
               <Button asChild size="lg" variant="outline" className="rounded-full">
-                <Link to="/products?sport=Ch%E1%BA%A1y%20b%E1%BB%99">Đồ chạy bộ</Link>
+                <Link to={sportLink('Chạy bộ')}>Đồ chạy bộ</Link>
               </Button>
             </div>
           </div>

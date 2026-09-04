@@ -44,10 +44,10 @@ export function Dashboard() {
   if (error) {
     return (
       <Card>
-        <CardHeader><CardTitle className="flex items-center gap-2"><AlertTriangle className="h-4 w-4" />Analytics unavailable</CardTitle></CardHeader>
+        <CardHeader><CardTitle className="flex items-center gap-2"><AlertTriangle className="h-4 w-4" />Không lấy được báo cáo</CardTitle></CardHeader>
         <CardContent className="space-y-2 text-sm text-muted-foreground">
           <p>{error}</p>
-          <p>Check that the Analytics Service (FastAPI) container is running on port 8000.</p>
+          <p>Kiểm tra container Analytics Service (FastAPI) có đang chạy ở cổng 8000 không.</p>
         </CardContent>
       </Card>
     );
@@ -60,22 +60,22 @@ export function Dashboard() {
   return (
     <div className="space-y-6">
       <div>
-        <h1 className="text-2xl font-semibold tracking-tight">Dashboard</h1>
-        <p className="text-sm text-muted-foreground">Last {overview.windowDays} days · served by the Analytics Service</p>
+        <h1 className="text-2xl font-semibold tracking-tight">Tổng quan</h1>
+        <p className="text-sm text-muted-foreground">{overview.windowDays} ngày gần nhất · dữ liệu từ Analytics Service</p>
       </div>
 
       <div className="grid gap-4 sm:grid-cols-2 xl:grid-cols-3">
-        <Stat icon={DollarSign} label="Revenue" value={formatCurrency(overview.revenue)} hint={`AOV ${formatCurrency(overview.averageOrderValue)}`} />
-        <Stat icon={Receipt} label="Orders" value={overview.orders} hint={`${overview.ordersInFlight} in flight`} />
-        <Stat icon={Boxes} label="Items sold" value={overview.itemsSold} />
-        <Stat icon={Users} label="Customers" value={overview.customers} />
-        <Stat icon={Package} label="Published products" value={overview.publishedProducts} hint={`${overview.unitsAvailable} units available`} />
-        <Stat icon={AlertTriangle} label="Low stock" value={overview.lowStockProducts} hint="5 units or fewer" />
+        <Stat icon={DollarSign} label="Doanh thu" value={formatCurrency(overview.revenue)} hint={`Giá trị đơn trung bình ${formatCurrency(overview.averageOrderValue)}`} />
+        <Stat icon={Receipt} label="Đơn hàng" value={overview.orders} hint={`${overview.ordersInFlight} đơn đang xử lý`} />
+        <Stat icon={Boxes} label="Sản phẩm đã bán" value={overview.itemsSold} />
+        <Stat icon={Users} label="Khách hàng" value={overview.customers} />
+        <Stat icon={Package} label="Sản phẩm đang bán" value={overview.publishedProducts} hint={`Còn ${overview.unitsAvailable} sản phẩm trong kho`} />
+        <Stat icon={AlertTriangle} label="Sắp hết hàng" value={overview.lowStockProducts} hint="Còn 5 sản phẩm trở xuống" />
       </div>
 
       <div className="grid gap-4 lg:grid-cols-[2fr_1fr]">
         <Card>
-          <CardHeader><CardTitle>Revenue (14 days)</CardTitle></CardHeader>
+          <CardHeader><CardTitle>Doanh thu (14 ngày)</CardTitle></CardHeader>
           <CardContent className="h-72">
             <ResponsiveContainer width="100%" height="100%">
               <AreaChart data={revenue} margin={{ left: -18, right: 8, top: 8 }}>
@@ -96,21 +96,21 @@ export function Dashboard() {
         </Card>
 
         <Card>
-          <CardHeader><CardTitle>Top sellers</CardTitle></CardHeader>
+          <CardHeader><CardTitle>Bán chạy nhất</CardTitle></CardHeader>
           <CardContent className="space-y-4">
-            {top.length === 0 && <p className="text-sm text-muted-foreground">No sales recorded yet.</p>}
+            {top.length === 0 && <p className="text-sm text-muted-foreground">Chưa ghi nhận đơn hàng nào.</p>}
             {top.map((item, index) => (
               <div key={item.productId} className="flex items-center gap-3">
                 <span className="w-5 text-sm text-muted-foreground">{index + 1}</span>
                 <div className="min-w-0 flex-1">
                   <p className="truncate text-sm font-medium">{item.name}</p>
-                  <p className="text-xs text-muted-foreground">{item.units} sold</p>
+                  <p className="text-xs text-muted-foreground">Đã bán {item.units}</p>
                 </div>
                 <span className="text-sm font-semibold">{formatCurrency(item.revenue)}</span>
               </div>
             ))}
             <Button variant="outline" size="sm" className="w-full" asChild>
-              <Link to="/cms/analytics">Full report</Link>
+              <Link to="/cms/analytics">Xem báo cáo đầy đủ</Link>
             </Button>
           </CardContent>
         </Card>

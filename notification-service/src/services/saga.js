@@ -11,6 +11,9 @@ import { notifyUser } from './fcm.js';
  */
 const REQUIRED = config.requiredSteps;
 
+// Nội dung push gửi cho khách hàng là tiếng Việt, tiền tệ VND.
+const VND = new Intl.NumberFormat('vi-VN', { style: 'currency', currency: 'VND', maximumFractionDigits: 0 });
+
 export async function startSaga(orderId, userId, meta = {}) {
   await query(
     `INSERT INTO ntf_saga_state (order_id, user_id, steps_json, status)
@@ -60,10 +63,10 @@ export async function recordStep(orderId, { userId, step, status, reason, meta }
     await notifyUser({
       userId: effectiveUser,
       orderId,
-      title: 'Order confirmed 🎉',
+      title: 'Đơn hàng đã được xác nhận 🎉',
       body: total
-        ? `Your SportHub order ${orderId} is confirmed. Total $${Number(total).toFixed(2)}.`
-        : `Your SportHub order ${orderId} is confirmed.`,
+        ? `Đơn ${orderId} tại SportHub đã được xác nhận. Tổng tiền ${VND.format(Number(total))}.`
+        : `Đơn ${orderId} tại SportHub đã được xác nhận.`,
       data: { type: 'order_confirmed', status: 'confirmed' },
     });
   } else if (nextStatus === 'failed' && failed[1].status === 'failed') {
@@ -73,10 +76,10 @@ export async function recordStep(orderId, { userId, step, status, reason, meta }
     await notifyUser({
       userId: effectiveUser,
       orderId,
-      title: 'Order could not be completed',
+      title: 'Không thể hoàn tất đơn hàng',
       body: info.reason
-        ? `Order ${orderId} was rolled back: ${info.reason}`
-        : `Order ${orderId} was rolled back and nothing was charged.`,
+        ? `Đơn ${orderId} đã được hoàn tác: ${info.reason}`
+        : `Đơn ${orderId} đã được hoàn tác, bạn không bị trừ tiền.`,
       data: { type: 'order_failed', status: 'failed' },
     });
   }

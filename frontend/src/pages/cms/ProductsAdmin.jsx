@@ -14,7 +14,7 @@ import {
   Dialog, DialogContent, DialogDescription, DialogFooter, DialogHeader, DialogTitle,
 } from '@/components/ui/dialog';
 import { api } from '@/lib/api';
-import { cn, formatCurrency, GENDER_LABELS, GENDER_STYLES } from '@/lib/utils';
+import { cn, formatCurrency, GENDER_LABELS, GENDER_STYLES, PRODUCT_STATUS_LABELS } from '@/lib/utils';
 
 const EMPTY = {
   sku: '', name: '', slug: '', description: '', imageUrl: '',
@@ -82,25 +82,25 @@ export function ProductsAdmin() {
     try {
       if (editing) {
         await api.products.update(editing.id, payload);
-        toast.success('Product updated', { description: 'Inventory Service notified over RabbitMQ.' });
+        toast.success('Đã cập nhật sản phẩm', { description: 'Inventory Service đã được báo qua RabbitMQ.' });
       } else {
         await api.products.create(payload);
-        toast.success('Product created', { description: 'Stock row is being opened by the Inventory Service.' });
+        toast.success('Đã tạo sản phẩm', { description: 'Inventory Service đang mở dòng tồn kho tương ứng.' });
       }
       setOpen(false);
       await load();
     } catch (err) {
-      toast.error('Save failed', { description: err.message });
+      toast.error('Lưu thất bại', { description: err.message });
     } finally {
       setSaving(false);
     }
   };
 
   const remove = async (product) => {
-    if (!window.confirm(`Archive "${product.name}"? Order history is kept.`)) return;
+    if (!window.confirm(`Lưu trữ "${product.name}"? Lịch sử đơn hàng vẫn được giữ lại.`)) return;
     try {
       await api.products.remove(product.id);
-      toast.success('Product archived');
+      toast.success('Đã lưu trữ sản phẩm');
       load();
     } catch (err) {
       toast.error(err.message);
@@ -116,15 +116,15 @@ export function ProductsAdmin() {
     <div className="space-y-6">
       <div className="flex flex-wrap items-center justify-between gap-4">
         <div>
-          <h1 className="text-2xl font-semibold tracking-tight">Products</h1>
-          <p className="text-sm text-muted-foreground">Create, edit and archive the catalogue.</p>
+          <h1 className="text-2xl font-semibold tracking-tight">Sản phẩm</h1>
+          <p className="text-sm text-muted-foreground">Tạo, sửa và lưu trữ danh mục sản phẩm.</p>
         </div>
-        <Button onClick={openCreate}><Plus className="h-4 w-4" />New product</Button>
+        <Button onClick={openCreate}><Plus className="h-4 w-4" />Thêm sản phẩm</Button>
       </div>
 
       <form className="relative max-w-sm" onSubmit={(e) => { e.preventDefault(); load(); }}>
         <Search className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-muted-foreground" />
-        <Input className="pl-9" placeholder="Search products…" value={search} onChange={(e) => setSearch(e.target.value)} />
+        <Input className="pl-9" placeholder="Tìm sản phẩm…" value={search} onChange={(e) => setSearch(e.target.value)} />
       </form>
 
       <Card>
@@ -135,12 +135,12 @@ export function ProductsAdmin() {
             <Table>
               <TableHeader>
                 <TableRow>
-                  <TableHead>Product</TableHead>
-                  <TableHead>Gender</TableHead>
-                  <TableHead>Price</TableHead>
-                  <TableHead>Stock</TableHead>
-                  <TableHead>Status</TableHead>
-                  <TableHead className="text-right">Actions</TableHead>
+                  <TableHead>Sản phẩm</TableHead>
+                  <TableHead>Đối tượng</TableHead>
+                  <TableHead>Giá</TableHead>
+                  <TableHead>Tồn kho</TableHead>
+                  <TableHead>Trạng thái</TableHead>
+                  <TableHead className="text-right">Thao tác</TableHead>
                 </TableRow>
               </TableHeader>
               <TableBody>
@@ -164,7 +164,7 @@ export function ProductsAdmin() {
                     </TableCell>
                     <TableCell>{formatCurrency(product.price)}</TableCell>
                     <TableCell className={cn(product.stock <= 5 && 'text-destructive')}>{product.stock}</TableCell>
-                    <TableCell className="capitalize">{product.status}</TableCell>
+                    <TableCell>{PRODUCT_STATUS_LABELS[product.status] || product.status}</TableCell>
                     <TableCell className="text-right">
                       <Button variant="ghost" size="icon" onClick={() => openEdit(product)}><Pencil className="h-4 w-4" /></Button>
                       <Button variant="ghost" size="icon" onClick={() => remove(product)}><Trash2 className="h-4 w-4" /></Button>
@@ -180,9 +180,9 @@ export function ProductsAdmin() {
       <Dialog open={open} onOpenChange={setOpen}>
         <DialogContent className="max-w-2xl">
           <DialogHeader>
-            <DialogTitle>{editing ? 'Edit product' : 'New product'}</DialogTitle>
+            <DialogTitle>{editing ? 'Sửa sản phẩm' : 'Thêm sản phẩm'}</DialogTitle>
             <DialogDescription>
-              Saving publishes a <code>product.*</code> event; the Inventory Service applies the stock change.
+              Khi lưu, hệ thống phát sự kiện <code>product.*</code>; Inventory Service sẽ cập nhật tồn kho.
             </DialogDescription>
           </DialogHeader>
 
@@ -192,7 +192,7 @@ export function ProductsAdmin() {
               <Input id="sku" required {...field('sku')} />
             </div>
             <div className="space-y-1.5">
-              <Label htmlFor="name">Name</Label>
+              <Label htmlFor="name">Tên sản phẩm</Label>
               <Input
                 id="name" required value={form.name}
                 onChange={(e) => setForm((prev) => ({
@@ -207,23 +207,23 @@ export function ProductsAdmin() {
               <Input id="slug" required {...field('slug')} />
             </div>
             <div className="space-y-1.5">
-              <Label htmlFor="price">Price (USD)</Label>
-              <Input id="price" type="number" step="0.01" min="0" required {...field('price')} />
+              <Label htmlFor="price">Giá (VND)</Label>
+              <Input id="price" type="number" step="1000" min="0" required {...field('price')} />
             </div>
 
             <div className="space-y-1.5">
-              <Label>Category</Label>
+              <Label>Danh mục</Label>
               <Select value={form.categoryId || 'none'} onValueChange={(v) => setForm((p) => ({ ...p, categoryId: v === 'none' ? '' : v }))}>
-                <SelectTrigger><SelectValue placeholder="Uncategorised" /></SelectTrigger>
+                <SelectTrigger><SelectValue placeholder="Chưa phân loại" /></SelectTrigger>
                 <SelectContent>
-                  <SelectItem value="none">Uncategorised</SelectItem>
+                  <SelectItem value="none">Chưa phân loại</SelectItem>
                   {categories.map((c) => <SelectItem key={c.id} value={String(c.id)}>{c.name}</SelectItem>)}
                 </SelectContent>
               </Select>
             </div>
 
             <div className="space-y-1.5">
-              <Label>Gender</Label>
+              <Label>Đối tượng</Label>
               <Select value={form.gender} onValueChange={(v) => setForm((p) => ({ ...p, gender: v }))}>
                 <SelectTrigger><SelectValue /></SelectTrigger>
                 <SelectContent>
@@ -235,42 +235,42 @@ export function ProductsAdmin() {
             </div>
 
             <div className="space-y-1.5">
-              <Label htmlFor="sport">Sport</Label>
-              <Input id="sport" placeholder="Running, Basketball…" {...field('sport')} />
+              <Label htmlFor="sport">Môn thể thao</Label>
+              <Input id="sport" placeholder="Chạy bộ, Bóng rổ…" {...field('sport')} />
             </div>
 
             <div className="space-y-1.5">
-              <Label htmlFor="stock">{editing ? 'Set stock to' : 'Initial stock'}</Label>
-              <Input id="stock" type="number" min="0" placeholder="leave empty to keep" {...field('stock')} />
+              <Label htmlFor="stock">{editing ? 'Đặt tồn kho thành' : 'Tồn kho ban đầu'}</Label>
+              <Input id="stock" type="number" min="0" placeholder="để trống nếu giữ nguyên" {...field('stock')} />
             </div>
 
             <div className="space-y-1.5 sm:col-span-2">
-              <Label htmlFor="imageUrl">Image URL</Label>
+              <Label htmlFor="imageUrl">Đường dẫn ảnh</Label>
               <Input id="imageUrl" type="url" {...field('imageUrl')} />
             </div>
 
             <div className="space-y-1.5 sm:col-span-2">
-              <Label htmlFor="description">Description</Label>
+              <Label htmlFor="description">Mô tả</Label>
               <Textarea id="description" {...field('description')} />
             </div>
 
             <div className="space-y-1.5">
-              <Label>Status</Label>
+              <Label>Trạng thái</Label>
               <Select value={form.status} onValueChange={(v) => setForm((p) => ({ ...p, status: v }))}>
                 <SelectTrigger><SelectValue /></SelectTrigger>
                 <SelectContent>
-                  <SelectItem value="published">Published</SelectItem>
-                  <SelectItem value="draft">Draft</SelectItem>
-                  <SelectItem value="archived">Archived</SelectItem>
+                  <SelectItem value="published">Đang bán</SelectItem>
+                  <SelectItem value="draft">Bản nháp</SelectItem>
+                  <SelectItem value="archived">Đã lưu trữ</SelectItem>
                 </SelectContent>
               </Select>
             </div>
 
             <DialogFooter className="sm:col-span-2">
-              <Button type="button" variant="outline" onClick={() => setOpen(false)}>Cancel</Button>
+              <Button type="button" variant="outline" onClick={() => setOpen(false)}>Huỷ</Button>
               <Button type="submit" disabled={saving}>
                 {saving && <Loader2 className="h-4 w-4 animate-spin" />}
-                {editing ? 'Save changes' : 'Create product'}
+                {editing ? 'Lưu thay đổi' : 'Tạo sản phẩm'}
               </Button>
             </DialogFooter>
           </form>

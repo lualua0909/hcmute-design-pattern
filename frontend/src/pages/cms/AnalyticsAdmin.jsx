@@ -31,15 +31,15 @@ export function AnalyticsAdmin() {
     <div className="space-y-6">
       <div className="flex flex-wrap items-center justify-between gap-4">
         <div>
-          <h1 className="text-2xl font-semibold tracking-tight">Analytics</h1>
-          <p className="text-sm text-muted-foreground">Reports computed by the FastAPI service from the sales fact table.</p>
+          <h1 className="text-2xl font-semibold tracking-tight">Báo cáo</h1>
+          <p className="text-sm text-muted-foreground">Số liệu do service FastAPI tính từ bảng fact bán hàng.</p>
         </div>
         <Select value={days} onValueChange={setDays}>
           <SelectTrigger className="w-40"><SelectValue /></SelectTrigger>
           <SelectContent>
-            <SelectItem value="7">Last 7 days</SelectItem>
-            <SelectItem value="30">Last 30 days</SelectItem>
-            <SelectItem value="90">Last 90 days</SelectItem>
+            <SelectItem value="7">7 ngày gần nhất</SelectItem>
+            <SelectItem value="30">30 ngày gần nhất</SelectItem>
+            <SelectItem value="90">90 ngày gần nhất</SelectItem>
           </SelectContent>
         </Select>
       </div>
@@ -49,7 +49,7 @@ export function AnalyticsAdmin() {
       ) : (
         <div className="grid gap-4 lg:grid-cols-2">
           <Card className="lg:col-span-2">
-            <CardHeader><CardTitle>Revenue &amp; orders</CardTitle></CardHeader>
+            <CardHeader><CardTitle>Doanh thu &amp; đơn hàng</CardTitle></CardHeader>
             <CardContent className="h-72">
               <ResponsiveContainer width="100%" height="100%">
                 <LineChart data={data.revenue} margin={{ left: -18, right: 8, top: 8 }}>
@@ -59,15 +59,15 @@ export function AnalyticsAdmin() {
                   <YAxis yAxisId="right" orientation="right" tickLine={false} axisLine={false} fontSize={12} />
                   <Tooltip />
                   <Legend />
-                  <Line yAxisId="left" type="monotone" dataKey="revenue" stroke="#0ea5e9" strokeWidth={2} dot={false} name="Revenue" />
-                  <Line yAxisId="right" type="monotone" dataKey="orders" stroke="#8b5cf6" strokeWidth={2} dot={false} name="Orders" />
+                  <Line yAxisId="left" type="monotone" dataKey="revenue" stroke="#0ea5e9" strokeWidth={2} dot={false} name="Doanh thu" />
+                  <Line yAxisId="right" type="monotone" dataKey="orders" stroke="#8b5cf6" strokeWidth={2} dot={false} name="Đơn hàng" />
                 </LineChart>
               </ResponsiveContainer>
             </CardContent>
           </Card>
 
           <Card>
-            <CardHeader><CardTitle>Top products by revenue</CardTitle></CardHeader>
+            <CardHeader><CardTitle>Sản phẩm doanh thu cao nhất</CardTitle></CardHeader>
             <CardContent className="h-80">
               <ResponsiveContainer width="100%" height="100%">
                 <BarChart data={data.top} layout="vertical" margin={{ left: 24, right: 16 }}>
@@ -82,7 +82,7 @@ export function AnalyticsAdmin() {
           </Card>
 
           <Card>
-            <CardHeader><CardTitle>Revenue by gender</CardTitle></CardHeader>
+            <CardHeader><CardTitle>Doanh thu theo đối tượng</CardTitle></CardHeader>
             <CardContent className="h-80">
               <ResponsiveContainer width="100%" height="100%">
                 <PieChart>

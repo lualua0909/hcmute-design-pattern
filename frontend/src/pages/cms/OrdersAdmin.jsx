@@ -23,7 +23,7 @@ export function OrdersAdmin() {
   const retry = async (id) => {
     try {
       await api.orders.retry(id);
-      toast.success('Saga replayed', { description: 'order.created was re-published.' });
+      toast.success('Đã phát lại saga', { description: 'Sự kiện order.created đã được gửi lại.' });
       load();
     } catch (err) {
       toast.error(err.message);
@@ -34,10 +34,10 @@ export function OrdersAdmin() {
     <div className="space-y-6">
       <div className="flex items-center justify-between">
         <div>
-          <h1 className="text-2xl font-semibold tracking-tight">Orders</h1>
-          <p className="text-sm text-muted-foreground">Status is projected from the saga events on RabbitMQ.</p>
+          <h1 className="text-2xl font-semibold tracking-tight">Đơn hàng</h1>
+          <p className="text-sm text-muted-foreground">Trạng thái được dựng lại từ các sự kiện saga trên RabbitMQ.</p>
         </div>
-        <Button variant="outline" size="sm" onClick={load}><RefreshCw className="h-4 w-4" />Refresh</Button>
+        <Button variant="outline" size="sm" onClick={load}><RefreshCw className="h-4 w-4" />Làm mới</Button>
       </div>
 
       <Card>
@@ -48,13 +48,13 @@ export function OrdersAdmin() {
             <Table>
               <TableHeader>
                 <TableRow>
-                  <TableHead>Order</TableHead>
-                  <TableHead>Customer</TableHead>
-                  <TableHead>Items</TableHead>
-                  <TableHead>Total</TableHead>
-                  <TableHead>Status</TableHead>
-                  <TableHead>Placed</TableHead>
-                  <TableHead className="text-right">Actions</TableHead>
+                  <TableHead>Mã đơn</TableHead>
+                  <TableHead>Khách hàng</TableHead>
+                  <TableHead>Số lượng</TableHead>
+                  <TableHead>Tổng tiền</TableHead>
+                  <TableHead>Trạng thái</TableHead>
+                  <TableHead>Đặt lúc</TableHead>
+                  <TableHead className="text-right">Thao tác</TableHead>
                 </TableRow>
               </TableHeader>
               <TableBody>
@@ -72,7 +72,7 @@ export function OrdersAdmin() {
                     <TableCell className="text-right">
                       {['pending', 'failed'].includes(order.status) && (
                         <Button variant="ghost" size="sm" onClick={() => retry(order.id)}>
-                          <RotateCw className="h-4 w-4" />Replay
+                          <RotateCw className="h-4 w-4" />Phát lại
                         </Button>
                       )}
                     </TableCell>

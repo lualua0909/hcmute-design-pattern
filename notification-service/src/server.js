@@ -27,7 +27,7 @@ app.get('/sagas/:orderId', async (req, res) => {
 
 /** Manual test hook: push a notification without running a whole order. */
 app.post('/test-push', async (req, res) => {
-  const { userId, title = 'SportHub test', body = 'Hello from the Notification Service' } = req.body || {};
+  const { userId, title = 'SportHub thử nghiệm', body = 'Xin chào từ Notification Service' } = req.body || {};
   if (!userId) return res.status(422).json({ message: 'userId is required' });
   res.json(await notifyUser({ userId, orderId: null, title, body, data: { type: 'test' } }));
 });

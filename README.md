@@ -1,4 +1,4 @@
-# SportHub — Sportswear & Footwear E-commerce
+# SportHub — Website bán đồ thể thao
 
 Đồ án môn **Thiết kế thành phần và Kiến trúc hệ thống** — website thương mại điện tử
 bán đồ thể thao (giày, quần áo, phụ kiện), thiết kế theo **kiến trúc Microservices** và mô tả bằng **C4 Model**.
@@ -14,7 +14,7 @@ bất đồng bộ qua **RabbitMQ (CloudAMQP)**, dùng chung **MySQL (Aiven)**, 
 | [`inventory-service/`](inventory-service) | Quản lý tồn kho, giữ/commit/hoàn kho | Go 1.23 | 9000 |
 | [`analytics-service/`](analytics-service) | Thống kê, báo cáo | Python 3.12, FastAPI | 8000 |
 | [`notification-service/`](notification-service) | Theo dõi saga + bắn FCM | Node.js 22 | 7000 |
-| [`infra/sql/`](infra/sql) | Schema + seed dữ liệu mẫu | MySQL 8 | — |
+| [`infra/sql/`](infra/sql) | Schema + seed dữ liệu mẫu (24 sản phẩm, giá VND) | MySQL 8 | — |
 
 ---
 

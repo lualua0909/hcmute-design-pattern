@@ -12,7 +12,7 @@ import {
   Dialog, DialogContent, DialogDescription, DialogFooter, DialogHeader, DialogTitle,
 } from '@/components/ui/dialog';
 import { api } from '@/lib/api';
-import { cn, formatDate } from '@/lib/utils';
+import { cn, formatDate, MOVEMENT_KIND_LABELS } from '@/lib/utils';
 
 export function InventoryAdmin() {
   const [stock, setStock] = useState(null);
@@ -34,7 +34,7 @@ export function InventoryAdmin() {
     setSaving(true);
     try {
       await api.inventory.restock({ productId: target.productId, sku: target.sku, quantity: Number(quantity) });
-      toast.success('Stock updated', { description: 'Handled by the Go Inventory Service.' });
+      toast.success('Đã cập nhật tồn kho', { description: 'Do Inventory Service (Go) xử lý.' });
       setOpen(false);
       load();
     } catch (err) {
@@ -48,16 +48,16 @@ export function InventoryAdmin() {
     <div className="space-y-6">
       <div className="flex items-center justify-between">
         <div>
-          <h1 className="text-2xl font-semibold tracking-tight">Inventory</h1>
-          <p className="text-sm text-muted-foreground">Owned by the Go service — reservations and commits happen over RabbitMQ.</p>
+          <h1 className="text-2xl font-semibold tracking-tight">Kho hàng</h1>
+          <p className="text-sm text-muted-foreground">Do service Go quản lý — giữ hàng và trừ kho đi qua RabbitMQ.</p>
         </div>
-        <Button variant="outline" size="sm" onClick={load}><RefreshCw className="h-4 w-4" />Refresh</Button>
+        <Button variant="outline" size="sm" onClick={load}><RefreshCw className="h-4 w-4" />Làm mới</Button>
       </div>
 
       <Tabs defaultValue="stock">
         <TabsList>
-          <TabsTrigger value="stock">Stock levels</TabsTrigger>
-          <TabsTrigger value="movements">Movements</TabsTrigger>
+          <TabsTrigger value="stock">Tồn kho</TabsTrigger>
+          <TabsTrigger value="movements">Biến động kho</TabsTrigger>
         </TabsList>
 
         <TabsContent value="stock">
@@ -69,12 +69,12 @@ export function InventoryAdmin() {
                 <Table>
                   <TableHeader>
                     <TableRow>
-                      <TableHead>Product</TableHead>
+                      <TableHead>Sản phẩm</TableHead>
                       <TableHead>SKU</TableHead>
-                      <TableHead>On hand</TableHead>
-                      <TableHead>Reserved</TableHead>
-                      <TableHead>Available</TableHead>
-                      <TableHead className="text-right">Actions</TableHead>
+                      <TableHead>Trong kho</TableHead>
+                      <TableHead>Đang giữ</TableHead>
+                      <TableHead>Có thể bán</TableHead>
+                      <TableHead className="text-right">Thao tác</TableHead>
                     </TableRow>
                   </TableHeader>
                   <TableBody>
@@ -90,7 +90,7 @@ export function InventoryAdmin() {
                             variant="outline" size="sm"
                             onClick={() => { setTarget(row); setQuantity('10'); setOpen(true); }}
                           >
-                            <PackagePlus className="h-4 w-4" />Restock
+                            <PackagePlus className="h-4 w-4" />Nhập thêm
                           </Button>
                         </TableCell>
                       </TableRow>
@@ -104,16 +104,16 @@ export function InventoryAdmin() {
 
         <TabsContent value="movements">
           <Card>
-            <CardHeader><CardTitle>Recent movements</CardTitle></CardHeader>
+            <CardHeader><CardTitle>Biến động gần đây</CardTitle></CardHeader>
             <CardContent className="p-0">
               <Table>
                 <TableHeader>
                   <TableRow>
-                    <TableHead>When</TableHead>
-                    <TableHead>Product</TableHead>
-                    <TableHead>Order</TableHead>
-                    <TableHead>Kind</TableHead>
-                    <TableHead>Qty</TableHead>
+                    <TableHead>Thời điểm</TableHead>
+                    <TableHead>Sản phẩm</TableHead>
+                    <TableHead>Đơn hàng</TableHead>
+                    <TableHead>Loại</TableHead>
+                    <TableHead>Số lượng</TableHead>
                   </TableRow>
                 </TableHeader>
                 <TableBody>
@@ -122,7 +122,7 @@ export function InventoryAdmin() {
                       <TableCell className="text-xs text-muted-foreground">{formatDate(m.createdAt)}</TableCell>
                       <TableCell>#{m.productId}</TableCell>
                       <TableCell className="font-mono text-xs">{m.orderId || '—'}</TableCell>
-                      <TableCell className="capitalize">{m.kind}</TableCell>
+                      <TableCell>{MOVEMENT_KIND_LABELS[m.kind] || m.kind}</TableCell>
                       <TableCell>{m.quantity}</TableCell>
                     </TableRow>
                   ))}
@@ -136,18 +136,18 @@ export function InventoryAdmin() {
       <Dialog open={open} onOpenChange={setOpen}>
         <DialogContent className="max-w-sm">
           <DialogHeader>
-            <DialogTitle>Restock {target?.sku}</DialogTitle>
-            <DialogDescription>Adds units to on-hand stock. Negative values are not allowed.</DialogDescription>
+            <DialogTitle>Nhập thêm {target?.sku}</DialogTitle>
+            <DialogDescription>Cộng thêm số lượng vào tồn kho. Không nhận giá trị âm.</DialogDescription>
           </DialogHeader>
           <form className="space-y-4" onSubmit={restock}>
             <div className="space-y-1.5">
-              <Label htmlFor="qty">Quantity to add</Label>
+              <Label htmlFor="qty">Số lượng cần thêm</Label>
               <Input id="qty" type="number" min="1" value={quantity} onChange={(e) => setQuantity(e.target.value)} required />
             </div>
             <DialogFooter>
-              <Button type="button" variant="outline" onClick={() => setOpen(false)}>Cancel</Button>
+              <Button type="button" variant="outline" onClick={() => setOpen(false)}>Huỷ</Button>
               <Button type="submit" disabled={saving}>
-                {saving && <Loader2 className="h-4 w-4 animate-spin" />}Add stock
+                {saving && <Loader2 className="h-4 w-4 animate-spin" />}Nhập kho
               </Button>
             </DialogFooter>
           </form>

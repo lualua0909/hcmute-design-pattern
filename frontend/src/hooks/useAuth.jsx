@@ -75,17 +75,17 @@ export function AuthProvider({ children }) {
   }, [profile]);
 
   const signInWithGoogle = useCallback(async () => {
-    if (!firebaseReady) throw new Error('Firebase is not configured yet');
+    if (!firebaseReady) throw new Error('Firebase chưa được cấu hình');
     await signInWithPopup(auth, googleProvider);
   }, []);
 
   const signInWithEmail = useCallback(async (email, password) => {
-    if (!firebaseReady) throw new Error('Firebase is not configured yet');
+    if (!firebaseReady) throw new Error('Firebase chưa được cấu hình');
     await signInWithEmailAndPassword(auth, email, password);
   }, []);
 
   const registerWithEmail = useCallback(async (email, password) => {
-    if (!firebaseReady) throw new Error('Firebase is not configured yet');
+    if (!firebaseReady) throw new Error('Firebase chưa được cấu hình');
     await createUserWithEmailAndPassword(auth, email, password);
   }, []);
 

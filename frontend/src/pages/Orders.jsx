@@ -33,9 +33,9 @@ export function Orders() {
     return (
       <div className="container py-16">
         <EmptyState
-          title="No orders yet"
-          description="Your orders and their saga status will show up here."
-          action={<Button asChild><Link to="/products">Start shopping</Link></Button>}
+          title="Chưa có đơn hàng nào"
+          description="Đơn hàng và trạng thái saga của bạn sẽ hiển thị ở đây."
+          action={<Button asChild><Link to="/products">Bắt đầu mua sắm</Link></Button>}
         />
       </div>
     );
@@ -44,8 +44,8 @@ export function Orders() {
   return (
     <div className="container space-y-6 py-10">
       <div className="flex items-center justify-between">
-        <h1 className="text-3xl font-semibold tracking-tight">My orders</h1>
-        <Button variant="outline" size="sm" onClick={load}><RefreshCw className="h-4 w-4" />Refresh</Button>
+        <h1 className="display text-3xl">Đơn hàng của tôi</h1>
+        <Button variant="outline" size="sm" onClick={load}><RefreshCw className="h-4 w-4" />Làm mới</Button>
       </div>
 
       {orders.map((order) => (
@@ -60,9 +60,9 @@ export function Orders() {
               {['pending', 'reserved'].includes(order.status) && (
                 <Button
                   variant="outline" size="sm"
-                  onClick={() => api.orders.cancel(order.id).then(load).then(() => toast.success('Order cancelled'))}
+                  onClick={() => api.orders.cancel(order.id).then(load).then(() => toast.success('Đã huỷ đơn hàng'))}
                 >
-                  Cancel
+                  Huỷ đơn
                 </Button>
               )}
             </div>
@@ -77,7 +77,7 @@ export function Orders() {
             ))}
             <Separator />
             <div className="flex justify-between font-semibold">
-              <span>Total</span><span>{formatCurrency(order.totalAmount)}</span>
+              <span>Tổng cộng</span><span>{formatCurrency(order.totalAmount)}</span>
             </div>
             {order.failReason && <p className="text-sm text-destructive">{order.failReason}</p>}
           </CardContent>

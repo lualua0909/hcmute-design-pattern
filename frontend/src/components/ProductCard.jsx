@@ -19,11 +19,11 @@ export function ProductCard({ product }) {
             className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
           />
         ) : (
-          <div className="flex h-full items-center justify-center text-sm text-muted-foreground">No image</div>
+          <div className="flex h-full items-center justify-center text-sm text-muted-foreground">Chưa có ảnh</div>
         )}
         {soldOut && (
           <div className="absolute inset-0 flex items-center justify-center bg-background/70 text-sm font-semibold uppercase tracking-widest">
-            Sold out
+            Hết hàng
           </div>
         )}
       </Link>
@@ -42,7 +42,7 @@ export function ProductCard({ product }) {
           <div>
             <p className="font-medium">{formatCurrency(product.price)}</p>
             <p className={cn('text-xs', soldOut ? 'text-destructive' : 'text-muted-foreground')}>
-              {soldOut ? 'Out of stock' : `${product.stock} in stock`}
+              {soldOut ? 'Hết hàng' : `Còn ${product.stock} sản phẩm`}
             </p>
           </div>
           <Button
@@ -53,7 +53,7 @@ export function ProductCard({ product }) {
             onClick={() => cart.add(product)}
           >
             <ShoppingCart className="h-4 w-4" />
-            Add
+            Thêm
           </Button>
         </div>
       </div>

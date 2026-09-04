@@ -42,6 +42,12 @@ export const MOVEMENT_KIND_LABELS = {
   adjust: 'Điều chỉnh',
 };
 
+export const PRODUCT_STATUS_LABELS = {
+  published: 'Đang bán',
+  draft: 'Bản nháp',
+  archived: 'Đã lưu trữ',
+};
+
 export const ROLE_LABELS = { admin: 'Quản trị', customer: 'Khách hàng' };
 
 export const ORDER_STATUS_STYLES = {

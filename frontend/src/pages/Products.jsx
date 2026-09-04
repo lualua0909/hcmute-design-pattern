@@ -11,10 +11,10 @@ import { api } from '@/lib/api';
 import { GENDER_LABELS } from '@/lib/utils';
 
 const SORTS = [
-  { value: 'newest', label: 'Newest' },
-  { value: 'price_asc', label: 'Price: low to high' },
-  { value: 'price_desc', label: 'Price: high to low' },
-  { value: 'name', label: 'Name A–Z' },
+  { value: 'newest', label: 'Mới nhất' },
+  { value: 'price_asc', label: 'Giá: thấp đến cao' },
+  { value: 'price_desc', label: 'Giá: cao đến thấp' },
+  { value: 'name', label: 'Tên A–Z' },
 ];
 
 export function Products() {
@@ -58,10 +58,10 @@ export function Products() {
     <div className="container space-y-8 py-10">
       <div className="space-y-2">
         <h1 className="display text-3xl">
-          {GENDER_LABELS[params.get('gender')] ? `${GENDER_LABELS[params.get('gender')]} gear` : 'All products'}
+          {GENDER_LABELS[params.get('gender')] ? `Đồ thể thao ${GENDER_LABELS[params.get('gender')]}` : 'Tất cả sản phẩm'}
         </h1>
         <p className="text-sm text-muted-foreground">
-          {data ? `${data.pagination.total} products` : 'Loading catalogue…'}
+          {data ? `${data.pagination.total} sản phẩm` : 'Đang tải danh mục…'}
         </p>
       </div>
 
@@ -74,23 +74,23 @@ export function Products() {
           <Input
             value={search}
             onChange={(e) => setSearch(e.target.value)}
-            placeholder="Search by name, SKU or sport…"
+            placeholder="Tìm theo tên, SKU hoặc môn thể thao…"
             className="pl-9"
           />
         </form>
 
         <Select value={params.get('category') || 'all'} onValueChange={(v) => patch({ category: v })}>
-          <SelectTrigger className="md:w-48"><SelectValue placeholder="Category" /></SelectTrigger>
+          <SelectTrigger className="md:w-48"><SelectValue placeholder="Danh mục" /></SelectTrigger>
           <SelectContent>
-            <SelectItem value="all">All categories</SelectItem>
+            <SelectItem value="all">Tất cả danh mục</SelectItem>
             {categories.map((c) => <SelectItem key={c.id} value={String(c.id)}>{c.name}</SelectItem>)}
           </SelectContent>
         </Select>
 
         <Select value={params.get('gender') || 'all'} onValueChange={(v) => patch({ gender: v })}>
-          <SelectTrigger className="md:w-40"><SelectValue placeholder="Gender" /></SelectTrigger>
+          <SelectTrigger className="md:w-40"><SelectValue placeholder="Đối tượng" /></SelectTrigger>
           <SelectContent>
-            <SelectItem value="all">Everyone</SelectItem>
+            <SelectItem value="all">Mọi đối tượng</SelectItem>
             {Object.entries(GENDER_LABELS).map(([value, label]) => (
               <SelectItem key={value} value={value}>{label}</SelectItem>
             ))}
@@ -98,9 +98,9 @@ export function Products() {
         </Select>
 
         <Select value={params.get('sport') || 'all'} onValueChange={(v) => patch({ sport: v })}>
-          <SelectTrigger className="md:w-44"><SelectValue placeholder="Sport" /></SelectTrigger>
+          <SelectTrigger className="md:w-44"><SelectValue placeholder="Môn thể thao" /></SelectTrigger>
           <SelectContent>
-            <SelectItem value="all">All sports</SelectItem>
+            <SelectItem value="all">Tất cả bộ môn</SelectItem>
             {sports.map((s) => <SelectItem key={s.sport} value={s.sport}>{s.sport} · {s.count}</SelectItem>)}
           </SelectContent>
         </Select>
@@ -120,7 +120,7 @@ export function Products() {
       )}
 
       {data && data.items.length === 0 && (
-        <EmptyState title="No products match those filters" description="Try clearing the search or picking another sport." />
+        <EmptyState title="Không có sản phẩm nào khớp bộ lọc" description="Thử xoá từ khoá tìm kiếm hoặc chọn bộ môn khác." />
       )}
 
       {data && data.items.length > 0 && (
@@ -136,17 +136,17 @@ export function Products() {
                 disabled={data.pagination.page <= 1}
                 onClick={() => patch({ page: String(data.pagination.page - 1) })}
               >
-                Previous
+                Trang trước
               </Button>
               <span className="text-sm text-muted-foreground">
-                Page {data.pagination.page} of {data.pagination.pages}
+                Trang {data.pagination.page} / {data.pagination.pages}
               </span>
               <Button
                 variant="outline" size="sm"
                 disabled={data.pagination.page >= data.pagination.pages}
                 onClick={() => patch({ page: String(data.pagination.page + 1) })}
               >
-                Next
+                Trang sau
               </Button>
             </div>
           )}

@@ -24,8 +24,8 @@ export function ProductDetail() {
   if (product === false) {
     return (
       <div className="container py-20 text-center">
-        <p className="text-lg font-medium">Product not found</p>
-        <Button variant="link" asChild><Link to="/products">Back to the shop</Link></Button>
+        <p className="text-lg font-medium">Không tìm thấy sản phẩm</p>
+        <Button variant="link" asChild><Link to="/products">Quay lại cửa hàng</Link></Button>
       </div>
     );
   }
@@ -46,14 +46,14 @@ export function ProductDetail() {
   return (
     <div className="container py-10">
       <Button variant="ghost" size="sm" onClick={() => navigate(-1)} className="mb-6">
-        <ArrowLeft className="h-4 w-4" />Back
+        <ArrowLeft className="h-4 w-4" />Quay lại
       </Button>
 
       <div className="grid gap-10 md:grid-cols-2">
         <div className="aspect-square overflow-hidden bg-muted">
           {product.imageUrl
             ? <img src={product.imageUrl} alt={product.name} className="h-full w-full object-cover" />
-            : <div className="flex h-full items-center justify-center text-sm text-muted-foreground">No image</div>}
+            : <div className="flex h-full items-center justify-center text-sm text-muted-foreground">Chưa có ảnh</div>}
         </div>
 
         <div className="space-y-6">
@@ -72,14 +72,14 @@ export function ProductDetail() {
           <p className="text-4xl font-semibold">{formatCurrency(product.price)}</p>
 
           <p className="text-sm leading-relaxed text-muted-foreground">
-            {product.description || 'No description provided for this product yet.'}
+            {product.description || 'Sản phẩm này chưa có mô tả.'}
           </p>
 
           <Separator />
 
           <div className="space-y-4">
             <p className={cn('text-sm', soldOut ? 'text-destructive' : 'text-muted-foreground')}>
-              {soldOut ? 'Out of stock' : `${product.stock} available`}
+              {soldOut ? 'Hết hàng' : `Còn ${product.stock} sản phẩm`}
             </p>
 
             <div className="flex items-center gap-3">
@@ -94,7 +94,7 @@ export function ProductDetail() {
               </div>
 
               <Button size="lg" className="rounded-full" disabled={soldOut} onClick={() => cart.add(product, quantity)}>
-                <ShoppingCart className="h-4 w-4" />Add to cart
+                <ShoppingCart className="h-4 w-4" />Thêm vào giỏ
               </Button>
             </div>
           </div>
